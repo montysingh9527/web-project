@@ -1,0 +1,23 @@
+{
+  "type": "Contains groups of numbers and objects",
+  "home": "Home",
+  "route": {
+    "tion": "document",
+    "routers": ["Home", "My", "All pages"]
+  },
+  "pages": {
+    "placeholder" : "Total {size} page",
+    "place": "Total {0} page"
+  },
+  "duction": {
+    "guide": "Guide",
+    "perm": {
+      "per": "Permission test page",
+      "page": {
+        "mission": "Page Authority",
+        "directive": "Command Authority"
+      },
+      "icons": "Icon"
+    }
+  }
+}
