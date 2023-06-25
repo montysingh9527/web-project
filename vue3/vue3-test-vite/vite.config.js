@@ -44,7 +44,7 @@ export default defineConfig(({ mode, command }) => {
 	const isBuild = command === 'build'
 	return {
 		base: VITE_BASE_URL,
-		root: mode === 'development' ? '' : '',
+		// root: mode === 'development' ? '' : '',
 		// 挂载到Window对象上
 		define: {
 			BASE_URL: JSON.stringify(devtest[devpro]), // 设置请求url, 在.js中直接使用 BASE_URL
@@ -75,10 +75,11 @@ export default defineConfig(({ mode, command }) => {
 				 */
 				inject: {
 				  data: {
-					title: 'index',
+					title: '后台',
 					// injectScript: `<script src="./inject.js"></script>`,
 					initDate: new Date().toLocaleString(),
-					title_mate: "后台管理-系统"
+					title_mate: "后台管理-系统",
+					processEnv: mode,
 				  },
 				},
 			  }),
@@ -122,16 +123,16 @@ export default defineConfig(({ mode, command }) => {
 			rollupOptions: {
 				input: {
 					main: path.resolve(__dirname, 'index.html'),
-					preview: path.resolve(__dirname, 'preview/index.html')
+					// preview: path.resolve(__dirname, 'preview/index.html')
 				},
 				output: {
-					manualChunks: {
-						jsonWorker: [`${prefix}/language/json/json.worker`],
-						cssWorker: [`${prefix}/language/css/css.worker`],
-						htmlWorker: [`${prefix}/language/html/html.worker`],
-						tsWorker: [`${prefix}/language/typescript/ts.worker`],
-						editorWorker: [`${prefix}/editor/editor.worker`]
-					}
+					// manualChunks: {
+					// 	jsonWorker: [`${prefix}/language/json/json.worker`],
+					// 	cssWorker: [`${prefix}/language/css/css.worker`],
+					// 	htmlWorker: [`${prefix}/language/html/html.worker`],
+					// 	tsWorker: [`${prefix}/language/typescript/ts.worker`],
+					// 	editorWorker: [`${prefix}/editor/editor.worker`]
+					// }
 				}
 			}
 		},
