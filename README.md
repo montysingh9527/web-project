@@ -7,6 +7,18 @@ test-pc-demo 未开始pc项目
 vue3		 一些vue3项目
 ```
 
+#####项目创建
+
+```
+vue创建项目：npm init vue@latest
+vite创建项目：npm create vite@latest
+
+```
+
+
+
+
+
 ##### Vscode插件
 
 ```
@@ -15,6 +27,7 @@ vue3		 一些vue3项目
 代码格式化：ESlint
 vue单文件提示： Vetur
 文件管理插件: project-manager
+Markdown： Markdown Preview Enhanced
 ```
 
 
