@@ -7,12 +7,12 @@ test-pc-demo 未开始pc项目
 vue3		 一些vue3项目
 ```
 
-#####项目创建
+##### 项目创建
 
 ```
 vue创建项目：npm init vue@latest
 vite创建项目：npm create vite@latest
-
+egg项目创建：npm init egg --type=simple
 ```
 
 ##### Vscode插件
@@ -24,6 +24,7 @@ vite创建项目：npm create vite@latest
 vue单文件提示： Vetur
 文件管理插件: project-manager
 Markdown： Markdown Preview Enhanced
+git操作： GitLens
 ```
 
 
@@ -37,7 +38,7 @@ Markdown： Markdown Preview Enhanced
 正则练习网址：https://regexr.com/
 ```
 
-#####Chrome浏览器插件
+##### Chrome浏览器插件
 
 ```
 格式化json数据： JSON-handle
