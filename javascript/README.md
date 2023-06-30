@@ -35,3 +35,9 @@ demo.js：生成器迭代器 * yield
 index.js/ vue.js ：用map()、Object.defineProperty 实现v-if、v-show、事件绑定
 ```
 
+##### Mvvm 数据的双向绑定
+
+```
+技术点：Object.defineProperty、new Proxy()、Reflect
+模板字符替换
+```
