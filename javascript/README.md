@@ -31,8 +31,15 @@ sensen-blog：https://blog.csdn.net/qq_41863447?type=blog
 
 ```
 实现：v-if、v-show
-demo.js：生成器迭代器 * yield
+demo.js：生成器迭代器 * yield 、声明可迭代协议 Symbol(Symbol.iterator), 定义生成器函数
 index.js/ vue.js ：用map()、Object.defineProperty 实现v-if、v-show、事件绑定
+```
+##### v-if-show 实现v-if/v-show
+
+```
+实现：v-if、v-show 实现元素的显示隐藏
+技术点：class、new Map()、Object.defineProperty()
+dom操作：childNodes、getAttribute()、createComment()、parentNode.replaceChild()
 ```
 
 ##### Mvvm 数据的双向绑定
