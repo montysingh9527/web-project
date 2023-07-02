@@ -48,3 +48,10 @@ dom操作：childNodes、getAttribute()、createComment()、parentNode.replaceCh
 技术点：Object.defineProperty、new Proxy()、Reflect
 模板字符替换
 ```
+
+##### tpl-loader-creator webpack的loader编写
+
+```
+技术点：webpack.config.js配置
+模板字符替换
+```
