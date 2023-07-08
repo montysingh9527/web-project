@@ -53,6 +53,9 @@ vue.js调试工具：  Vue.js devtools@6.1.4
 ##### 题目
 
 ```
+sensen: https://github.com/yesmore/pre-interview
+https://github.com/xlearns/vue-admin/tree/master
+
 https://github.com/CavsZhouyou/Front-End-Interview-Notebook
 
 https://github.com/stephentian/33-js-concepts#1-%E8%B0%83%E7%94%A8%E5%A0%86%E6%A0%88
