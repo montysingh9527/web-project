@@ -63,3 +63,10 @@ dom操作：childNodes、getAttribute()、createComment()、parentNode.replaceCh
 技术点：DOM节点操作、new Proxy()、Reflect、document.createDocumentFragment()、getAttribute、parentNode、replaceChild
 双向数据绑定、模板字符替换、app.mount()、createApp
 ```
+
+##### vDom-diff（虚拟节点与DOM Diff算法源码实现）
+
+```
+技术点：DOM节点操作、createTextNode()、parentNode.replaceChild()、parentNode.removeChild()、 removeAttribute()
+
+```
