@@ -31,6 +31,61 @@ export const getExplorer = () => {
 };
 
 /**
+ * 数据类型判断
+ * @param {*} obj 需要判断的数据
+ * @returns
+ */
+export const typeOf = (obj) => {
+  const toString = Object.prototype.toString;
+  const map = {
+    "[object Boolean]": "boolean",
+    "[object Number]": "number",
+    "[object String]": "string",
+    "[object Function]": "function",
+    "[object Array]": "array",
+    "[object Date]": "date",
+    "[object RegExp]": "regExp",
+    "[object Undefined]": "undefined",
+    "[object Null]": "null",
+    "[object Object]": "object",
+  };
+  return map[toString.call(obj)];
+};
+
+/**
+ * 判断数组中是否存在该值（某个值）
+ * @param {*} value
+ * @param {*} validList
+ * @returns
+ */
+export function oneOf(value, validList) {
+  for (let i = 0; i < validList.length; i++) {
+    if (value === validList[i]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * 驼峰字符串转连字符
+ * @param {*} str
+ * @returns "HomePAGE"  => "home-page"
+ */
+export function camelcaseToHyphen(str) {
+  return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+}
+
+/**
+ * 第一个字符转大写
+ * @param {*} str
+ * @returns "home_page"  => "Home_page"
+ */
+export function firstUpperCase(str) {
+  return str.toString()[0].toUpperCase() + str.toString().slice(1);
+}
+
+/**
  * 检测设备类型
  * @returns {String}
  */
@@ -163,7 +218,7 @@ function isIpAddr(str) {
 }
 
 /**
- * 生成一个24位随机字符窜
+ * 生成一个24位随机字符串
  * @returns {String}
  */
 function randomHex() {
@@ -173,6 +228,22 @@ function randomHex() {
   );
   return arr.join("");
 }
+
+/**
+ * 生成随机字符串
+ * @param {*} len 生成位数
+ * @returns
+ */
+export const randomText = (len = 32) => {
+  const chars =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+  const maxPos = chars.length;
+  let str = "";
+  for (let i = 0; i < len; i++) {
+    str += chars.charAt(Math.floor(Math.random() * maxPos));
+  }
+  return str;
+};
 
 /**
  * 删除对象某个属性
@@ -227,6 +298,35 @@ export const deepClone = (initalObj) => {
   }
   return obj;
 };
+
+/**
+ * 深拷贝对象/数组
+ * @param {*} data
+ * @returns
+ */
+export function deepCopy(data) {
+  const t = Object.prototype.toString.call(data);
+  let o;
+
+  if (t === "array") {
+    o = [];
+  } else if (t === "object") {
+    o = {};
+  } else {
+    return data;
+  }
+
+  if (t === "array") {
+    for (let i = 0; i < data.length; i++) {
+      o.push(deepCopy(data[i]));
+    }
+  } else if (t === "object") {
+    for (let i in data) {
+      o[i] = deepCopy(data[i]);
+    }
+  }
+  return o;
+}
 
 /**
  * JS 两个数的精确乘法
