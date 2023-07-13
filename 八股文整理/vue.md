@@ -75,4 +75,7 @@ default: () => ({})
 
 ##### vue3源码解析
 ###### ref
-![Alt text](./img/image.png)
+![Alt text](./img/ref.png)
+
+###### reactive
+![Alt text](./img/reactive.png)

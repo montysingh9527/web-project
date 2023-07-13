@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let entries = [
+        {
+          id: "12",
+          parentId: "0",
+          text: "Man",
+          level: "1",
+          children: null,
+        },
+        {
+          id: "7",
+          parentId: "12",
+          text: "Other",
+          level: "2",
+          children: null,
+        },
+        {
+          id: "8",
+          parentId: "7",
+          text: "Bird",
+          level: "3",
+          children: null,
+        },
+        {
+          id: "9",
+          parentId: "0",
+          text: "Woman",
+          level: "1",
+          children: null,
+        },
+        {
+          id: "11",
+          parentId: "9",
+          text: "Girl",
+          level: "2",
+          children: null,
+        },
+      ];
+
+      function list_to_tree(list) {
+        let objs = {},roots=[];
+        for(let i = 0; i < list.length; i++){
+          objs[list[i].parentId] = list[i]
+        }
+        console.log('---logs--qqq-',objs);
+        
+        for(let i = 0; i< list.length; i++){
+          if(objs[list[i].id]){
+            roots.push(list[i])
+          }
+        }
+
+        return roots;
+      }
+
+      console.log("---logs---", list_to_tree(entries));
+    </script>
+  </body>
+</html>

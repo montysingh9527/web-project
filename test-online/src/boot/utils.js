@@ -218,6 +218,17 @@ function isIpAddr(str) {
 }
 
 /**
+ * 获取当前月份的总天数
+ * @returns 31
+ */
+function getMonthDay() {
+  const year = new Date().getFullYear();
+  const month = new Date().getMonth();
+  const days = new Date(year, month + 1, 0).getDate();
+  return days;
+}
+
+/**
  * 生成一个24位随机字符串
  * @returns {String}
  */

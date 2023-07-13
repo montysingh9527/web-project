@@ -64,9 +64,30 @@ dom操作：childNodes、getAttribute()、createComment()、parentNode.replaceCh
 双向数据绑定、模板字符替换、app.mount()、createApp
 ```
 
-##### vDom-diff（虚拟节点与DOM Diff算法源码实现）
+##### vue2-VDOM-Diff 最小算法实现（虚拟节点与 DOM Diff 算法源码实现）
 
 ```
 技术点：DOM节点操作、createTextNode()、parentNode.replaceChild()、parentNode.removeChild()、 removeAttribute()
 
+```
+
+##### md2html（.md 转 Html）
+
+```
+技术点：class、文件读取fs.readFileSync()、正则match()、replace()
+```
+
+##### defineProperty 实践-视图渲染与 localStorage
+
+```
+技术点：Object.defineProperty()
+```
+
+##### defineProperty 实践-属性权限控制
+
+```
+技术点：Object.defineProperty()、自定义构造函数、
+属性控制 enumerable: false,
+        writable: false,
+        configurable: false,
 ```
