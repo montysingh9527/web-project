@@ -66,6 +66,8 @@ vue源码解密：https://github.com/FrontEndGitHub/FrontEndGitHub#vue-%E6%BA%90
 
 动态图演示 Promises & Async/Await 的过程：
 https://github.com/biaochenxuying/blog/issues/64
+
+算法：https://github.com/course-dasheng/fe-algorithm
 ```
 
 ##### 项目

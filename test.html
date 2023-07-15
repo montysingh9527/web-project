@@ -46,15 +46,15 @@
       ];
 
       function list_to_tree(list) {
-        let objs = {},roots=[];
-        for(let i = 0; i < list.length; i++){
-          objs[list[i].parentId] = list[i]
+        let objs = {},
+          roots = [];
+        for (let i = 0; i < list.length; i++) {
+          objs[list[i].parentId] = list[i];
         }
-        console.log('---logs--qqq-',objs);
-        
-        for(let i = 0; i< list.length; i++){
-          if(objs[list[i].id]){
-            roots.push(list[i])
+
+        for (let i = 0; i < list.length; i++) {
+          if (objs[list[i].id]) {
+            roots.push(list[i]);
           }
         }
 

@@ -340,6 +340,32 @@ export function deepCopy(data) {
 }
 
 /**
+ * 深拷贝对象
+ * @param {*} origin
+ * @param {*} target
+ * @returns
+ */
+function deepClone(origin, target) {
+  var tar = target || {};
+  var toStr = Object.prototype.toString;
+  var arrType = "[object Array]";
+
+  for (var k in origin) {
+    if (origin.hasOwnProperty(k)) {
+      // 判断是否为org自己的属性
+      if (typeof origin[k] === "object" && origin[k] !== null) {
+        tar[k] = toStr.call(origin[k]) === arrType ? [] : {}; // 判断是数组还是对象
+        deepClone(origin[k], tar[k]);
+      } else {
+        // 非object类型则直接赋值
+        tar[k] = origin[k];
+      }
+    }
+  }
+  return tar;
+}
+
+/**
  * JS 两个数的精确乘法
  * @param v1
  * @param v2
