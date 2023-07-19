@@ -81,14 +81,21 @@ vite / vite.config.js
 vite / vite.config.js
 ```
 
-#### vue3-course-table 卡片拖拽式课程表
+##### vue3-course-table 卡片拖拽式课程表
 
 ```
 技术点： 策略模式、自定义指令、拖拽draggable
 vite / vite.config.js
 ```
 
-#### vue3-provinces-cities-districts (省市县区联动选择)
+##### vue3-provinces-cities-districts (省市县区联动选择)
+
+```
+技术点： 策略模式、reduce处理数据
+vite / vite.config.js
+```
+
+##### vue3-provinces-cities-districts-组件化 (省市县区联动选择)
 
 ```
 技术点： 策略模式、reduce处理数据
