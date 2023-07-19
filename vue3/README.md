@@ -88,6 +88,13 @@ vite / vite.config.js
 vite / vite.config.js
 ```
 
+#### vue3-provinces-cities-districts (省市县区联动选择)
+
+```
+技术点： 策略模式、reduce处理数据
+vite / vite.config.js
+```
+
 ##### vue3-test-antd 测试项目
 
 ```
