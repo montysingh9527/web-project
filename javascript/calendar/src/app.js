@@ -1,5 +1,6 @@
 import MyCalendar from "./components/Calendar";
 import { render, update } from "./components/Calendar/render";
+import "./components/Calendar/index.scss";
 
 (() => {
   const myCalendar = MyCalendar();

@@ -29,4 +29,12 @@ export function render(container) {
   };
 }
 
-export function update() {}
+export function update(year, month) {
+  let oTBody = document.querySelector(".my-calendar-body");
+  const dateTrs = createDateNode(year, month);
+  oTBody.innerHTML = "";
+
+  dateTrs.forEach((tr) => {
+    oTBody.appendChild(tr);
+  });
+}
