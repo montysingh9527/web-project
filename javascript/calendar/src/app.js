@@ -4,6 +4,7 @@ import { render, update } from "./components/Calendar/render";
 (() => {
   const myCalendar = MyCalendar();
   const oApp = document.querySelector("#app");
+  // 获取当前日期（年/月/日）
   const dateInfo = myCalendar.getDateInfo();
 
   const init = () => {
@@ -11,6 +12,7 @@ import { render, update } from "./components/Calendar/render";
   };
 
   function render(...args) {
+    console.log("-render(...args)-", ...args);
     oApp.appendChild(myCalendar.render(...args));
   }
 
