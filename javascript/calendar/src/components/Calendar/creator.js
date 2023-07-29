@@ -113,8 +113,35 @@ function createCurrentDaysTD(currentDayCount, year, month) {
       oTd.className = "day current-day";
     }
     oTd.innerText = i;
-    oTd.setAttribute("data-date", getFormatDate(year, month, i))
+    oTd.setAttribute("data-date", getFormatDate(year, month, i));
     tdArr.push(oTd);
   }
   return tdArr;
+}
+
+/**
+ * 创建年/月 切换
+ * @param {*} year 
+ * @param {*} month 
+ * @returns 
+ */
+export function createControlArea(year, month) {
+  const oArea = document.createElement("div");
+  oArea.className = "control-area";
+
+  oArea.innerHTML = `
+        <span class="control-btn btn-year-lt">&lt;&lt;</span>
+        <span class="control-btn btn-month-lt">&lt;</span>
+            <span class="control-show">
+                <span class="control-title">
+                    <span class="title-year">${year}</span>年
+                </span>
+                <span class="control-title">
+                    <span class="title-month">${month}</span>月
+                </span>
+            </span>
+        <span class="control-btn btn-month-lt">&gt;</span>
+        <span class="control-btn btn-year-lt">&gt;&gt;</span>
+    `;
+  return oArea;
 }
