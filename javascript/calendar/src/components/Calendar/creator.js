@@ -8,6 +8,7 @@ import {
   getMonthDayCount,
   getNextMonthRestDays,
   getDateInfo,
+  getFormatDate,
 } from "./utils";
 /**
  * 创建星期节点
@@ -112,6 +113,7 @@ function createCurrentDaysTD(currentDayCount, year, month) {
       oTd.className = "day current-day";
     }
     oTd.innerText = i;
+    oTd.setAttribute("data-date", getFormatDate(year, month, i))
     tdArr.push(oTd);
   }
   return tdArr;

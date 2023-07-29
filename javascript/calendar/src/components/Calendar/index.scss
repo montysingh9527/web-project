@@ -31,5 +31,9 @@
       color: orange;
       font-weight: bold;
     }
+    &.selected {
+      background-color: orange;
+      color: #fff;
+    }
   }
 }

@@ -29,6 +29,11 @@ export function render(container) {
   };
 }
 
+/**
+ * 更新节点
+ * @param {*} year 
+ * @param {*} month 
+ */
 export function update(year, month) {
   let oTBody = document.querySelector(".my-calendar-body");
   const dateTrs = createDateNode(year, month);
