@@ -37,3 +37,119 @@ function list_to_tree(list) {
   }
   return roots;
 }
+
+/** *
+ *
+ *  将列表型的数据转化成树形数据 => 递归算法 => 自身调用自身 => 一定条件不能一样， 否则就会死循环
+ *  遍历树形 有一个重点 要先找一个头儿
+ * ***/
+export function tranListToTreeData(list, rootValue) {
+  var arr = [];
+  list.forEach((item) => {
+    if (item.pid === rootValue) {
+      // 找到之后 就要去找 item 下面有没有子节点
+      const children = tranListToTreeData(list, item.id);
+      if (children.length) {
+        // 如果children的长度大于0 说明找到了子节点
+        item.children = children;
+      }
+      arr.push(item); // 将内容加入到数组中
+    }
+  });
+  return arr;
+}
+
+// this.treeData = tranListToTreeData(depts, '')
+
+
+/**
+ * 
+ * 扁平的数组结构 -> 转树状结构（使用递归）
+let arr = [
+  { menu: "1", level: 1 },
+  { menu: "2", sonmenu: "22", level: 2 },
+  { menu: "2", sonmenu: "21", level: 1 },
+  { menu: "22", sonmenu: "221", level: 3 },
+  { menu: "22", sonmenu: "222", level: 3 },
+  { menu: "50", sonmenu: "51", level: 1 },
+  { menu: "100", level: 1 },
+];
+====转换成====
+[
+        { menu: "1", level: 1, },
+        {
+          menu: "2",
+          level: 1,
+          children: [
+            { menu: "2", sonmenu: "21", level: 1 },
+            { menu: "2", sonmenu: "22", level: 2 },
+            {
+              menu: "22",
+              level: 3,
+              children: [
+                  { menu: "22", sonmenu: "221", level: 3 },
+                  { menu: "22", sonmenu: "222", level: 3 }
+            ],
+            },
+          ],
+        },
+        {
+          menu: "51",
+          level: 1,
+          children: [{ menu: "50", sonmenu: "51", level: 1,},],
+        },
+        { menu: "100", level: 1, },
+];
+ */
+
+function deesp(data) {
+  // 按level等级排序
+  data.sort((a, b) => a.level - b.level);
+  const deepson = (datalist, sonVal) => {
+    // 如果是一级菜单
+    if (sonVal.level == 1) {
+      datalist.push({
+        level: sonVal.level,
+        menu: sonVal.menu,
+        children: [Object.assign(sonVal, { level: 2 })],
+      });
+    } else {
+      datalist.forEach((item) => {
+        // 当前菜单名称和子级菜单名称相同，添加到children（说明同一菜单有两个子级）
+        if (item.menu == sonVal.menu) {
+          item.children.push(sonVal);
+        } else {
+          // 子级菜单
+          if (item.sonmenu == sonVal.menu) {
+            // 如果菜单有相同的则不添加
+            let isadd = datalist.some((o) => o.menu == sonVal.menu);
+            if (!isadd) {
+              let obj2 = {
+                level: sonVal.level * 1 - 1,
+                menu: sonVal.menu,
+                children: [sonVal],
+              };
+              datalist.push(obj2);
+            }
+          } else {
+            // 递归
+            item.children?.length && deepson(item.children, sonVal);
+          }
+        }
+      });
+    }
+    return datalist;
+  };
+
+  return data.reduce((prev, cur) => {
+    // 如果没有子级菜单，直接添加
+    if (!cur.sonmenu) {
+      prev.push(cur)
+    } else {
+      // 递归调用
+      deepson(prev, cur);
+    }
+    return prev;
+  }, []);
+}
+console.log("---logs---", deesp(arr));
