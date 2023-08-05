@@ -7,19 +7,23 @@
   "private": true,
   "scripts": {
     "h5": "echo \"运行项目H5/PC\" && quasar dev h5",
-    "h5-build": "echo \"打包项目H5/PC\" && quasar build h5",
+    "h5-build": "echo \"打包项目H5/PC\" && run-s job-d && quasar build h5",
     "ht": "echo \"运行管理后台\" && quasar dev ht",
-    "ht-build": "echo \"打包管理后台\" && quasar build ht"
+    "ht-build": "echo \"打包管理后台\" && quasar build ht",
+    "job-d": "node ./job/doc.js",
+    "job-t": "node ./job/test.js",
+    "dev-s": "echo \"npm-run-all测试脚本\" && run-s job-d job-t"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "vue-i18n": "^8.0.0",
     "@quasar/extras": "^1.0.0",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
-    "quasar": "^1.0.0"
+    "quasar": "^1.0.0",
+    "vue-i18n": "^8.0.0"
   },
   "devDependencies": {
-    "@quasar/app": "^2.0.0"
+    "@quasar/app": "^2.0.0",
+    "npm-run-all": "^4.1.5"
   },
   "browserslist": [
     "last 10 Chrome versions",

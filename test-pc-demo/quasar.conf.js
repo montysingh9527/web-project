@@ -32,7 +32,32 @@ if (isDEV) {
     },
   };
 } else {
-  projectconfig = {};
+  projectconfig = {
+    htmlVariables: {
+      TITLE: isH5 ? "H5/PC项目-prod" : "prod管理后台",
+      VERSION_DATE: new Date().toLocaleString(),
+      TAG: process.env.TAG,
+      ICON: isH5 ? "./devfavicon.ico" : "./favicon.ico",
+
+    },
+    devServer: {
+      port: isDEV ? 8899 : 9000, // 设置端口
+      open: true, // 启动项目打开浏览器
+      // host: 
+      API: "http://127.0.0.0:8080"
+    },
+    // 默认输出文件
+    sourceFiles: {
+      rootComponent: isH5 ? "src/pc.vue" : "src/ht.vue",
+      router: isH5 ? "src/router/h5_pc" : "src/router/ht",
+      store: isH5 ? "src/h5_pc/store" : "src/ht/store",
+      indexHtmlTemplate: isH5 ? "src/pc.html" : "src/ht.html",
+    },
+    build: {
+      gzip: true,
+      distDir: isH5 ? "h5" : "ht",
+    },
+  };
 }
 
 console.log(`最终配置输出=${(isDEV, isH5)}==>>>`, projectconfig);
