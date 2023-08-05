@@ -44,7 +44,7 @@ function list_to_tree(list) {
  *  遍历树形 有一个重点 要先找一个头儿
  * ***/
 export function tranListToTreeData(list, rootValue) {
-  var arr = [];
+  let arr = [];
   list.forEach((item) => {
     if (item.pid === rootValue) {
       // 找到之后 就要去找 item 下面有没有子节点
@@ -61,6 +61,53 @@ export function tranListToTreeData(list, rootValue) {
 
 // this.treeData = tranListToTreeData(depts, '')
 
+/**
+ *  扁平的数组结构 -> 转树状结构
+ * @param {*} data
+ * @returns
+ */
+function buildTreeIterative(data) {
+  const map = new Map();
+  const tree = [];
+  data.forEach((item) => {
+    map.set(item.id, { ...item, children: [] });
+  });
+  data.forEach((item) => {
+    const parent = map.get(item.parentId);
+    if (parent) {
+      parent.children.push(map.get(item.id));
+    } else {
+      tree.push(map.get(item.id));
+    }
+  });
+  return tree;
+}
+const treeData = buildTreeIterative(flatArray);
+// console.log(treeData);
+
+/**
+ * 使用reduce方法   扁平的数组结构 -> 转树状结构
+ * @param {*} data
+ * @returns
+ */
+function buildTreeWithReduce(data) {
+  const tree = data.reduce((acc, item) => {
+    const parent = item.parentId
+      ? acc.find((el) => el.id === item.parentId)
+      : null;
+    if (parent) {
+      parent.children = parent.children || [];
+      parent.children.push(item);
+    } else {
+      acc.push(item);
+    }
+    return acc;
+  }, []);
+  return tree;
+}
+
+const treeData3 = buildTreeWithReduce(flatArray);
+// console.log(treeData3);
 
 /**
  * 
@@ -144,7 +191,7 @@ function deesp(data) {
   return data.reduce((prev, cur) => {
     // 如果没有子级菜单，直接添加
     if (!cur.sonmenu) {
-      prev.push(cur)
+      prev.push(cur);
     } else {
       // 递归调用
       deepson(prev, cur);
