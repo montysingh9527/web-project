@@ -103,6 +103,7 @@ export default defineConfig(({ mode, command }) => {
 			// manifest: false, // 是否产出maifest.json
 			// sourcemap: false, // 是否产出soucemap.json
 			// cssTarget: 'chrome79',
+  			// assetsDir: "assets", //生成静态资源的存放路径
 			cssCodeSplit: true, // 如果设置为false，整个项目中的所有 CSS 将被提取到一个 CSS 文件中
 			sourcemap: false, // 构建后是否生成 source map 文件。如果为 true，将会创建一个独立的 source map 文件
 			target: 'modules', // 设置最终构建的浏览器兼容目标。默认值是一个 Vite 特有的值——'modules'  还可设置为 'es2015' 'es2016' 'es2017'等
@@ -150,6 +151,7 @@ export default defineConfig(({ mode, command }) => {
 			port: 4000, //启动端口
 			open: true, // 浏览器自动打开
 			https: false, // 是否开启 https
+			hrm: true,  // 组件引入的路径名错误，导致热更新失效（大小写不一致）
 			proxy: {
 				'/api': {
 					target: 'http://v.juhe.cn',

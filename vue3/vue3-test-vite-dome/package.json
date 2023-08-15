@@ -1,0 +1,22 @@
+{
+  "name": "vue3-test-vite-dome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vite-dev": "vite --config vue3-vite/vue3-vite-config.js",
+    "vite-build": "vite build --config vue3-vite/vue3-vite-config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "sass": "^1.65.1",
+    "vite": "^4.4.9"
+  }
+}
