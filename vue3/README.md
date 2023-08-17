@@ -118,7 +118,6 @@ vite配置、vite引入antd
 ```
 通过--config 配置启动/打包项目
 npm 运行多个脚本 安装npm-run-all包   示例："vite-ddd": "run-s html-inject vite-dev"
-
 在项目中使用 import * from "" 而不是 require("") 引入node模块 。添加"type": "module"到您的package.json文件。{"type": "module",}
 
 ```
