@@ -1,5 +1,7 @@
 <template>
-  <div class="home">home</div>
+  <div class="home">
+    <q-btn>Home</q-btn>
+  </div>
 </template>
 
 <script setup>

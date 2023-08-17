@@ -3,19 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "vite-dev": "vite --config vue3-vite/vue3-vite-config.js",
-    "vite-build": "vite build --config vue3-vite/vue3-vite-config.js"
+    "vite-build": "vite build --config vue3-vite/vue3-vite-config.js",
+    "html-inject": "echo '复写index.html内容,配置项替换' && node ./job/index-html.js",
+    "vite-ddd": "run-s html-inject vite-dev"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "quasar": "^2.12.4",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "npm-run-all": "^4.1.5",
     "sass": "^1.65.1",
     "vite": "^4.4.9"
   }

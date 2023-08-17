@@ -2,8 +2,7 @@ import path from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 // https://vitejs.dev/config/
-console.log('---logs---',path.resolve(__dirname, "./src"));
-
+console.log("---logs---", path.resolve(__dirname, ".."), "---", process.cwd());
 
 export default defineConfig(({ mode, command }) => {
   console.log("====mode, command====", mode, command);
@@ -17,14 +16,18 @@ export default defineConfig(({ mode, command }) => {
           find: "src",
           replacement: path.resolve(__dirname, "./src"),
         },
+        {
+          find: "app",
+          replacement: path.resolve(__dirname, ".."), // 项目根目录  path.resolve(process.cwd())
+        },
       ],
     },
     build: {
       outDir: "test",
       rollupOptions: {
         input: {
-        //   main: "src/main.js", // 这里指定的是入口 JavaScript 文件路径
-          main: path.resolve(__dirname, 'index.html'),
+          //   main: "src/main.js", // 这里指定的是入口 JavaScript 文件路径
+          main: path.resolve(__dirname, "index.html"),
         },
       },
     },
