@@ -22,12 +22,15 @@ const table_data = ref({});
  * @param {*} datas
  */
 function deep_params(datas) {
-  console.log("---datas--", datas);
+  // console.log("---datas--", datas);
   let data = [];
   let obj = {};
   for (const key in datas) {
     // console.log('---logs--key-',key);
-    if (["params", "definition"].includes(key) && Object.keys(datas[key]).length) {
+    if (
+      ["params", "definition"].includes(key) &&
+      Object.keys(datas[key]).length
+    ) {
       for (const k in datas[key]) {
         obj = {
           ...datas[key][k],
@@ -40,9 +43,8 @@ function deep_params(datas) {
       obj = {
         title: key,
         type: type_props(datas[key]),
-        ...datas[key]
+        ...datas[key],
       };
-      
     }
   }
   data.push(obj);
@@ -69,12 +71,28 @@ function type_props(objs) {
 }
 
 /**
+ * 递归处理
+ */
+function comput_scope(datas) {
+  // console.log("---logs--datas-", datas);
+  // const isdeep =  Object.keys(datas).some(i=> ['scope',"params","definition"].includes(i))
+  // if(isdeep){
+  //   Object.keys(datas).forEach(key=>{
+  //     if(['scope',"params","definition"].includes(key)){
+        
+  //     }
+  //   })
+  // }
+  return datas;
+}
+
+/**
  * 处理数据
  * @param {*} key 键
  * @param {*} datas 数据
  */
-function filter_props(key, datas) {
-  const isProps = key === "props";
+function filter_props(keys, datas) {
+  const isProps = keys === "props";
   const prevtype = isProps ? {} : [];
   return Object.entries(datas)?.reduce((prev, [key, cur]) => {
     if (isProps) {
@@ -92,6 +110,15 @@ function filter_props(key, datas) {
         }
       });
     } else {
+      // console.log('---logs-cur--',cur);
+      if (keys == "slots") {
+        const objs = {
+          ...comput_scope(cur),
+          title: key,
+          type: type_props(cur),
+        };
+        prev.push(objs);
+      }
     }
     return prev;
   }, prevtype);
@@ -113,7 +140,7 @@ init_table();
 
 // console.log("---logs--4444-", props_left_menu.value);
 // console.log("---header_menu---", header_menu.value);
-console.log("---table_data---", table_data.value.props);
+console.log("---table_data---", table_data.value.slots);
 </script>
 
 <style scoped lang="scss">

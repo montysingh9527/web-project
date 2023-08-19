@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "docsUrl": "https://v2.quasar.dev/vue-components/table"
+  },
+
+  "props": {
+    "props": {
+      "type": "Object",
+      "desc": "QTable's header column scoped slot property",
+      "examples": [":props=\"props\""],
+      "category": "general"
+    }
+  },
+
+  "slots": {
+    "default": {
+      "extends": "default"
+    }
+  }
+}

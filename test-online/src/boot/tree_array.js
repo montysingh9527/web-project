@@ -200,3 +200,27 @@ function deesp(data) {
   }, []);
 }
 console.log("---logs---", deesp(arr));
+
+
+/**
+ * 数组递归添加 递归层级
+ * 示例嵌套数组对象
+ */
+// const nestedArray = [
+//   { value: "A", children: [ { value: "B", children: [ { value: "D", },{ value: "E", }, ], }, { value: "C", }, ],},
+//   { value: "F",},
+//   { value: "G",children: [{ value: "H" }],},
+// ];
+// 递归函数来为数组对象添加层级记录
+function addDepthToNestedArray(arr, depth = 0) {
+  for (const item of arr) {
+    item.depth = depth;
+    if (item.children) {
+      addDepthToNestedArray(item.children, depth + 1);
+    }
+  }
+}
+// 调用递归函数
+addDepthToNestedArray(nestedArray);
+// 打印带有层级记录的嵌套数组对象
+console.log("====nestedArray4===", nestedArray);

@@ -61,11 +61,110 @@
         return roots;
       }
 
-      console.log("---logs---", list_to_tree(entries));
+      // console.log("---logs---", list_to_tree(entries));
 
-      Array.from({ length: 3 }, function () {
-        console.log("====", this);
-      });
+      // Array.from({ length: 3 }, function () {
+      //   console.log("====", this);
+      // });
+
+      let arrdatas = [
+        // { menu: "1", level: 1 },
+        { menu: "2", sonmenu: "21", level: 1 },
+        { menu: "2", sonmenu: "22", level: 2 },
+        { menu: "22", sonmenu: "221", level: 3 },
+        { menu: "22", sonmenu: "222", level: 3 },
+        { menu: "21", sonmenu: "211", level: 3 },
+        { menu: "21", sonmenu: "212", level: 3 },
+        // { menu: "30", sonmenu: "31", level: 1 },
+        // { menu: "31", sonmenu: "32", level: 2 },
+        // { menu: "31", sonmenu: "33", level: 2 },
+        // { menu: "33", sonmenu: "34", level: 2 },
+        // { menu: "33", sonmenu: "35", level: 2 },
+        // { menu: "100", level: 1 },
+      ];
+      function deesp(data) {
+        data.sort((a, b) => a.level - b.level);
+        const deepson = (datalist, sonVal) => {
+          if (sonVal.level == 1) {
+            datalist.push({
+              level: sonVal.level,
+              menu: sonVal.menu,
+              children: [Object.assign(sonVal, { level: 2 })],
+            });
+          } else {
+            datalist.forEach((item) => {
+              // debugger
+              if (item.menu == sonVal.menu) {
+                item.children.push(sonVal);
+                console.log("---logs-item--", item, sonVal);
+              } else {
+                // debugger
+                console.log("---logs-isadd-111-", datalist, item, sonVal);
+                if (item.sonmenu == sonVal.menu) {
+                  let isadd = datalist.find((o) => o.menu == sonVal.menu);
+                  console.log(
+                    "---logs-isadd-222-",
+                    datalist,
+                    isadd,
+                    item,
+                    sonVal
+                  );
+                  if (!isadd) {
+                    let sonIdx = datalist.findIndex(
+                      (v) => v.menu == sonVal.menu
+                    );
+                    console.log("---logs-11111-datae-", datalist, item, sonVal);
+                    let obj2 = {
+                      level: sonVal.level * 1 - 1,
+                      menu: sonVal.menu,
+                      children: [sonVal],
+                    };
+                    datalist.splice(sonIdx, 1);
+                    datalist.push(obj2);
+                    // debugger
+                    console.log(
+                      "---logs-111-datalist-",
+                      datalist,
+                      item,
+                      sonVal
+                    );
+                    datalist.map((v) => {
+                      if (v.sonmenu != sonVal.menu) {
+                        return v;
+                      }
+                    });
+                    // debugger
+                    console.log(
+                      "---logs-222-datalist-",
+                      datalist,
+                      item,
+                      sonVal
+                    );
+                    // debugger
+                  }
+                } else {
+                  item.children?.length && deepson(item.children, sonVal);
+                }
+              }
+            });
+          }
+          return datalist;
+        };
+
+        let dataw = data.reduce((prev, cur) => {
+          if (!cur.sonmenu) {
+            prev.push(cur);
+          } else {
+            deepson(prev, cur);
+          }
+          return prev;
+        }, []);
+        return dataw;
+      }
+      // console.log("--555-logs---", deesp(arrdatas));
+
+
+
     </script>
   </body>
 </html>
