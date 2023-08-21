@@ -23,6 +23,11 @@ const routes = [
     component:()=> import("src/pages/h5_pc/filtertable.vue")
   },
   {
+    path: "/live",
+    name: "live",
+    component:()=> import("src/pages/h5_pc/live.vue")
+  },
+  {
     path: '*',
     component: () => import('pages/Error404.vue')
   }
