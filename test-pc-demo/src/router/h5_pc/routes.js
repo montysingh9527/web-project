@@ -25,7 +25,13 @@ const routes = [
   {
     path: "/live",
     name: "live",
-    component:()=> import("src/pages/h5_pc/live.vue")
+    component:()=> import("src/pages/h5_pc/live.vue"),
+    metaInfo: {
+      tips: "应用输入url显示网站信息，实际就是显示网站的title内容。SEO: https://www.mintimate.cn/categories/",
+      title: "视频直播",
+      description:"在线视频直播",
+      keywords: "最流畅的在线视频直播",
+    }
   },
   {
     path: '*',
