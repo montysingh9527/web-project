@@ -231,7 +231,7 @@ module.exports = function (/* ctx */) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: "xiaoye-project",
+        appId: "demo-project",
       },
 
       // More info: https://v1.quasar.dev/quasar-cli/developing-electron-apps/node-integration

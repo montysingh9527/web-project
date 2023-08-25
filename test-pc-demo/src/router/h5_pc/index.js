@@ -1,30 +1,61 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-import routes from './routes'
+import routes from "./routes";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-/*
- * If not building with SSR mode, you can
- * directly export the Router instantiation;
- *
- * The function below can be async too; either use
- * async/await or return a Promise which resolves
- * with the Router instance.
+
+
+/**
+ * 
+const metaInfo = {
+  'Home': {
+    title: 'Home Page',
+    description: 'Welcome to our website!'
+  },
+  'About': {
+    title: 'About Us',
+    description: 'Learn more about our company.'
+  },
+  // ... add more routes as needed
+};
+
+
+router.beforeEach((to, from, next) => {
+  const routeMeta = metaInfo[to.name];
+  if (routeMeta) {
+    document.title = routeMeta.title;
+    const descriptionMetaTag = document.querySelector('meta[name="description"]');
+    if (descriptionMetaTag) {
+      descriptionMetaTag.setAttribute('content', routeMeta.description);
+    }
+  }
+  next();
+});
  */
 
-export default function (/* { store, ssrContext } */) {
-  const Router = new VueRouter({
-    scrollBehavior: () => ({ x: 0, y: 0 }),
-    routes,
+const router = new VueRouter({
+  scrollBehavior: () => ({ x: 0, y: 0 }),
+  routes,
+  // Leave these as they are and change in quasar.conf.js instead!
+  // quasar.conf.js -> build -> vueRouterMode
+  // quasar.conf.js -> build -> publicPath
+  mode: process.env.VUE_ROUTER_MODE,
+  base: process.env.VUE_ROUTER_BASE,
+});
 
-    // Leave these as they are and change in quasar.conf.js instead!
-    // quasar.conf.js -> build -> vueRouterMode
-    // quasar.conf.js -> build -> publicPath
-    mode: process.env.VUE_ROUTER_MODE,
-    base: process.env.VUE_ROUTER_BASE
-  })
+router.beforeEach((to, from, next) => {
+  console.log("--router---", to, from);
+  if (to.meta.description) {
+    const descriptionMetaTag = document.querySelector(
+      'meta[name="description"]'
+    );
+    if (descriptionMetaTag) {
+      descriptionMetaTag.setAttribute("content", to.meta.description);
+    }
+  }
+  next();
+});
 
-  return Router
-}
+export default router;

@@ -15,18 +15,30 @@ const routes = [
   {
     path: "/us",
     name: "us",
-    component:()=> import("src/pages/h5_pc/contact.vue")
+    component:()=> import("src/pages/h5_pc/contact.vue"),
+    meta: {
+      tips: "应用输入url显示网站信息，实际就是显示网站的title内容。SEO: https://www.mintimate.cn/categories/",
+      title: "关于我们",
+      description:"关于我们-description",
+      keywords: "关于我们-keywords",
+    }
   },
   {
     path: "/filtertable",
     name: "filtertable",
-    component:()=> import("src/pages/h5_pc/filtertable.vue")
+    component:()=> import("src/pages/h5_pc/filtertable.vue"),
+    meta: {
+      tips: "应用输入url显示网站信息，实际就是显示网站的title内容。SEO: https://www.mintimate.cn/categories/",
+      title: "table过滤",
+      description:"table过滤-description",
+      keywords: "table过滤-keywords",
+    }
   },
   {
     path: "/live",
     name: "live",
     component:()=> import("src/pages/h5_pc/live.vue"),
-    metaInfo: {
+    meta: {
       tips: "应用输入url显示网站信息，实际就是显示网站的title内容。SEO: https://www.mintimate.cn/categories/",
       title: "视频直播",
       description:"在线视频直播",

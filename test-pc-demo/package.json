@@ -1,9 +1,9 @@
 {
-  "name": "xiaoye-project",
+  "name": "test-pc-demo",
   "version": "0.0.1",
-  "description": "xiaoye-project",
+  "description": "test-pc-demo",
   "productName": "Quasar App",
-  "author": "xiaoye-project",
+  "author": "test-pc-demo",
   "private": true,
   "scripts": {
     "h5": "echo \"运行项目H5/PC\" && quasar dev h5",
