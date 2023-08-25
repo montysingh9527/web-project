@@ -30,6 +30,11 @@ router.beforeEach((to, from, next) => {
     if (descriptionMetaTag) {
       descriptionMetaTag.setAttribute('content', routeMeta.description);
     }
+
+    // const ogDescriptionMetaTag = document.querySelector('meta[property="og:description"]');
+    // if (ogDescriptionMetaTag) {
+    //   ogDescriptionMetaTag.setAttribute('content', routeMeta.ogDescription);
+    // }
   }
   next();
 });
@@ -45,14 +50,31 @@ const router = new VueRouter({
   base: process.env.VUE_ROUTER_BASE,
 });
 
+// router.beforeEach((to, from, next) => {
+//   console.log("--router---", to, from);
+//   if (to.meta.description) {
+//     const descriptionMetaTag = document.querySelector(
+//       'meta[name="description"]'
+//     );
+//     if (descriptionMetaTag) {
+//       descriptionMetaTag.setAttribute("content", to.meta.description);
+//     }
+//   }
+//   next();
+// });
+
+
 router.beforeEach((to, from, next) => {
-  console.log("--router---", to, from);
-  if (to.meta.description) {
-    const descriptionMetaTag = document.querySelector(
-      'meta[name="description"]'
-    );
-    if (descriptionMetaTag) {
-      descriptionMetaTag.setAttribute("content", to.meta.description);
+  const routeMeta = to.meta;
+  if (routeMeta) {
+    // Update Open Graph title and description
+    const ogTitleMetaTag = document.querySelector('meta[property="og:title"]');
+    if (ogTitleMetaTag) {
+      ogTitleMetaTag.setAttribute('content', routeMeta.ogTitle);
+    }
+    const ogDescriptionMetaTag = document.querySelector('meta[property="og:description"]');
+    if (ogDescriptionMetaTag) {
+      ogDescriptionMetaTag.setAttribute('content', routeMeta.ogDescription);
     }
   }
   next();
