@@ -1,16 +1,15 @@
 <template>
 	<div class="project">
-		<span style="color: red">test4</span>
+		<span style="color: red">test0</span>
 		<div class="project-swiper">
 			<swiper
 				:slidesPerView="5"
 				:spaceBetween="10"
 				:slidesPerGroup="3"
-				:loop="true"
 				:centeredSlides="false"
-				:autoplay="{ delay: 2000, disableOnInteraction: false }"
 				:navigation="navigation"
 				:modules="modules"
+				:pagination="{ clickable: true, el: '.swiper-paginations' }"
 				class="mySwiper"
 			>
 				<swiper-slide v-for="num in 14" :key="num" @click="onChange(num)">
@@ -35,6 +34,7 @@
 				<span style="border: 1px solid">&gt;</span>
 				<!-- <img src="@/assets/logo.png" style="width: 20px" /> -->
 			</div>
+			<div class="swiper-paginations"></div>
 		</div>
 	</div>
 </template>
@@ -54,6 +54,7 @@ import 'swiper/css/pagination'
 
 // setup语法糖只需要这样创建一个变量就可以正常使用分页器和对应功能，如果没有这个数组则无法使用对应功能
 const modules = [Autoplay, Pagination, Navigation, A11y]
+
 const navigation = ref({
 	nextEl: '.button-next',
 	prevEl: '.button-prev'
@@ -107,6 +108,21 @@ const onChange = (num) => {
 			right: -40px;
 			cursor: pointer;
 		}
+		.swiper-paginations {
+			position: absolute;
+			top: 100px;
+			font-size: 50px;
+			::v-deep(.swiper-pagination-bullet) {
+				width: 30px;
+				border-radius: 5px;
+				background-color: #003261;
+			}
+			::v-deep(.swiper-pagination-bullet-active) {
+				width: 30px;
+				border-radius: 5px;
+				background-color: orange;
+			}
+		}
 	}
 }
 
@@ -140,6 +156,24 @@ const onChange = (num) => {
 	top: 0;
 	right: 0;
 	z-index: 99;
+}
+
+.mySwiper {
+	position: relative;
+	::v-deep(.swiper-pagination) {
+		position: absolute;
+		top: -8px;
+	}
+	::v-deep(.swiper-pagination-bullet) {
+		width: 30px;
+		border-radius: 5px;
+		background-color: #003261;
+	}
+	::v-deep(.swiper-pagination-bullet-active) {
+		width: 30px;
+		border-radius: 5px;
+		background-color: orange;
+	}
 }
 </style>
   

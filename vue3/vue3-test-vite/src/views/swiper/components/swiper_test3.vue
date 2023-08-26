@@ -1,5 +1,6 @@
 <template>
 	<div class="swiperbox">
+		<span style="color:red">test3</span>
 		<swiper
 			:slidesPerView="1"
 			:slides-per-view="3"

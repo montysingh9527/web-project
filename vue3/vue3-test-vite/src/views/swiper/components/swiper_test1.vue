@@ -1,6 +1,6 @@
 <template>
 	<div class="swiper-test1">
-		<div>swiper-test1</div>
+		<span style="color: red">test1</span>
 		<swiper
 			:modules="modules"
 			:slides-per-view="3"
@@ -31,7 +31,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 const modules = [Navigation, Pagination, Scrollbar, A11y]
 
 const onSwiper = (swiper) => {
-	console.log("swiper==>>",swiper)
+	console.log('swiper==>>', swiper)
 }
 const onSlideChange = (val) => {
 	console.log('slide change==>>', val)

@@ -1,6 +1,9 @@
 <template>
 	<div class="swiper">
-		<div>
+        <div>
+			<swipertest0></swipertest0>
+		</div>
+		<div class="mt10">
 			<swipertest1></swipertest1>
 		</div>
 		<div class="mt10">
@@ -25,6 +28,7 @@
 </template>
 
 <script setup>
+import swipertest0 from '@/views/swiper/components/swiper_test0.vue'
 import swipertest1 from '@/views/swiper/components/swiper_test1.vue'
 import swipertest2 from '@/views/swiper/components/swiper_test2.vue'
 import swipertest3 from '@/views/swiper/components/swiper_test3.vue'

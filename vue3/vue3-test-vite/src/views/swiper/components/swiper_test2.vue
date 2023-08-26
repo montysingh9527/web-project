@@ -1,5 +1,6 @@
 <template>
 	<div class="swiperbox">
+		<span style="color: red">test2</span>
 		<swiper
 			:slidesPerView="1"
 			:slides-per-view="2"
@@ -17,8 +18,8 @@
 			:modules="modules"
 			class="mySwiper"
 		>
-			<swiper-slide v-for="item of [1,2,3,4,5,6]" :key="item">
-				<p style="border: 1px solid;">{{ item }}</p>
+			<swiper-slide v-for="item of [1, 2, 3, 4, 5, 6]" :key="item">
+				<p style="border: 1px solid">{{ item }}</p>
 			</swiper-slide>
 		</swiper>
 	</div>
