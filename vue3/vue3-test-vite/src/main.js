@@ -8,6 +8,11 @@ import "@/assets/css/index.scss"
 
 import './assets/main.css'
 
+/** swiper样式 */
+import 'swiper/css';            // 基础样式
+import 'swiper/css/navigation';    // 左右切换按钮样式
+import 'swiper/css/pagination'; // 分页样式
+// import 'swiper/css/scrollbar';   // 滚动条样式
 const app = createApp(App)
 
 app.use(createPinia())
