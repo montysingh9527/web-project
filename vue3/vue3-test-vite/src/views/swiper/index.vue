@@ -18,6 +18,9 @@
         <div class="mt10">
 			<swipertest6></swipertest6>
 		</div>
+        <div class="mt10">
+			<swipertest7></swipertest7>
+		</div>
 	</div>
 </template>
 
@@ -28,6 +31,7 @@ import swipertest3 from '@/views/swiper/components/swiper_test3.vue'
 import swipertest4 from '@/views/swiper/components/swiper_test4.vue'
 import swipertest5 from '@/views/swiper/components/swiper_test5.vue'
 import swipertest6 from '@/views/swiper/components/swiper_test6.vue'
+import swipertest7 from '@/views/swiper/components/swiper_test7.vue'
 </script>
 
 <style scoped lang="scss">

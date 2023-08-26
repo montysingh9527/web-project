@@ -55,7 +55,7 @@
   // 更改当前活动swiper
   const onSlideChange = (swiper) => {
     // swiper是当前轮播的对象，里面可以获取到当前swiper的所有信息，当前索引是activeIndex
-    console.log(swiper.activeIndex);
+    console.log("--test5---",swiper.activeIndex);
   };
   </script>
   
