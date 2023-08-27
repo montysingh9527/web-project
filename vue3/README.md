@@ -112,6 +112,8 @@ vite引入antd
 
 ```
 vite配置、vite引入antd
+swiper插件使用
+seo 配置 vue内置组件teleport使用
 ```
 
 ##### vue3-test-vite-dome (vite测试项目、不依赖vue-cli生成项目)

@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <div class="text-red">主页</div>
+    <div class="text-red">
+      <a-button @click="$router.push({name:'home'})">跳转home</a-button>
+    </div>
     <a-button type="primary" size="small" @click="changeBtn">按钮</a-button>
     <a-checkbox class="ml-10" v-model="checked">勾选</a-checkbox>
 
