@@ -13,11 +13,16 @@ function handleClick(...args) {
   const className = tar.className;
   // 判断是否可点击
   if (className.includes("current-day")) {
-    if (target) {
-      target.className = target.className.replace(" selected", "");
-    }
-    target = tar;
-    tar.className += " selected";
-    handler && handler(tar.dataset.date);
+    dateClick(tar, handler);
+    return;
   }
+}
+
+function dateClick(tar, handler) {
+  if (target) {
+    target.className = target.className.replace(" selected", "");
+  }
+  target = tar;
+  tar.className += " selected";
+  handler && handler(tar.dataset.date);
 }

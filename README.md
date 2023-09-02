@@ -15,20 +15,6 @@ vite创建项目：npm create vite@latest
 egg项目创建：npm init egg --type=simple
 ```
 
-##### Vscode插件
-
-```
-设置编辑器语言：  Chinese(Simplified)(简体中文)
-以localhost打开单文件： Live Server
-代码格式化：ESlint
-vue单文件提示： Vetur
-文件管理插件: project-manager
-Markdown： Markdown Preview Enhanced
-git操作： GitLens
-```
-
-
-
 ##### 网站收集
 
 ```
