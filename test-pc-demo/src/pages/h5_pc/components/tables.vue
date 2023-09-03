@@ -45,7 +45,9 @@ const { tabledata } = toRefs(props);
 // const tablesold = markRaw(props.tabledata)
 const tables = ref(tabledata.value);
 
-// 搜索名称
+/**
+ * 搜索名称
+ */
 const searchName = (event) => {
   const inputValue = event.target.value;
   tables.value = tabledata.value;
@@ -57,7 +59,9 @@ const searchName = (event) => {
   console.log("输入中....");
 };
 
-// 搜索域名
+/**
+ * 搜索域名
+ */
 const searchDomain = (event) => {
   const inputValue = event.target.value;
   tables.value = tabledata.value;
@@ -68,7 +72,10 @@ const searchDomain = (event) => {
   });
 };
 
-// 结果
+/**
+ * 结果
+ * @param {*} event 
+ */
 const changeTbs = (event) => {
   const istab = event.target.checked;
   if (istab) {
@@ -87,6 +94,10 @@ const changeTbs = (event) => {
 const isIdSort = ref(false);   // id排序
 const isTimeSort = ref(false); // 时间排序
 
+/**
+ * 
+ * @param {*} type 
+ */
 const clickSort = (type) => {
     if(type == "id"){
         isIdSort.value = !isIdSort.value;

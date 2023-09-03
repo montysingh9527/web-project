@@ -35,7 +35,10 @@ export default {
     console.log("====tabdata====", this.thdata, this.tddata);
   },
   created() {},
-  methods: {},
+  methods: {
+    initdata(data) {
+    }
+  },
 };
 </script>
 

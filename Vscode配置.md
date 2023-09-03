@@ -4,6 +4,7 @@
 设置编辑器语言：  Chinese(Simplified)(简体中文)
 以localhost打开单文件： Live Server
 自动重命名配对的HTML标记：Auto Rename Tag
+自动闭合HTML标签: Auto Close Tag
 npm Intellisense - 用于在 import 语句中自动填充 npm 模块
 Path Intellisense - 自动填充文件名
 Prettier - 格式化您的 JavaScript / TypeScript / CSS
@@ -16,7 +17,7 @@ vue格式化：Vue Language Features (Volar)
 CSS格式化：Prettier - Code formatter
 文件夹颜色：Output Colorizer
 CSS格式化：Color Highlight
-
+用于生成文件头部注释和函数注释的插件: koroFileHeader
 ```
 
 ##### vsCode 中 settings.json
@@ -178,7 +179,57 @@ CSS格式化：Color Highlight
   // tab的空格
   "editor.tabSize": 2,
   // vetur格式化的时候tab距离
-  "vetur.format.options.tabSize": 2
+  "vetur.format.options.tabSize": 2,
+    "fileheader.configObj": {
+    "autoAdd": true, //自动生成注释
+    "annotationStr": {
+        "head": "/*",
+        "middle": " * @",
+        "end": " */",
+        "use": true //设置自定义注释可用
+    },
+    "language": {
+      // 普通后缀文件
+      "tsx": {
+        "head": "/$$",
+        "middle": " $ @",
+        "end": " $/",
+        "functionParams": "typescript", // 使用ts语言解析函数参数
+        // 函数自定义注释符号：如果有此配置 会默认使用
+        "functionSymbol": {
+          "head": "/******* ", // 统一增加几个*号
+          "middle": " * @",
+          "end": " */"
+        }
+      },
+      // 一次匹配多种文件后缀文件 不用重复设置
+      "h/hpp/cpp": {
+        "head": "/*** ", // 统一增加几个*号
+        "middle": " * @",
+        "end": " */"
+      },
+      // 针对有特殊要求的文件如：test.blade.php
+      "blade.php": {
+        "head": "<!--",
+        "middle": " * @",
+        "end": "-->",
+      }
+    },
+  },
+  // 头部注释
+  "fileheader.customMade": {
+    "Description": "",
+    "Date": "Do not edit", // 文件创建时间(不变)
+    // 文件最后编辑者
+    // "LastEditors": "git config user.name && git config user.email",
+    // "LastEditTime": "Do not edit", // 文件最后编辑时间
+    "FilePath": "Do not edit" // 文件在项目中的相对路径 自动更新
+  },
+  // 函数注释 
+  "fileheader.cursorMode": {
+    "param": "",
+    "return": "",
+  } 
 }
 ```
 
@@ -205,7 +256,7 @@ CSS格式化：Color Highlight
 			"}",
 			"});",
 			"</script>\n",
-			"<style scoped lang=\"less\">\n",
+			"<style scoped lang=\"scss\">\n",
 			"</style>",
 		],
 		"description": "Vue3—基础模板"

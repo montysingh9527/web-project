@@ -37,7 +37,12 @@ export default {
     };
   },
   created() {},
-  methods: {},
+  methods: {
+   
+    init(row){
+
+    }
+  },
 };
 </script>
 
