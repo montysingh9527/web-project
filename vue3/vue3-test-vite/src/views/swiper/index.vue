@@ -1,7 +1,15 @@
+<!--
+ * @Description: 
+ * @Date: 2023-08-26 21:29:02
+ * @FilePath: \web-project\vue3\vue3-test-vite\src\views\swiper\index.vue
+-->
 <template>
 	<div class="swiper">
         <div>
 			<swipertest0></swipertest0>
+		</div>
+		<div class="mt10">
+			<swipertest8></swipertest8>
 		</div>
 		<div class="mt10">
 			<swipertest1></swipertest1>
@@ -36,6 +44,7 @@ import swipertest4 from '@/views/swiper/components/swiper_test4.vue'
 import swipertest5 from '@/views/swiper/components/swiper_test5.vue'
 import swipertest6 from '@/views/swiper/components/swiper_test6.vue'
 import swipertest7 from '@/views/swiper/components/swiper_test7.vue'
+import swipertest8 from '@/views/swiper/components/swiper_test8.vue'
 </script>
 
 <style scoped lang="scss">

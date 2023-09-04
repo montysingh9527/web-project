@@ -21,6 +21,7 @@ autoplay：切换图片的频率（毫秒为单位）
 delay：切换的时间（单位：2500毫秒ms）
 disableOnInteraction：滑动图片后不禁用自动播放
 disableOnInteraction: false,
+:slidesPerColumn="4"
 ```
 
 ##### 分页pagination
