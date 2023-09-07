@@ -27,13 +27,15 @@ egg项目创建：npm init egg --type=simple
 ##### Chrome浏览器插件
 
 ```
-格式化json数据： JSON-handle
+工具箱: FeHelper(前端助手)
 Github目录：     Octotree-Github code tree
     VPN免费：   Urban Free VPN 
-    谷歌翻墙：        谷歌上网助手@1.4.3
-图片批量下载：    Fatkun
 vue.js调试工具：  Vue.js devtools@6.1.4
+谷歌翻墙：        谷歌上网助手@1.4.3
+图片批量下载：    Fatkun
 正则提取：		XPath Helper
+格式化json数据： JSON-handle
+
 ```
 
 ##### 题目
