@@ -1,20 +1,20 @@
 <template>
 	<div class="project">
-		<span style="color: red">test8</span>
-		<div class="project-swiper" style="height: 200px; width: 300px">
+		<span style="color: red">column</span>
+		<div class="project-swiper" style="">
 			<swiper
-				:slidesPerView="2"
-				:spaceBetween="10"
-				:grid="{ fill: 'row', rows: 2 }"
+				:slidesPerView="4"
+                :slidesPerGroup="4"
+				:grid="{ fill: 'column', rows: 3,}"
 				:slidesPerColumn="3"
 				:centeredSlides="false"
 				:navigation="navigation"
 				:modules="modules"
 				:pagination="{ clickable: true, el: '.swiper-paginations' }"
 				class="mySwiper"
-				style="height: 200px;width: 300px;"
+				style="height: 300px;width: 300px;"
 			>
-				<swiper-slide v-for="num in 8" :key="num" @click="onChange(num)">
+				<swiper-slide v-for="num in 30" :key="num" @click="onChange(num)">
 					<div class="swiper-content">
 						<img
 							src="https://game.gtimg.cn/images/yxzj/cp/a20200321gmjy/v2/jiang-img2.jpg"
@@ -47,6 +47,8 @@ import 'swiper/swiper-bundle.css'
 
 // setup语法糖只需要这样创建一个变量就可以正常使用分页器和对应功能，如果没有这个数组则无法使用对应功能
 const modules = [Autoplay, Pagination, Navigation, A11y]
+
+
 
 const colom = [
 	[
@@ -112,6 +114,7 @@ const nextEl = () => {
 	console.log('下一张')
 }
 
+const actIndex = ref(0)
 const onChange = (num) => {
 	console.log('--点击项---', num)
 }
@@ -123,7 +126,8 @@ const onChange = (num) => {
 		text-align: center;
 		font-size: 18px;
 		background: #fff;
-		height: calc((100% - 30px) / 2);
+        // height: 50px;
+		height: calc((100% - 30px) / 3);
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: -webkit-flex;

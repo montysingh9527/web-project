@@ -21,7 +21,8 @@ autoplay：切换图片的频率（毫秒为单位）
 delay：切换的时间（单位：2500毫秒ms）
 disableOnInteraction：滑动图片后不禁用自动播放
 disableOnInteraction: false,
-:slidesPerColumn="4"
+:slidesPerColumn="4"    显示行 多行布局里面每列的slide数量.(该属性需要在swiper-slide上设置height的高度来配合使用才能有效)
+slidesPerGroupSkip 在设置了slidesPerGroup的基础上，设置跳过分组。设置的前几个slide将不计入分组之内。
 ```
 
 ##### 分页pagination
