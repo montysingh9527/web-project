@@ -44,11 +44,8 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/swiper-bundle.css'
-
 // setup语法糖只需要这样创建一个变量就可以正常使用分页器和对应功能，如果没有这个数组则无法使用对应功能
 const modules = [Autoplay, Pagination, Navigation, A11y]
-
-
 
 const colom = [
 	[
