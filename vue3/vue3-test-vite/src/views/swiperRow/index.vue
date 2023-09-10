@@ -8,11 +8,15 @@
         <div>
 			<swipertest0></swipertest0>
 		</div>
+		<div class="mt10">
+			<swiperColumn></swiperColumn>
+		</div>
 	</div>
 </template>
 
 <script setup>
 import swipertest0 from '@/views/swiperRow/components/swiper_row.vue'
+import swiperColumn from '@/views/swiperRow/components/swiper_column.vue'
 </script>
 
 <style scoped lang="scss">

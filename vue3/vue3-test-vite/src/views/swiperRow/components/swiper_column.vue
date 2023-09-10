@@ -4,15 +4,16 @@
 		<div class="project-swiper" style="">
 			<swiper
 				:slidesPerView="2"
-				:grid="{ fill: 'column', rows: 3 }"
-				:slidesPerColumn="3"
-				:centeredSlides="false"
-				:navigation="navigation"
+				:grid="{
+					rows: 3
+				}"
+				:pagination="{
+					clickable: true
+				}"
 				:modules="modules"
-				:pagination="{ clickable: true, el: '.swiper-paginations' }"
 				class="mySwiper"
-				style="height: 300px; width: 300px"
-                @slideChange="change_slide"
+                :navigation="navigation"
+                style="height: 300px; width: 300px"
 			>
 				<swiper-slide v-for="num in colom" :key="num" @click="onChange(num)">
 					<div class="swiper-content">
@@ -31,7 +32,7 @@
 			<div class="button-next2" @click.stop="nextEl">
 				<span style="border: 1px solid">&gt;</span>
 			</div>
-			<div class="swiper-paginations"></div>
+			<div class="swiper-paginations-column"></div>
 		</div>
 	</div>
 </template>
@@ -46,7 +47,7 @@ import 'swiper/css/pagination'
 import 'swiper/swiper-bundle.css'
 // import 'swiper/css/grid';
 // setup语法糖只需要这样创建一个变量就可以正常使用分页器和对应功能，如果没有这个数组则无法使用对应功能
-const modules = [Autoplay, Pagination, Navigation, A11y, Grid ]
+const modules = [Autoplay, Pagination, Navigation, A11y, Grid]
 
 const colom = [
 	{
@@ -88,8 +89,8 @@ const colom = [
 ]
 
 const navigation = ref({
-	nextEl: '.button-next1',
-	prevEl: '.button-prev2'
+	nextEl: '.button-next1-x',
+	prevEl: '.button-prev2-x'
 })
 const prevEl = () => {
 	console.log('上一张')
@@ -103,10 +104,9 @@ const onChange = (num) => {
 	console.log('--点击项---', num)
 }
 
-const change_slide = (e) =>{
-    console.log('---logs--eee-',e);
+const change_slide = (e) => {
+	console.log('---logs--eee-', e)
 }
-
 </script>
   
 <style lang="scss" scoped>
@@ -115,19 +115,10 @@ const change_slide = (e) =>{
 		text-align: center;
 		font-size: 18px;
 		background: #fff;
-		// height: 50px;
-		height: calc((100% - 30px) / 3);
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: -webkit-flex;
+		height: calc((100% - 30px) / 3) !important;
+
 		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
-		-webkit-justify-content: center;
 		justify-content: center;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		-webkit-align-items: center;
 		align-items: center;
 	}
 }
@@ -151,11 +142,11 @@ const change_slide = (e) =>{
 // 	clear: both;
 // }
 
-.swiper-paginations {
+.swiper-paginations-column {
 	position: absolute;
 	bottom: 0;
-    left: 50%;
-    // transform: translateX(-50%);
+	left: 50%;
+	// transform: translateX(-50%);
 	font-size: 50px;
 	::v-deep(.swiper-pagination-bullet) {
 		width: 30px;
