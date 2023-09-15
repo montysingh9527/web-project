@@ -17,3 +17,17 @@ npm install nodemon -g
 
 ##### 二. Node bug处理
 1. [npm install常见报错以及问题详解](https://www.jb51.net/article/274144.htm)
+
+```
+清除npm 的缓存: npm cache clean --force
+清除npm 的缓存:npm cache verify
+
+查看npm信息: npm config list
+
+安装cnpm: npm install -g cnpm --registry=http://registry.npmmirror.com
+
+查看cnpm安装: cnpm -v
+cnpm安装包: cnpm install XXX
+```
+
+
