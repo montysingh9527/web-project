@@ -5,12 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite"
+    "dev": "vite",
+    "build": "echo \"打包项目\" && vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
     "vite": "^4.4.9"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "D": "^1.0.0",
+    "sass": "^1.67.0",
+    "vue": "^3.3.4"
   }
 }
