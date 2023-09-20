@@ -9,11 +9,13 @@
         1989382939
       </div>
     </div>
+    <iBackground />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import iBackground from "./components/i_background.vue";
 
 const chouti = ref(false);
 </script>
