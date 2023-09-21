@@ -1,3 +1,8 @@
+<!--
+ * @Description: 
+ * @Date: 2023-09-07 20:45:23
+ * @FilePath: \web-project\Node.md
+-->
 ##### Node工具
 
 ```
@@ -31,3 +36,14 @@ cnpm安装包: cnpm install XXX
 ```
 
 
+
+##### 三. Node后端
+1. MongoDB数据库: 
+    1.1 [mongoose官方文档](https://mongoosejs.com/docs/queries.html) / [中文文档1](https://mongodb.net.cn/manual/crud/) / [中文文档2](https://docs.mongoing.com/mongodb-crud-operations/insert-documents)
+    1.2 可视化工具:  ([MongoDB Compass](https://www.mongodb.com/try/download/compass) / [NoSQLBooster](https://nosqlbooster.com/downloads?spm=a2c6h.12873639.article-detail.11.17cb125aIgDSvr))
+    1.3 [mongoose分页插件](https://www.npmjs.com/package/mongoose-paginate-v2): mongoose-paginate
+2. MySQL数据库:
+    2.1 mysql插件: [sequelize](https://github.com/demopark/sequelize-docs-Zh-CN)  
+
+3. Egg框架:
+    3.1 egg文档: [官方文档](https://www.eggjs.org/zh-CN/intro/quickstart#%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96)  / [egg团队文档](https://www.yuque.com/egg/nodejs/gkk3r9)
