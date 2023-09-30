@@ -22,6 +22,7 @@ egg项目创建：npm init egg --type=simple
 本地时间校验： https://time.is/
 视频转gif格式：：https://spark.adobe.com/zh-Hans-CN/tools/convert-to-gif
 正则练习网址：https://regexr.com/
+脚本之家在线工具: http://tools.jb51.net/code/css3path
 ```
 
 ##### Chrome浏览器插件
