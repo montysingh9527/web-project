@@ -84,6 +84,7 @@ export default defineComponent({
     const leftDrawerOpen = ref(false);
 
     const routes = useRouter()
+    console.log("===process.client===",process.client)
     console.log('---logs---',routes);
     const jump_url = (url) => {
       routes.push({
