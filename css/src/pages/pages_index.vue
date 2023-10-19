@@ -10,12 +10,16 @@
       </div>
     </div>
     <iBackground />
+    <contentAttr />
+    <animationText />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import iBackground from "./components/i_background.vue";
+import contentAttr from "./components/content_attr.vue"; 
+import animationText from "./components/animation.vue"; 
 
 const chouti = ref(false);
 </script>
@@ -38,7 +42,7 @@ const chouti = ref(false);
       width: 0px;
       background-color: #ab399c;
       transition: all 3s;
-        // animation: choutianimt 1.5s forwards;
+      // animation: choutianimt 1.5s forwards;
       &.chout-ti-mouse {
         width: 100px;
       }

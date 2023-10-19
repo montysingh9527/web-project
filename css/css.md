@@ -15,4 +15,14 @@ vertical-align 调节图片垂直对齐的方式(去除图片与之间间隙)：
 input修改placeholder 的样式：  input::placeholder{}
 ```
 
+```
+attr的使用
+ <div class="background" :data-content="announcements[activeIndex]?.content" />
+
+     &::before {
+        content: attr(data-content);
+        display: block;
+        position: absolute;
+        width: 100%;
+```
 

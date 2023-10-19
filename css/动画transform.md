@@ -65,15 +65,15 @@ transform: scale(0.5,1.5)   如果取值是1代表不变,取值小于1缩小,等
 }
 2、使用动画
 div{
-    animation-name: 动画名称;   //(必须) 使用动画名称
+    animation-name: 动画名称;   // (必须) 使用动画名称
     animation-duration: 3s;    //（必须）持续时间，默认0
     animation-delay: 2s;       // 动画何时开始, 默认0
     animation-iteration-count: infinite;  // 动画播放次数，默认1，无限infinite
     animation-direction: normal; // 是否反方向播放，默认normal，反方向alternate
-    animation-fill-mode: backwards;  // 动画结束后停留位置，默认backwards回到起始位置                                        forwards停留在结束位置
-  animation-timing-function:ease;//速度变化,默认ease不是匀速的,而是逐渐放慢;
+    animation-fill-mode: backwards; // 动画结束后停留位置，默认backwards回到起始位置, forwards停留在结束位置
+    animation-timing-function:ease; // 速度变化,默认ease不是匀速的,而是逐渐放慢;
                                     linear:匀速;steps(5)指定时间函数间隔数量(步长)
-    animation-play-state: paused;  //鼠标经过(:hover)让这个div停止动画，离开就继续动画
+    animation-play-state: paused;  // 鼠标经过(:hover)让这个div停止动画，离开就继续动画
 }
 
 连写格式：animation: move 3s forwards;
