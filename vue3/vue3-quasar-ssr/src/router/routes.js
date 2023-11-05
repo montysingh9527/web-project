@@ -8,8 +8,9 @@ const routes = [
   {
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
+    name: "pc",
+    redirect: "home",
     children: [
-      { path: "", component: () => import("pages/IndexPage.vue") },
       {
         path: "/home",
         name: "home",
@@ -19,6 +20,25 @@ const routes = [
         path: "/about",
         name: "about",
         component: () => import("pages/about.vue"),
+      },
+    ],
+  },
+  {
+    path: "/",
+    component: () => import("layouts/MainLayout.vue"),
+    name: "h5",
+    // redirect: "h5/home",
+    redirect: { name: 'h5home' },
+    children: [
+      {
+        path: "/h5/home",
+        name: "h5home",
+        component: () => import("pages/h5_home.vue"),
+      },
+      {
+        path: "/h5/about",
+        name: "h5about",
+        component: () => import("pages/h5_about.vue"),
       },
     ],
   },

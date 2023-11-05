@@ -163,7 +163,41 @@
       }
       // console.log("--555-logs---", deesp(arrdatas));
 
+      function test_promise(num) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log('---logs-resolve--', num);
+            resolve("成功了.", num);
+          }, 3000);
+        });
+      }
 
+      // async function test_promise_await() {
+      //   console.log("---logs--1111-");
+      //   const res = await test_promise();
+      //   console.log("---logs-222--", res);
+      //   console.log("---logs--333-");
+      // }
+      // test_promise_await();
+
+
+      function test_promise_then() {
+        console.log('---logs--44444-');
+        test_promise().then((res)=>{
+          console.log('---logs-5555--', res);
+        })
+        console.log('---logs--6666-');
+      }
+      test_promise_then()
+
+      ;[1,2,3,4,5].map(async(item)=>{
+        const res = await test_promise(item)
+        console.log('---logs---',res);
+        test_promise(item).then(vals=>{
+          console.log('---logs-then--',vals);
+          
+        })
+      })
 
     </script>
   </body>

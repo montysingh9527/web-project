@@ -67,15 +67,7 @@ egg-project
     └── controller
         └── home.test.js
 ```
-
-
-##### NodeJs教程
-```
-http://nodejs.cn/api-v16/fs.html
-```
-
-
-###### 相关项目  egg + mongoose
+##### 相关项目  egg + mongoose
 ```
 https://github.com/cnodejs/egg-cnode/blob/master/config/plugin.js
 https://github.com/heimi-block/egg-RESTfulAPI/blob/master/app/controller/user.js

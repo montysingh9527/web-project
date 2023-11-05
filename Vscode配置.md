@@ -18,6 +18,8 @@ CSS格式化：Prettier - Code formatter
 文件夹颜色：Output Colorizer
 CSS格式化：Color Highlight
 用于生成文件头部注释和函数注释的插件: koroFileHeader
+画流程图插件: Draw.io Integration  
+获取github地址上的项目: GitHub Repositories  
 ```
 
 ##### vsCode 中 settings.json

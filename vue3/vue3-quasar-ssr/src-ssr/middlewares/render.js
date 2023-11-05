@@ -1,3 +1,8 @@
+/*
+ * @Description: 
+ * @Date: 2023-09-30 21:06:42
+ * @FilePath: \web-project\vue3\vue3-quasar-ssr\src-ssr\middlewares\render.js
+ */
 import { ssrMiddleware } from 'quasar/wrappers'
 
 // This middleware should execute as last one
@@ -5,13 +10,25 @@ import { ssrMiddleware } from 'quasar/wrappers'
 // render the page with Vue
 
 export default ssrMiddleware(({ app, resolve, render, serve }) => {
+  // console.log('---logs-context--',app);
+  
   // we capture any other Express route and hand it
   // over to Vue and Vue Router to render our page
   app.get(resolve.urlPath('*'), (req, res) => {
+    const userAgent = req.headers['user-agent'] || "";
+    const is_h5 = userAgent.includes("Mobile")
+    // console.log('---logs--req-',req.headers);
+    console.log('---logs--userAge-',userAgent);
+    console.log('---logs-is_h5--',is_h5);
+    
+    
+    
     res.setHeader('Content-Type', 'text/html')
 
     render(/* the ssrContext: */ { req, res })
       .then(html => {
+        // console.log('---logs--html-',html);
+        
         // now let's send the rendered html to the client
         res.send(html)
       })

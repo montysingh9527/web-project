@@ -22,6 +22,10 @@ useMeta({
       name: "关于我们",
       content: "关于我们-abouts",
     },
+    description: {
+      name: "关于我们-description-name",
+      content: "关于我们-description-content",
+    }
   },
 });
 </script>

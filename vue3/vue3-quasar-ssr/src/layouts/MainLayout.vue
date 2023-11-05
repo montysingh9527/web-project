@@ -1,3 +1,8 @@
+<!--
+ * @Description: 
+ * @Date: 2023-09-30 21:00:29
+ * @FilePath: \web-project\vue3\vue3-quasar-ssr\src\layouts\MainLayout.vue
+-->
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
@@ -38,7 +43,6 @@
 <script>
 import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
-// import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
@@ -46,30 +50,6 @@ const linksList = [
     caption: "quasar.dev",
     icon: "school",
     link: "about",
-  },
-  {
-    title: "Docs",
-    caption: "quasar.dev",
-    icon: "school",
-    link: "https://quasar.dev",
-  },
-  {
-    title: "Github",
-    caption: "github.com/quasarframework",
-    icon: "code",
-    link: "https://github.com/quasarframework",
-  },
-  {
-    title: "Forum",
-    caption: "forum.quasar.dev",
-    icon: "record_voice_over",
-    link: "https://forum.quasar.dev",
-  },
-  {
-    title: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev",
   },
 ];
 
@@ -84,8 +64,9 @@ export default defineComponent({
     const leftDrawerOpen = ref(false);
 
     const routes = useRouter()
-    console.log("===process.client===",process.client)
-    console.log('---logs---',routes);
+    // console.log("===process.client===", process.client)
+    console.log('-layout--logs-222--',routes);
+    // console.log('---logs-window--',window.__INITIAL_STATE__);
     const jump_url = (url) => {
       routes.push({
         name: "about",
