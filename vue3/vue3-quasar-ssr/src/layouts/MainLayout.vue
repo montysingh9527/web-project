@@ -4,7 +4,7 @@
  * @FilePath: \web-project\vue3\vue3-quasar-ssr\src\layouts\MainLayout.vue
 -->
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout class="q-layouts" view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -18,7 +18,7 @@
 
         <q-toolbar-title> Quasar Meta </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>Quasar v{{ $q.version }}-{{is_show_header}}</div>
       </q-toolbar>
     </q-header>
 
@@ -35,13 +35,13 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view class="router-view" />
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref,computed } from "vue";
 import { useRouter } from "vue-router";
 
 const linksList = [
@@ -72,6 +72,9 @@ export default defineComponent({
         name: "about",
       });
     };
+    const is_show_header = computed(()=>{
+      return false;
+    })
 
     return {
       essentialLinks: linksList,
@@ -80,6 +83,7 @@ export default defineComponent({
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
       jump_url,
+      is_show_header,
     };
   },
 });
