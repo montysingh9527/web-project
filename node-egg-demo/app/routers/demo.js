@@ -6,7 +6,7 @@
 "use strict";
 
 module.exports = (app) => {
-  const { router, controller } = app;
+  const { router, controller, config, middleware } = app;
   /** 一. 单路由插入jwt验证 */
   //   const jwt = app.middleware.jwt({ app });
   //   router.post("/home", jwt, controller.home.index);
@@ -19,6 +19,6 @@ module.exports = (app) => {
   // const user = "/user"; // 用户模块
   // router.post(adminPrefix + user + "/create", controller.user.create);
 
-  /** 路由重定向 */
+  /** 四. 路由重定向 */
   // app.router.redirect('/', '/home/index', 302)
 };

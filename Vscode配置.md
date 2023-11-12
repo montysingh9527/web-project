@@ -19,6 +19,8 @@ CSS格式化：Prettier - Code formatter
 CSS格式化：Color Highlight
 用于生成文件头部注释和函数注释的插件: koroFileHeader
 画流程图插件: Draw.io Integration  
+选中一段代码运行: turbo Console Log
+自动生成css类名: AutoScssStruct4Vue
 获取github地址上的项目: GitHub Repositories  
 ```
 
