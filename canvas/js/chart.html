@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description: 树状图
  * @Date: 2023-11-02 15:35:16
  * @FilePath: \web-project\canvas\js\chart.html
 -->
@@ -8,17 +8,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>canvas</title>
+    <title>canvas-树状图</title>
 
     <style>
       .canvas-container {
+        position: relative;
         margin: 50px auto;
         box-shadow: 1px 3px 5px #ccc;
+      }
+      .canvas-container .round {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #85c35e;
+        box-shadow: 0 0 3px #85c35e;
+        transition: transform 0.3;
+      }
+      .canvas-container .round.show {
+        opacity: 1;
+        transform: scale(1.5);
       }
     </style>
   </head>
   <body>
     <div class="canvas-container">
+      <i class="round"></i>
       <canvas id="chartCanvas"></canvas>
     </div>
 
@@ -28,7 +48,7 @@
           name: "降水量",
           unit: "ml",
           data: [
-            6, 32, 70, 86, 68, 7, 100.7, 125.6, 112.2, 78.7, 48.8, 36.0, 19.3,
+            42, 32, 70, 86, 68, 110, 100.7, 125.6, 152.2, 78.7, 48.8, 36.0,
           ],
           max: 250,
         },
@@ -38,7 +58,7 @@
           max: 25,
           data: [
             6.0, 10.2, 10.3, 11.5, 10.3, 13.2, 14.3, 16.4, 18.0, 16.5, 12.8,
-            5.2, 9.4,
+            5.2,
           ],
         },
         bottom: [
@@ -59,6 +79,7 @@
 
       const oContainer = document.querySelector(".canvas-container");
       const oCan = document.getElementById("chartCanvas");
+      const oRound = oContainer.querySelector(".round");
       const ctx = oCan.getContext("2d");
 
       const canPaddingX = 80;
@@ -75,15 +96,46 @@
       let xGap = canPaddingY;
       let leftNumber = data.axis2.max;
       let rightNumber = data.axis1.max;
+      let textGap = bottomTextGap;
+      // 坐标
+      const roundData = [];
 
       const init = () => {
         adaptDpr(oCan, canWidth, canHeight);
+        // 绑定事件
+        bindEvent();
         setDefaultStyle();
         // 渲染名称 温度/降水量
         drawAxisField();
         // 渲染六条线
         drawAxisLines();
+        // 渲染小圆点
+        drawRounds();
+        // 渲染点-点连接线
+        drawRoundLines();
+        // 渲染树状图
+        drawRects();
       };
+
+      function bindEvent() {
+        oCan.addEventListener("mousemove", handleCanvasMouseMove, false);
+      }
+
+      /**
+       * 触摸小圆点放大
+       */
+      function handleCanvasMouseMove(e) {
+        const x = e.clientX;
+        const y = e.clientY;
+        const roundPos = checkInPath(x, y);
+        if (roundPos.length) {
+          oRound.style.left = roundPos[0] - 3 + "px";
+          oRound.style.top = roundPos[1] - 3 + "px";
+          oRound.classList.add("show");
+        } else {
+          oRound.classList.remove("show");
+        }
+      }
 
       function setDefaultStyle() {
         ctx.lineCap = "round";
@@ -91,7 +143,7 @@
         ctx.font = "14px Arial";
       }
 
-      // 渲染 温度/降水量 名称 
+      // 渲染 温度/降水量 名称
       function drawAxisField() {
         const textPosY = xGap - 30;
         ctx.fillStyle = "#666";
@@ -104,7 +156,12 @@
         for (let i = 0; i < lineCount; i++) {
           const isFinalLine = i === lineCount - 1;
           drawAxisLine(isFinalLine);
-          xGap += axisXGap;
+          // xGap += axisXGap;
+          if (isFinalLine) {
+            for (let i = 0; i < data.bottom.length; i++) {
+              drawBottomText(i);
+            }
+          }
         }
       }
 
@@ -135,6 +192,79 @@
         ctx.textAlign = "start";
         ctx.fillText(rightText, axisXWidth + canPaddingX + 10, xGap);
         ctx.stroke();
+
+        leftNumber -= 5;
+        rightNumber -= 50;
+        xGap += axisXGap;
+      }
+
+      /**
+       * 绘制小圆点
+       */
+      function drawRounds() {
+        for (let i = 0; i < data.axis2.data.length; i++) {
+          drawRound(i);
+        }
+      }
+
+      function drawRound(index) {
+        const [x, y] = cToPx(index);
+        roundData.push([x, y]);
+
+        ctx.fillStyle = "#85c35e";
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+
+      /**
+       * 绘制点对点连接线
+       */
+      function drawRoundLines() {
+        for (let i = 0; i < roundData.length - 1; i++) {
+          drawRoundLine(i);
+        }
+      }
+
+      function drawRoundLine(index) {
+        const [x1, y1] = roundData[index];
+        const [x2, y2] = roundData[index + 1];
+        ctx.strokeStyle = "#85c35e";
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+      }
+
+      /**
+       * 渲染树状图
+       */
+      function drawRects() {
+        for (let i = 0; i < data.axis1.data.length; i++) {
+          drawRect(i);
+        }
+      }
+
+      function drawRect(index) {
+        const [x, y] = mlToPx(index);
+        ctx.fillStyle = "#5a6fc0";
+        ctx.beginPath();
+        ctx.fillRect(x - 20, y, 40, totalHeight + canPaddingY - y);
+      }
+
+      /**
+       * 绘制x轴文字
+       */
+      function drawBottomText(index) {
+        const text = data.bottom[index];
+        const startX = canPaddingX + axisXGap + index * textGap;
+        const textWidth = ctx.measureText(text).width;
+
+        ctx.beginPath();
+        ctx.moveTo(startX, xGap - axisXGap);
+        ctx.lineTo(startX, xGap - axisXGap + 5);
+        ctx.fillText(text, startX - textWidth / 2, xGap - axisXGap + 20);
+        ctx.stroke();
       }
 
       function adaptDpr(canvas, width, height) {
@@ -146,6 +276,43 @@
         canvas.style.width = width + "px";
         canvas.style.height = height + "px";
         ctx.scale(dpr, dpr);
+      }
+
+      /**
+       * totalHeight / max = x / data
+       * totalHeight - totalHeight * data / max + canPaddingY
+       */
+      function cToPx(index) {
+        const x = canPaddingX + axisXGap + index * bottomTextGap;
+        const y =
+          totalHeight -
+          (totalHeight * data.axis2.data[index]) / data.axis2.max +
+          canPaddingY;
+        return [x, y];
+      }
+
+      function mlToPx(index) {
+        const x = canPaddingX + axisXGap + index * bottomTextGap;
+        const y =
+          totalHeight -
+          (totalHeight * data.axis1.data[index]) / data.axis1.max +
+          canPaddingY;
+        return [x, y];
+      }
+
+      /**
+       * 检查触摸小圆点是否在范围内
+       */
+      function checkInPath(x, y) {
+        for (let i = 0; i < roundData.length; i++) {
+          const [rx, ry] = roundData[i];
+          const _x = rx + oContainer.offsetLeft;
+          const _y = ry + oContainer.offsetTop;
+          if (x >= _x - 3 && x <= _x + 3 && y >= _y - 3 && y <= _y + 3) {
+            return [rx, ry];
+          }
+        }
+        return [];
       }
 
       init();
