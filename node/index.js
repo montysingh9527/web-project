@@ -4,6 +4,7 @@
  * @FilePath: \web-project\node\index.js
  */
 const fs = require("fs");
+const path = require("path");
 
 fs.writeFile(
   "./example.json",
@@ -17,3 +18,18 @@ fs.writeFile(
     console.log("File has been written.");
   }
 );
+
+const fileList = ["test", "test1", "test2"]
+
+try {
+  fileList.forEach(item=>{
+    fs.mkdirSync(item, { recursive: true })
+  })
+  console.log('-创建目录成功-');
+} catch (error) {
+  console.log('---logs--创建目录失败-',error);
+}
+
+console.log('---logs---', path.resolve(__dirname));
+
+
