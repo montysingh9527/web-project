@@ -137,6 +137,13 @@ postman请求工具：https://insomnia.rest/pricing
   db.集合名.findOne(查询条件[,投影])    默认只要找到一个
   举例：db.students.find({},{_id:0, name:0})   过滤掉id和name
   举例：db.students.find({},{age:1})   只保留age
+  // 查询年龄大于等于 18 且名字为 "John" 或 "Jane" 的文档
+  db.collection.find({
+    $and: [
+      { age: { $gte: 18 } },
+      { $or: [ { name: "John" }, { name: "Jane" } ] }
+    ]
+  })
 
 ---update:更新
   db.集合.update(查询条件,要更新的内容,[,配置对象])
