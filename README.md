@@ -79,6 +79,8 @@ https://github.com/biaochenxuying/blog/issues/64
 
 ```
 https://www.naiveui.com/zh-CN/os-theme/components/legacy-transfer
+quasar: https://quasar.dev/
+汇总: https://ui-libs.vercel.app/
 ```
 
 #####  工具库
