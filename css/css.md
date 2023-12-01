@@ -1,4 +1,5 @@
 
+
 ##### flex布局
 ```
 https://www.evernote.com/shard/s423/sh/e061e040-a38b-dffb-2e3c-6e40dba040e9/a74f77f8cea6e5a6835ef94fdd6a0888
@@ -13,6 +14,7 @@ vertical-align 调节图片垂直对齐的方式(去除图片与之间间隙)：
 禁止溢出：overflow:hidden;	 		
 溢出部分显示省略号：text-overflow:ellipsis;	
 input修改placeholder 的样式：  input::placeholder{}
+宽度适应文字: width: fit-content;   
 ```
 
 ```

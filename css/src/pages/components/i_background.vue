@@ -43,7 +43,7 @@
     width: 50px;
     margin: 10px;
     border-radius: 50%;
-    background-color: red;
+    background-color: var(--rr-color-red);
     z-index: 1;
   }
 }

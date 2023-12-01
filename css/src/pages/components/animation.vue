@@ -58,7 +58,7 @@ animation-play-state: paused;  //鼠标经过(:hover)让这个div停止动画，
   margin-top: 20px;
   width: 250px;
   &-box {
-    border: 1px solid red;
+    border: 1px solid var(--rr-color-red);
     position: relative;
     .xiaoqiu {
       width: 30px;

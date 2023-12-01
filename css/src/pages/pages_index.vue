@@ -9,8 +9,11 @@
         1989382939
       </div>
     </div>
+    <!-- 利用i标签设置虚线 -->
     <iBackground />
+    <!-- 伪元素传值 :after content: attr()   样式局部变量--attrC -->
     <contentAttr />
+    <!-- 动画 -->
     <animationText />
   </div>
 </template>
@@ -25,15 +28,19 @@ const chouti = ref(false);
 </script>
 
 <style scoped lang="scss">
+$primary   : #1976D2;
+@import "src/css/file_path.scss";
 .pages-index {
   .chou-ti {
-    width: 50px;
+    width: fit-content;
     height: 40px;
     text-align: center;
     line-height: 40px;
-    background-color: #00d5ff;
+    background-color: $primary;
     position: relative;
     cursor: pointer;
+    background: url($BASE_SCSS + "/404.png");
+    background-image: url($BASE_File + "/404.png");
     &-text {
       position: absolute;
       padding: 0 10px;
