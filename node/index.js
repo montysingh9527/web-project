@@ -31,40 +31,59 @@ try {
   console.log("---logs--创建目录失败-", error);
 }
 
-console.log('--path-logs---', path.resolve(__dirname));
+console.log("--path-logs---", path.resolve(__dirname));
 
-console.log("-目录是否存在: statSync--logs--", fs.statSync("test"),"--333--", fs.statSync("test").isDirectory(),"--444--", fs.statSync("test/test.text"),"--555--",  fs.statSync("test/test.text").isDirectory());
-console.log('-目录是否存在: existsSync--logs---',fs.existsSync("test"), fs.existsSync("test/test.text"));
+console.log(
+  "-目录是否存在: statSync--logs--",
+  fs.statSync("test"),
+  "--333--",
+  fs.statSync("test").isDirectory(),
+  "--444--",
+  fs.statSync("test/test.text"),
+  "--555--",
+  fs.statSync("test/test.text").isDirectory()
+);
+console.log(
+  "-目录是否存在: existsSync--logs---",
+  fs.existsSync("test"),
+  fs.existsSync("test/test.text")
+);
 
 setInterval(() => {
   // 获取文件信息
-  const text_size = fs.statSync("test/test.text");
-  const text1_size = fs.statSync("test1/test1.text");
-  console.log('-size--logs---',text_size.size, text1_size.size);
+  const text_size = fs.statSync("test/test.txt");
+  const text1_size = fs.statSync("test1/test1.txt");
+  console.log("-size--logs---", text_size.size, text1_size.size);
   // 文件大小 < 500
   if (text_size.size < 500) {
     fs.appendFileSync(
-      "test/test.text",
+      "test/test.txt",
       `test-${Math.floor(Math.random() * 100)} \n`
     );
   }
   if (text1_size.size < 500) {
     fs.writeFileSync(
-      "test1/test1.text",
-      `test1-${Math.floor(Math.random() * 100)} \n`
-    ,{ encoding: 'utf8', flag: 'a' });
+      "test1/test1.txt",
+      `test1-${Math.floor(Math.random() * 100)} \n`,
+      { encoding: "utf8", flag: "a" }
+    );
   }
 }, 1000);
 
 /**
  * 判断文件夹是否存在
  */
-if(!fs.existsSync("test3")){
+if (!fs.existsSync("test3")) {
   // 不存在, 则创建
-  fs.mkdirSync("test3")
+  fs.mkdirSync("test3");
   fs.appendFileSync(
-    "test3/test3.text",
+    "test3/test3.txt",
     `test3-${Math.floor(Math.random() * 100)} \n`
   );
 }
 
+try {
+  fs.copyFileSync("test3/test3.text", "test2/file2.txt");
+} catch (error) {
+  console.error("---logs-11--", error);
+}
