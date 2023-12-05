@@ -90,7 +90,10 @@ js类库: https://github.com/MrXujiang/xijs/blob/main/src/transformArray/index.t
 js类库: https://github.com/x-extends/xe-utils/blob/master/func/toTreeArray.js
 ```
 
-
+##### electron桌面应用
+```
+文档上传: https://github.com/hawkeye64/electron-quasar-file-explorer-v2
+```
 
 
 
