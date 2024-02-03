@@ -86,6 +86,14 @@ export function firstUpperCase(str) {
 }
 
 /**
+ * 生成随机数
+ * @returns
+ */
+export function randomPwd() {
+  return Math.random().toString(36).slice(2);
+}
+
+/**
  * 检测设备类型
  * @returns {String}
  */

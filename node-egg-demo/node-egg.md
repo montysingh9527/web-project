@@ -5,6 +5,7 @@
     1.3 [mongoose分页插件](https://www.npmjs.com/package/mongoose-paginate-v2): mongoose-paginate
 2. MySQL数据库:
     2.1 mysql插件: [sequelize](https://github.com/demopark/sequelize-docs-Zh-CN)  
+    2.2 mysql可视化工具: [dbeaver](https://dbeaver.io/download/) 
 
 3. Egg框架:
     3.1 egg文档: [官方文档](https://www.eggjs.org/zh-CN/intro/quickstart#%E5%BF%AB%E9%80%9F%E5%88%9D%E5%A7%8B%E5%8C%96)  / [egg团队文档](https://www.yuque.com/egg/nodejs/gkk3r9)
@@ -17,6 +18,11 @@
 生成项目: npm init egg --type=simple
 npm i
 npm run dev
+
+
+========egg3.0创建项目:========
+1 全局范围内安装: npm install egg-init@latest -g
+2 项目目录，并运行以下命令：egg-init
 
 
 MongoDB数据库: egg-mongoose   

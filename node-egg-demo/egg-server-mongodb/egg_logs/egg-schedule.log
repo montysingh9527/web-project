@@ -1,0 +1,45 @@
+2024-02-03 00:55:45,127 INFO 24536 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 00:55:45,127 INFO 24536 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 00:55:45,127 INFO 24536 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 00:55:46,911 INFO 15628 [Timer] C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 12853098ms at 2024-02-03 04:30:00.009
+2024-02-03 00:55:46,914 INFO 15628 [Timer] C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 83053088ms at 2024-02-04 00:00:00.002
+2024-02-03 00:55:46,916 INFO 15628 [Timer] C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 83054086ms at 2024-02-04 00:00:01.002
+2024-02-03 00:57:55,085 INFO 1900 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 00:57:55,085 INFO 1900 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 00:57:55,085 INFO 1900 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 00:58:00,353 INFO 23728 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 00:58:00,353 INFO 23728 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 00:58:00,353 INFO 23728 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 00:59:52,387 INFO 23476 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 00:59:52,387 INFO 23476 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 00:59:52,387 INFO 23476 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 00:59:58,765 INFO 11056 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 00:59:58,765 INFO 11056 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 00:59:58,765 INFO 11056 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 01:00:34,976 INFO 9864 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 01:00:34,976 INFO 9864 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 01:00:34,976 INFO 9864 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 01:00:43,999 INFO 24260 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 01:00:43,999 INFO 24260 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 01:00:43,999 INFO 24260 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 01:02:52,034 INFO 16276 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 01:02:52,034 INFO 16276 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 01:02:52,034 INFO 16276 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 01:02:59,310 INFO 22620 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 01:02:59,310 INFO 22620 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 01:02:59,310 INFO 22620 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 01:03:04,233 INFO 16948 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 01:03:04,233 INFO 16948 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 01:03:04,233 INFO 16948 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 01:03:27,063 INFO 15932 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 01:03:27,063 INFO 15932 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 01:03:27,063 INFO 15932 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 01:03:33,752 INFO 13564 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 01:03:33,753 INFO 13564 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 01:03:33,753 INFO 13564 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 01:04:27,273 INFO 24640 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 01:04:27,273 INFO 24640 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 01:04:27,273 INFO 24640 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2024-02-03 01:04:36,382 INFO 19944 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2024-02-03 01:04:36,382 INFO 19944 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\clean_log.js
+2024-02-03 01:04:36,382 INFO 19944 [egg-schedule]: register schedule C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-logrotator\app\schedule\rotate_by_file.js

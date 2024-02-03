@@ -1,0 +1,71 @@
+2024-02-03 00:55:59,903 ERROR 24536 [-/127.0.0.1/-/37ms POST /admin/login] [controller.login] 账号与密码不能为空!
+2024-02-03 00:55:59,919 ERROR 24536 [-/127.0.0.1/-/41ms POST /admin/login] nodejs.Error: 账号与密码不能为空.
+    at LoginController.create (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\app\controller\login.js:15:13)
+    at Object.callFn (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\router.js:186:18
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\router.js:191:33)
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\koa-compose\index.js:42:32)
+    at auth (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\app\middleware\auth.js:8:11)
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\koa-compose\index.js:42:32)
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+pid: 24536
+hostname: DESKTOP-VEOURDF
+
+2024-02-03 00:57:53,805 ERROR 24536 [-/127.0.0.1/-/146ms POST /admin/login] [controller.login] 账号与密码不能为空!
+2024-02-03 00:57:53,908 ERROR 24536 [-/127.0.0.1/-/147ms POST /admin/login] nodejs.Error: 账号与密码不能为空.
+    at LoginController.create (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\app\controller\login.js:15:13)
+    at Object.callFn (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\router.js:186:18
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\router.js:191:33)
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\koa-compose\index.js:42:32)
+    at auth (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\app\middleware\auth.js:8:11)
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\koa-compose\index.js:42:32)
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+pid: 24536
+hostname: DESKTOP-VEOURDF
+
+2024-02-03 00:58:27,778 ERROR 23728 [-/127.0.0.1/-/69ms POST /admin/login] [controller.login] 账号与密码不能为空!
+2024-02-03 00:58:56,864 ERROR 23728 [-/127.0.0.1/-/6ms POST /admin/login] [controller.login] 账号与密码不能为空!
+2024-02-03 01:00:47,705 ERROR 24260 [-/127.0.0.1/-/68ms POST /admin/login] nodejs.Error: 账号与密码不能为空!
+    at LoginController.create (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\app\controller\login.js:14:13)
+    at Object.callFn (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\router.js:186:18
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\@eggjs\router\lib\router.js:191:33)
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\koa-compose\index.js:42:32)
+    at auth (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\app\middleware\auth.js:8:11)
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Xiaoyon\Desktop\web-project\node-egg-demo\egg-server-mongodb\node_modules\koa-compose\index.js:42:32)
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+pid: 24260
+hostname: DESKTOP-VEOURDF
+
+2024-02-03 01:01:08,695 INFO 24260 [-/127.0.0.1/-/12ms POST /admin/login] [controller.login] addd token为: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVG9rZW4iOnsidXNlcm5hbWUiOiJhZGRkIiwicGFzc3dvcmQiOiJhc2RkIn0sImV4cCI6MTcwNjkxODQ2OCwiaWF0IjoxNzA2ODkzMjY4fQ.nnoUw4NyEFj7EUwO0wBJBX8pkBfpXUtbWWzt61PXnpw
+2024-02-03 01:03:30,751 WARN 15932 [-/127.0.0.1/-/65ms POST /admin/login] [controller.login] 用户: addd token为: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVG9rZW4iOnsidXNlcm5hbWUiOiJhZGRkIiwicGFzc3dvcmQiOiJhc2RkIn0sImV4cCI6MTcwNjkxODYxMCwiaWF0IjoxNzA2ODkzNDEwfQ.E3ee7BoMrwS0rNVRq38VI1Frs0_2KjElR_FPfDuOrNM
+2024-02-03 01:03:38,277 WARN 13564 [-/127.0.0.1/-/43ms POST /admin/login] [controller.login] 用户: addd token为: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVG9rZW4iOnsidXNlcm5hbWUiOiJhZGRkIiwicGFzc3dvcmQiOiJhc2RkIn0sImV4cCI6MTcwNjkxODYxOCwiaWF0IjoxNzA2ODkzNDE4fQ.O8k0k8mEGSQaVh12TdbmEpNmRif4iZJQdp9XOKBEtT4
+2024-02-03 01:05:37,457 WARN 19944 [-/127.0.0.1/-/94ms POST /admin/login] [controller.login] 用户: eeeee token为: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVG9rZW4iOnsidXNlcm5hbWUiOiJlZWVlZSIsInBhc3N3b3JkIjoiODVlMWM1ZmNkMjgxNjU5YTA5Mzk4ZjExMGYyZDAzOWYifSwiZXhwIjoxNzA2OTE4NzM3LCJpYXQiOjE3MDY4OTM1Mzd9._YMPASsmMrsimP-20T__WH-_fnxjgnarw6A5Uuh__YM

@@ -1,0 +1,16 @@
+/*
+ * @Description: 
+ * @Date: 2023-12-28 20:13:57
+ * @FilePath: \web-project\node-egg-demo\egg-server-mysql\.sequelizerc
+ */
+"use strict";
+// https://sequelize.org/docs/v6/other-topics/migrations/#the-sequelizerc-file
+const path = require("path");
+
+module.exports = {
+  env: "development",  // 运行命令的环境
+  config: path.join(__dirname, "database/config.json"),
+  "migrations-path": path.join(__dirname, "database/migrations"),
+  "seeders-path": path.join(__dirname, "database/seeders"),
+  "models-path": path.join(__dirname, "app/model"),
+};

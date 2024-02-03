@@ -23,6 +23,7 @@ npm install nodemon -g
 4. 安装node版本: nvm install 14
 5. 切换node版本: nvm use 14
 6. 卸载node版本: nvm uninstall 14
+7. 指定默认的node版本: nvm alias default v14.13.0    
 
 
 ##### 二. Node bug处理
