@@ -1,3 +1,8 @@
+<!--
+ * @Description: 
+ * @Date: 2023-12-27 14:28:53
+ * @FilePath: \web-project\node-egg-demo\egg-server-mysql\README.md
+-->
 
 ## egg 项目
 
@@ -14,14 +19,37 @@
 
 ```
 MySql数据库: mysql2
-MySql数据库的ORM: egg-sequelize
+MySql数据库的ORM: egg-sequelize  https://github.com/eggjs/egg-sequelize?tab=readme-ov-file#usage--configuration
 解决跨域安全威胁csrf的防范: egg-cors
 管理数据结构的变更: sequelize-cli   https://www.eggjs.org/zh-CN/tutorials/sequelize#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C-migrations
 ```
 
+###### 数据迁移
+```
+User.sync({alter: true}) // （慎用） 在程序运行时调用，把model跟数据表同步
+https://sequelize.org/docs/v6/other-topics/migrations/
+https://www.eggjs.org/zh-CN/tutorials/sequelize#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C-migrations
 
 
 
+第一次创建user表
+npx sequelize migration:generate --name=init-users
+
+up 中是更新的操作，down 是回退的操作。
+
+npx sequelize db:migrate
+# 如果有问题需要回滚，可以通过 `db:migrate:undo` 回退一个变更
+# npx sequelize db:migrate:undo
+# 可以通过 `db:migrate:undo:all` 回退到初始状态
+# npx sequelize db:migrate:undo:all
+
+```
+
+##### 数据库查询
+```
+数据迁移: https://www.cnblogs.com/xiebenyin-/p/15520978.html
+数据库查询: https://www.cnblogs.com/xiebenyin-/p/15490927.html
+```
 
 ###### 数据类型
 

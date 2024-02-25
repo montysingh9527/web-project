@@ -1,14 +1,14 @@
 /*
  * @Description: 
  * @Date: 2023-12-28 20:19:14
- * @FilePath: \web-project\node-egg-demo\egg-server-mysql\app\model\user.js
+ * @FilePath: \web-project\node-egg-demo\egg-server-mysql\app\sequelizeModel\user.js
  */
 'use strict';
 
 module.exports = (app) => {
   const { STRING, INTEGER, DATE } = app.Sequelize;
 
-  const User = app.model.define('user', {
+  const User = app.sqlModel.define('user', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -39,7 +39,7 @@ module.exports = (app) => {
     avatar: {
       allowNull: true,
       type: STRING,
-      defaultValue: null,
+      defaultValue: "../public/img/user.jpg",
       comment: '头像'
     },
     email: {
@@ -94,6 +94,6 @@ module.exports = (app) => {
   //   });
   //   User.belongsToMany(app.model.Roles, { through: 'user_roles', foreignKey: 'userId', as: 'roles'});
   // };
-
+  // User.sync({alter: true}) // （慎用）
   return User;
 };

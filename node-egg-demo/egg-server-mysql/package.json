@@ -8,9 +8,9 @@
   },
   "scripts": {
     "migrate": "npx sequelize db:migrate && echo \"初始化数据库迁移\"",
-    "start": "egg-scripts start --daemon --title=egg-server-egg-server",
-    "stop": "egg-scripts stop --title=egg-server-egg-server",
-    "dev": "egg-bin dev",
+    "start": "egg-scripts start --daemon --title=egg-server-egg-server && echo \"生产运行项目\"",
+    "stop": "egg-scripts stop --title=egg-server-egg-server && echo \"停止项目\"",
+    "dev": "egg-bin dev && echo \"dev启动项目\"",
     "test": "npm run lint -- --fix && npm run test:local",
     "test:local": "egg-bin test",
     "cov": "egg-bin cov",

@@ -1,14 +1,15 @@
 /*
  * @Description:
  * @Date: 2023-12-27 14:28:53
- * @FilePath: \web-project\node-egg-demo\egg-server\config\config.default.js
+ * @FilePath: \web-project\node-egg-demo\egg-server-mysql\config\config.default.js
  */
 /* eslint valid-jsdoc: "off" */
-
+const mysql_config = require("../database/config.json")
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
 module.exports = (appInfo) => {
+  
   /**
    * built-in config
    * @type {Egg.EggAppConfig}
@@ -24,13 +25,16 @@ module.exports = (appInfo) => {
   ];
 
   config.sequelize = {
-    dialect: "mysql", // 表示使用mysql
-    host: "127.0.0.1", // 连接的数据库主机地址
-    port: 3306, // mysql服务端口
-    database: "egg_admin_dev", // 数据库名
-    username: "root", // 数据库用户名
-    password: "root", // 数据库密码
-    timezone: "+8:00", // 由于orm用的UTC时间，这里必须加上东八区，否则取出来的时间相差8小时
+    ...mysql_config[appInfo.env],
+    // dialect: "mysql", // 表示使用mysql
+    // host: "127.0.0.1", // 连接的数据库主机地址
+    // port: 3306, // mysql服务端口
+    // database: "egg_admin_dev", // 数据库名
+    // username: "root", // 数据库用户名
+    // password: "root", // 数据库密码
+    // timezone: "+8:00", // 由于orm用的UTC时间，这里必须加上东八区，否则取出来的时间相差8小时
+    // baseDir: "sequelizeModel",
+    // delegate: "sqlModel",
     define: {
       // model的全局配置
       timestamps: false, // 添加create,update,delete时间戳

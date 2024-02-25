@@ -1,18 +1,19 @@
 /*
- * @Description: 
+ * @Description:
  * @Date: 2023-12-28 18:02:45
- * @FilePath: \web-project\node-egg-demo\egg-server\app\extend\context.js
+ * @FilePath: \web-project\node-egg-demo\egg-server-mysql\app\extend\context.js
  */
 "use strict";
 const httpCode = require("../utils/http-code");
 
 module.exports = {
   // response通用返回
-  returnBody(data = null, code = 0, status = 200) {
+  returnBody({ data = null, code = 200, msgcode, status = 200 }) {
     this.status = status;
+    msgcode = msgcode ? msgcode : code;
     this.body = {
       code,
-      message: httpCode[code] ? httpCode[code] : "success",
+      message: httpCode[msgcode] ? httpCode[msgcode] : "success",
       data,
     };
   },
@@ -30,5 +31,5 @@ module.exports = {
     if (typeof str === "number") return str;
     if (!str) return str;
     return parseInt(str, 10) || 0;
-  }
+  },
 };

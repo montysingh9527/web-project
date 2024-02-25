@@ -4,20 +4,29 @@
     "password": "root",
     "database": "egg_admin_dev",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "timezone": "+08:00 && echo \"东八区\"",
+    "baseDir": "sequelizeModel && echo \"修改默认路径model`app/${baseDir}` as models, default to `model`\"",
+    "delegate": "sqlModel && echo \"修改默认model, ctx[delegate]`, default to `model`\""
   },
-  "test": {
+  "local": {
     "username": "root",
     "password": "root",
     "database": "egg_admin_dev",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "timezone": "+08:00",
+    "baseDir": "sequelizeModel",
+    "delegate": "sqlModel"
   },
   "production": {
     "username": "root",
     "password": "root",
     "database": "egg_admin_dev",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "timezone": "+08:00",
+    "baseDir": "sequelizeModel",
+    "delegate": "sqlModel"
   }
 }
