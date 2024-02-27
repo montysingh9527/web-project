@@ -53,6 +53,12 @@ module.exports = (appInfo) => {
     },
   };
 
+  // 接口前缀
+  config.front_web = {
+    web_prefix: "/web",
+    admin_prefix: "/admin",
+  }
+
   config.jwt = {
     secret: "egg-api-jwt",
     expiresIn: 60 * 60 * 24, // 1天过期
@@ -75,7 +81,7 @@ module.exports = (appInfo) => {
   config.logger = {
     // level: 'INFO', // 设置日志级别，可选值：DEBUG、INFO、WARN、ERROR，默认为 INFO
     // consoleLevel: 'DEBUG', // 控制台日志级别
-    dir: "/egg_logs", // 日志存放路径
+    dir: "./egg_logs", // 日志存放路径
     appLogName: `${appInfo.name}-web.log`,
     coreLogName: "egg-web.log",
     agentLogName: "egg-agent.log",

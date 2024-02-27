@@ -7,14 +7,15 @@
 
 module.exports = (app) => {
   const { router, controller, config, middleware } = app;
+  const adminPrefix = config.front_web.admin_prefix;
   // 创建
-  router.post("/user/create", controller.user.create);
+  router.post(adminPrefix + "/user/create", controller.user.create);
   // 查询
-  router.get("/user/list", controller.user.findall);
+  router.get(adminPrefix + "/user/list", controller.user.findall);
   // 修改
-  router.get("/user/update", controller.user.update);
+  router.get(adminPrefix + "/user/update", controller.user.update);
   // 删除
-  router.get("/user/delete", controller.user.delete);
+  router.get(adminPrefix + "/user/delete", controller.user.delete);
 
   /** 一. 单路由插入jwt验证 */
   //   const jwt = app.middleware.jwt({ app });

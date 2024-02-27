@@ -18,11 +18,11 @@ module.exports = (app) => {
     userName: {
       allowNull: false,
       unique: true,
-      type: STRING,
+      type: STRING(20),
       comment: '用户名'
     },
     nickName: {
-      type: STRING,
+      type: STRING(50),
       defaultValue: null,
       comment: '昵称'
     },
