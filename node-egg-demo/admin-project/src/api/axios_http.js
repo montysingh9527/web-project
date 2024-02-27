@@ -1,7 +1,7 @@
 /*
  * @Description: axios 请求封装
  * @Date: 2024-01-15 22:00:26
- * @FilePath: \web-project\node-egg-demo\admin-project\src\api\common\axios_http.js
+ * @FilePath: \web-project\node-egg-demo\admin-project\src\api\axios_http.js
  */
 import axios from "axios";
 import { Notify, useQuasar } from "quasar";
