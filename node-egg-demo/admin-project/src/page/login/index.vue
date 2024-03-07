@@ -41,7 +41,6 @@ const chang_login = async () => {
     return;
   }
 
-
   const result = await api_login.user_login({ username, password: md5(password) })
 
   console.log('---logs-result--', result);

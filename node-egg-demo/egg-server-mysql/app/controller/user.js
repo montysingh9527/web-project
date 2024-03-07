@@ -10,20 +10,22 @@ class UserController extends Controller {
   // 查询所有
   async findall() {
     const ctx = this.ctx;
+    const { size = 10, page = 1 } = ctx.query;
     const query = {
-      limit: ctx.toInt(ctx.query.pageSize) || 10, // 取多少条数据
-      offset: ctx.toInt(ctx.query.pageSize) * (ctx.query.page - 1) || 0, // 跳过多少条数据(减1是因为从0开始查询)
+      limit: ctx.toInt(size), // 取多少条数据
+      offset: ctx.toInt(size) * (page - 1) || 0, // 跳过多少条数据(减1是因为从0开始查询)
       // order: [["id", "desc"], ["createdAt", "asc"]],  // desc降序   asc升序
       order: [["id", "asc"], "createdAt"],
+      attributes: {
+        exclude: ["password"], // 排除password,不返回
+      },
     };
-    
-    const data = await ctx.sqlModel.User.findAll(query);
-    console.log('---logs-data--',data);
-    
+
+    const data = await ctx.sqlModel.User.findAndCountAll(query);
     if (data) {
-      ctx.returnBody({ data });
+      ctx.api_success({ data: { list: data.rows, total: data.count, size: Number(size), page: Number(page) } });
     } else {
-      ctx.returnBody({ data });
+      ctx.api_error({ data });
     }
   }
 
@@ -34,20 +36,19 @@ class UserController extends Controller {
 
   async create() {
     const ctx = this.ctx;
-    const { userName, age, nickName, sex, password, email } = ctx.request.body;
+    const { username, age, nickname, sex, password, email } = ctx.request.body;
     const data = await ctx.sqlModel.User.create({
-      userName,
+      username,
       age,
-      nickName,
+      nickname,
       sex,
       password,
       email,
-      createdAt: new Date(),
     });
     if (data) {
-      ctx.returnBody({ data, msgcode: 100020 });
+      ctx.api_success({ msg: "创建用户成功" });
     } else {
-      ctx.returnBody();
+      ctx.api_error({ msg: "创建用户失败", data });
     }
   }
 
@@ -60,8 +61,8 @@ class UserController extends Controller {
       return;
     }
 
-    const { userName, age } = ctx.request.body;
-    await user.update({ userName, age });
+    const { username, age } = ctx.request.body;
+    await user.update({ username, age });
     ctx.body = user;
   }
 

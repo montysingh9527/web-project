@@ -8,9 +8,9 @@
 const path = require("path");
 
 module.exports = {
-  env: "development",  // 运行命令的环境
+  env: "local",  // 运行命令的环境
   config: path.join(__dirname, "database/config.json"),
   "migrations-path": path.join(__dirname, "database/migrations"),
   "seeders-path": path.join(__dirname, "database/seeders"),
-  "models-path": path.join(__dirname, "app/model"),
+  "models-path": path.join(__dirname, "app/sequelizeModel"),
 };

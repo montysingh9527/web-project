@@ -35,7 +35,7 @@ http.interceptors.response.use(
       res.config?.url.endsWith("delete")
     ) {
       Notify.create({
-        message: res.data?.msg || "response error",
+        message: res.data?.message || "response error",
         position: "top",
         color: "teal",
         timeout: 3000,

@@ -8,5 +8,5 @@
 module.exports = (app) => {
   const { router, controller, config, middleware } = app;
   const adminPrefix = config.front_web.admin_prefix;
-  router.post(adminPrefix + "/login", controller.login.create);
+  router.post(adminPrefix + "/login", controller.login.loginIndex);
 };

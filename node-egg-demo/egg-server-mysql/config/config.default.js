@@ -1,10 +1,11 @@
 /*
- * @Description:
+ * @Description: 默认配置合并规则: https://www.eggjs.org/zh-CN/basics/config#%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE
  * @Date: 2023-12-27 14:28:53
  * @FilePath: \web-project\node-egg-demo\egg-server-mysql\config\config.default.js
  */
 /* eslint valid-jsdoc: "off" */
 const mysql_config = require("../database/config.json")
+const Op = require('sequelize').Op;
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -51,6 +52,42 @@ module.exports = (appInfo) => {
         return next();
       },
     },
+    operatorsAliases: {
+      $eq: Op.eq,
+      $ne: Op.ne,
+      $gte: Op.gte,
+      $gt: Op.gt,
+      $lte: Op.lte,
+      $lt: Op.lt,
+      $not: Op.not,
+      $in: Op.in,
+      $notIn: Op.notIn,
+      $is: Op.is,
+      $like: Op.like,
+      $notLike: Op.notLike,
+      $iLike: Op.iLike,
+      $notILike: Op.notILike,
+      $regexp: Op.regexp,
+      $notRegexp: Op.notRegexp,
+      $iRegexp: Op.iRegexp,
+      $notIRegexp: Op.notIRegexp,
+      $between: Op.between,
+      $notBetween: Op.notBetween,
+      $overlap: Op.overlap,
+      $contains: Op.contains,
+      $contained: Op.contained,
+      $adjacent: Op.adjacent,
+      $strictLeft: Op.strictLeft,
+      $strictRight: Op.strictRight,
+      $noExtendRight: Op.noExtendRight,
+      $noExtendLeft: Op.noExtendLeft,
+      $and: Op.and,
+      $or: Op.or,
+      $any: Op.any,
+      $all: Op.all,
+      $values: Op.values,
+      $col: Op.col,
+    }
   };
 
   // 接口前缀
