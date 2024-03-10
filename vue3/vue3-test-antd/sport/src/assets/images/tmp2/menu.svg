@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="9px" viewBox="0 0 10 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>菜单</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-12.000000, -42.000000)" fill="#26FFBE">
+            <path d="M22,50 L22,51 L12,51 L12,50 L22,50 Z M22,46 L22,47 L12,47 L12,46 L22,46 Z M22,42 L22,43 L12,43 L12,42 L22,42 Z" id="菜单"></path>
+        </g>
+    </g>
+</svg>

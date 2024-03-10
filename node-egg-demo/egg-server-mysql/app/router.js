@@ -9,7 +9,9 @@
 module.exports = (app) => {
   const { router, controller } = app;
   // 获取版本
-  router.get("/version", controller.version.index);
+  router.get("/version", controller.common.index);
+  // 公共
+  require("./routers/common")(app);
   // 登录
   require("./routers/login")(app);
   // 导入roles下的路由

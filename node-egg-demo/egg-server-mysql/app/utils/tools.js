@@ -14,11 +14,11 @@ function checkWhiteList(ctx, list) {
 }
 
 // 递归创建目录 同步方法
-function mkdirsSync(dirname) {
+function deepMkdirsSync(dirname) {
   if (fs.existsSync(dirname)) {
     return true;
   } else {
-    if (mkdirsSync(path.dirname(dirname, "/"))) {
+    if (deepMkdirsSync(path.dirname(dirname, "/"))) {
       fs.mkdirSync(dirname);
       return true;
     }
@@ -76,5 +76,5 @@ function getIdLists(arr, ids = [], id = "id") {
 module.exports = {
   checkWhiteList,
   handleTree,
-  mkdirsSync,
+  deepMkdirsSync,
 };

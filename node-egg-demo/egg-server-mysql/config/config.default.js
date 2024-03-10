@@ -4,13 +4,13 @@
  * @FilePath: \web-project\node-egg-demo\egg-server-mysql\config\config.default.js
  */
 /* eslint valid-jsdoc: "off" */
-const mysql_config = require("../database/config.json")
-const Op = require('sequelize').Op;
+const mysql_config = require("../database/config.json");
+const Op = require("sequelize").Op;
+const path = require("path");
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
 module.exports = (appInfo) => {
-  
   /**
    * built-in config
    * @type {Egg.EggAppConfig}
@@ -87,14 +87,14 @@ module.exports = (appInfo) => {
       $all: Op.all,
       $values: Op.values,
       $col: Op.col,
-    }
+    },
   };
 
   // 接口前缀
   config.front_web = {
     web_prefix: "/web",
     admin_prefix: "/admin",
-  }
+  };
 
   config.jwt = {
     secret: "egg-api-jwt",
@@ -112,6 +112,18 @@ module.exports = (appInfo) => {
   config.cors = {
     origin: "*",
     allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS",
+  };
+  // file模式上传文件 https://eggjs.github.io/zh/guide/upload.html#file-%E6%A8%A1%E5%BC%8F
+  config.multipart = {
+    mode: "file",
+    whitelist: [".png", ".jpg"],
+  };
+
+  config.static = {
+    // 图片地址
+    img_prefix: path.join(__dirname, "../app/public/img"),
+    // img_prefix: "public/img",
+    // dir: [path.join(__dirname, '../app/public'), path.join(__dirname, '../www')] // 多静态文件入口
   };
 
   // 日志配置 this.logger 访问到 Egg 内置的 logger 对象,  this.logger.debug('Debug message'); info, warn, error

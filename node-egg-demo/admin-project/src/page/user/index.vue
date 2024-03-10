@@ -5,9 +5,10 @@
 -->
 <template>
   <div class="user-wrap">
-    用户管理
     <q-card>
       <q-card-section>
+        <div>用户管理</div>
+        <q-input @click="upload_img($event)" label="上传图片"></q-input>
         <q-input v-model="from.username" label="用户名" placeholder="请输入用户名..." outlined></q-input>
         <q-input v-model="from.password" class="q-mt-md" label="密码" placeholder="请输入密码..." outlined></q-input>
         <q-card-actions vertical align="right">
@@ -37,6 +38,7 @@
 <script setup>
 import { onMounted, ref, watch } from "vue";
 import { api_user } from "src/api/index.js";
+import { use_upload_img } from "src/hooks/upload.js"
 import md5 from "js-md5"
 const img_url = BASE_URL;
 const table_data = ref([]);
@@ -87,6 +89,12 @@ const init_table = async () => {
   console.log("---logs--result-", res);
   table_data.value = res.data;
 };
+
+// 上传图片
+const upload_img = async (event) =>{
+  const res = await use_upload_img(event);
+  console.log('--222-logs--res-',res);
+}
 
 watch(() => from.value.page, () => {
   init_table();

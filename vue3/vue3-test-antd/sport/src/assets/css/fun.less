@@ -1,0 +1,217 @@
+@dpr: 1;
+@html_size: 10 * 2;
+
+.fs(@px) {
+  font-size: unit(@px * @dpr / @html_size, rem) !important;
+}
+.w(@px) {
+  width: unit(@px*@dpr/@html_size, rem);
+}
+.h(@px) {
+  height: unit(@px*@dpr/@html_size, rem);
+}
+.lh(@px) {
+  line-height: unit(@px*@dpr/@html_size, rem);
+}
+.mg(@all) {
+  margin:unit(@all*@dpr/@html_size, rem);
+}
+.mg-top-center-bottom(@top, @center, @bottom) {
+  margin: unit(@top*@dpr/@html_size, rem) unit(@center*@dpr/@html_size, rem) unit(@bottom*@dpr/@html_size, rem);
+}
+.mg-top-left(@top_and_bottom, @right_and_left) {
+  margin: unit(@top_and_bottom*@dpr/@html_size, rem) unit(@right_and_left*@dpr/@html_size, rem);
+}
+.m-t(@px) {
+  margin-top: unit(@px*@dpr/@html_size, rem)!important;
+}
+.m-r(@px) {
+  margin-right: unit(@px*@dpr/@html_size, rem)!important;
+}
+.m-b(@px) {
+  margin-bottom: unit(@px*@dpr/@html_size, rem)!important;
+}
+.m-l(@px) {
+  margin-left: unit(@px*@dpr/@html_size, rem)!important;
+}
+.pd(@all) {
+  padding:unit(@all*@dpr/@html_size, rem)!important;
+}
+.pd-top-left (@top_and_bottom, @right_and_left) {
+  padding: unit(@top_and_bottom*@dpr/@html_size, rem) unit(@right_and_left*@dpr/@html_size, rem);
+}
+.p-t(@px) {
+  padding-top: unit(@px*@dpr/@html_size, rem)!important;
+}
+.p-r(@px) {
+  padding-right: unit(@px*@dpr/@html_size, rem)!important;
+}
+.p-b(@px) {
+  padding-bottom: unit(@px*@dpr/@html_size, rem)!important;
+}
+.p-l(@px) {
+  padding-left: unit(@px*@dpr/@html_size, rem)!important;
+}
+.left(@px){
+  left: unit(@px*@dpr/@html_size, rem);
+}
+.right(@px){
+  right: unit(@px*@dpr/@html_size, rem);
+}
+.top(@px){
+  top: unit(@px*@dpr/@html_size, rem);
+}
+.bottom(@px){
+  bottom: unit(@px*@dpr/@html_size, rem);
+}
+.radius(@px) {
+  border-radius: unit(@px*@dpr/@html_size, rem);
+}
+.translate3d(@x, @y, @z) {
+  transform: translate3d(unit(@x*@dpr/@html_size, rem), unit(@y*@dpr/@html_size, rem), unit(@y*@dpr/@html_size, rem));
+}
+.flex() {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  display: flex!important;
+}
+
+.flex-direction() {
+  flex-direction: column;
+}
+
+.flex-fix() {
+  flex: 1;
+  flex-basis: 0.000000001px;
+  width: 1%;
+}
+
+.justify-content(@jc) when (@jc = flex-start) {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+.justify-content(@jc) when (@jc = flex-end) {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.justify-content(@jc) when (@jc = space-between) {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.justify-content(@jc) when not (@jc = flex-start) and not (@jc = flex-end) and not (@jc = space-between) {
+  -webkit-box-pack: @jc;
+  -ms-flex-pack: @jc;
+  -webkit-justify-content: @jc;
+  justify-content: @jc;
+}
+.align-items(@ai) when (@ai = flex-start) {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.align-items(@ai) when (@ai = flex-end) {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+.align-items(@ai) when not (@ai = flex-start) and not (@ai = flex-end) {
+  -webkit-box-align: @ai;
+  -ms-flex-align: @ai;
+  -webkit-align-items: @ai;
+  align-items: @ai;
+}
+
+// 背景图片
+//.bg-image(@url) {
+//  background-image: url(@url + "@2x.png");
+  //@media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+  //background-image: url(@url + "@3x.png");
+//}
+
+// 超出 n 行 省略号显示
+.cles(@n) {
+  display: -webkit-box!important;
+  -webkit-box-orient: vertical!important;
+  -webkit-line-clamp: @n!important;
+  overflow: hidden!important;
+  white-space: normal;
+}
+
+// 不换行
+.no-wrap(){
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+// 扩展点击区域
+.extend-click() {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

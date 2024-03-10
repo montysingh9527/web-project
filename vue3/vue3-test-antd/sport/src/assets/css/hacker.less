@@ -1,0 +1,327 @@
+
+
+
+//滚球投注页 tabs
+.bet-grounder {
+  .el-tabs__active-bar {
+    background: #fff;
+    height: 3px;
+  }
+
+  .el-tabs__item {
+    padding: 0;
+    line-height: 16px;
+    height: 28px;
+  }
+}
+
+.collapse-line {
+  width: 4px;
+  height: 16px;
+  margin-right: 12px;
+  background: #2B2745;
+  border-radius: 0 2px 2px 0;
+}
+
+.select-box {
+  height: 28px;
+  line-height: 28px;
+  border-radius: 14px;
+}
+
+
+
+.el-popover {
+  min-width: auto!important;
+  padding: 0!important;
+}
+
+// 玩法公共样式
+.play-list {
+  height: 52px;
+  padding-left: 4px;
+
+  > li {
+    border-radius: 14px;
+    height: 28px;
+    margin-right: 12px;
+    background: #fff;
+    padding: 8px 20px;
+
+    &.active {
+      background: #2B2745;
+      color: #fff;
+    }
+  }
+}
+
+.home-team {
+  border-left: 4px solid #F13F40;
+  padding-left: 4px;
+  line-height: 12px;
+}
+
+.visiting-team {
+  border-right: 4px solid #3388FF;
+  padding-right: 4px;
+  line-height: 12px;
+}
+
+.van-dialog {
+  border-radius: 8px!important;
+  top: 50%!important;
+}
+
+.line-ratio {
+  height: 4px;
+  background-color: #00BF8B;
+  border-radius: 2px;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 1px;
+    background-color: #fff;
+    left: 50%;
+  }
+}
+
+.tmp2-overlay-content {
+  background: #E4E4E4;
+  border-radius: 1px;
+  max-height: 66vh;
+  >li {
+    padding: 0.6rem;
+    border-bottom: 1px solid #c3c3c3;
+    color: #545454;
+    &.active {
+      background-color: #fff!important;
+      color: #126E51!important;
+    }
+  }
+}
+
+  .van-popover__arrow {
+    display: none!important;
+  }
+
+.van-popover__content {
+  border-radius: 0!important;
+}
+
+/**比赛详情 滚球弹框**/
+.ground-popover {
+
+  .van-cell {
+    padding: 0 !important;
+  }
+
+  .van-collapse-item__content {
+    padding: 0 !important;
+  }
+
+  .ground-match-item {
+    background-color: #e4e4e4;
+    padding: 0.6rem 0.8rem;
+
+    .score {
+      color: #404040;
+    }
+
+    &.active {
+      background-color: #fff !important;
+
+      .score {
+        color: #126E51 !important;
+      }
+    }
+  }
+}
+
+.football-bg {
+  background: url("../../assets/images/tmp2/foolball-bg.png");
+}
+
+.football-pc-bg {
+  background: url("../../assets/images/tmp2/football_bg_pc.png");
+}
+
+.basketball-bg {
+  background: url("../../assets/images/tmp2/basketball-bg.png");
+}
+
+.basketball-pc-bg {
+  background: url("../../assets/images/tmp2/basketball_bg_pc.png");
+}
+
+.volleyball-bg {
+  background: url("../../assets/images/tmp2/volleyball-bg.png");
+}
+
+.volleyball-pc-bg {
+  background: url("../../assets/images/tmp2/volleyball_bg_pc.png");
+}
+
+.tennis-bg {
+  background: url("../../assets/images/tmp2/tennis-bg.png");
+}
+
+.tennis-pc-bg {
+  background: url("../../assets/images/tmp2/tennis_bg_pc.png");
+}
+
+.baseball-bg {
+  background: url("../../assets/images/tmp2/baseball-bg.png");
+}
+
+.baseball-pc-bg {
+  background: url("../../assets/images/tmp2/baseball_bg_pc.png");
+}
+
+.gaming-bg {
+  background: url("../../assets/images/tmp2/gaming-bg.png");
+}
+
+.gaming-pc-bg {
+  background: url("../../assets/images/tmp2/gaming_bg_pc.png");
+}
+
+
+
+.football-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/football.svg");
+  background-size: 100% 100%;
+  &.active {
+    background-image: url("../images/tmp2/football-active.svg")!important;
+  }
+}
+
+.basketball-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-size: 100% 100%;
+  background-image: url("../images/tmp2/basketball.svg");
+  &.active {
+    background-image: url("../images/tmp2/basketball-active.svg")!important;
+  }
+}
+
+.tennis-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/tennis.svg");
+  background-size: 100% 100%;
+  &.active {
+    background-image: url("../images/tmp2/tennis-active.svg")!important;
+  }
+}
+
+
+.volleyball-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/volleyball.svg");
+  background-size: 100% 100%;
+  &.active {
+    background-image: url("../images/tmp2/volleyball-active.svg")!important;
+  }
+}
+
+.baseball-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/baseball.svg");
+  background-size: 100% 100%;
+  &.active {
+    background-image: url("../images/tmp2/baseball-active.svg") !important;
+  }
+}
+
+.gaming-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/gaming.svg");
+  background-size: 100% 100%;
+  &.active {
+    background-image: url("../images/tmp2/gaming-active.svg") !important;
+  }
+}
+
+.border-bottom-line {
+  border-bottom: 1px solid #137A5A;
+}
+.grid-line-right {
+  border-right: 1px solid #5D5D5D;
+}
+
+.circle {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #6E6E6E;
+  &.active {
+    background-color: #26FFBE!important;
+  }
+}
+
+.sx-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/sx.svg");
+  background-size: 100% 100%;
+}
+.qipai-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/qipai.svg");
+  background-size: 100% 100%;
+}
+
+.cp-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/cp.png");
+  background-size: 100% 100%;
+}
+.lhj-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/lhj.svg");
+  background-size: 100% 100%;
+}
+.buyu-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/buyu.svg");
+  background-size: 100% 100%;
+}
+.dianjing-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  background-image: url("../images/tmp2/dianjing.png");
+  background-size: 100% 100%;
+}
+
+//{title: '百家乐', logo: require('../assets/images/tmp2/sx.svg'), id: '32', alias: '真人'},
+//{title: '棋牌', logo: require('../assets/images/tmp2/qipai.svg'), id: '38', alias: '棋牌'},
+//{title: '彩票', logo: require('../assets/images/tmp2/cp.png'), id: 'cp', alias: '彩票'},
+//{title: '老虎机', logo: require('../assets/images/tmp2/lhj.svg'), id: '33', alias: '电子'},
+//{title: '捕鱼', logo: require('../assets/images/tmp2/buyu.svg'), id: '36', alias: '捕鱼'},
+//{title: '电竞', logo: require('../assets/images/tmp2/dianjing.png'), id: '37', alias:'电竞'},

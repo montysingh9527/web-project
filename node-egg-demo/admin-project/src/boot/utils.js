@@ -8,7 +8,7 @@ import { Notify, Dialog } from "quasar";
  * Notify消息提示
  * @param {msg} 消息
  * @param {position} 展示位置
- * @param {color}  negative红色  warning黄色  info
+ * @param {color}  negative红色  warning黄色  info  negative红色
  */
 const showNotify = ({ msg = "成功。", position = "top", color = "teal" }) => {
   Notify.create({

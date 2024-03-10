@@ -1,0 +1,27 @@
+@import 'theme';
+@import './fun';
+//@import './grid';
+@import "./base";
+@import "./hacker";
+@import "./icon";
+@import "./font";
+
+.fs10 {
+  font-size: 12px;
+  transform: scale(0.83);
+  transform-origin: left;
+  //-webkit-transform-origin: left; /* Safari and Chrome */
+  display: inline-block;
+
+  &.origin-left {
+    transform-origin: left!important;
+  }
+
+  &.origin-right {
+    transform-origin: right!important;
+  }
+
+  &.origin-center {
+    transform-origin: center!important;
+  }
+}
