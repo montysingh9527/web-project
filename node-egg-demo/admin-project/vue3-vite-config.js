@@ -33,7 +33,8 @@ export default defineConfig(({ mode, command }) => {
     resolve: {
       alias: {
         src: path.resolve(__dirname, "./src"), //设置别名
-        base_src: path.resolve(__dirname, "./node_modules")
+        node_modules: path.resolve(__dirname, "./node_modules"),
+        base_src: path.resolve(__dirname, "./")
       },
     },
     build: {

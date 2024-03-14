@@ -11,6 +11,7 @@ const path = require("path");
  * @param {Egg.EggAppInfo} appInfo app info
  */
 module.exports = (appInfo) => {
+  // console.log('--appInfo-logs---', path.join(appInfo.baseDir, "static"));
   /**
    * built-in config
    * @type {Egg.EggAppConfig}
@@ -116,14 +117,53 @@ module.exports = (appInfo) => {
   // file模式上传文件 https://eggjs.github.io/zh/guide/upload.html#file-%E6%A8%A1%E5%BC%8F
   config.multipart = {
     mode: "file",
-    whitelist: [".png", ".jpg"],
+    whitelist: [
+      ".png",
+      ".jpg",
+      ".gif",
+      ".bmp",
+      ".jpg",
+      ".png",
+      ".tif",
+      ".gif",
+      ".pcx",
+      ".tga",
+      ".exif",
+      ".fpx",
+      ".svg",
+      ".psd",
+      ".cdr",
+      ".pcd",
+      ".dxf",
+      ".ufo",
+      ".eps",
+      ".ai",
+      ".raw",
+      ".WMF",
+      ".webp",
+      ".avif",
+      ".apng",
+      ".txt",
+      ".doc",
+      ".docx",
+      ".xlsx",
+      ".xls",
+      ".csv",
+      ".zip",
+      ".pdf",
+    ],
   };
 
   config.static = {
+    prefix: "/", // 是静态资源URL的前缀, 如果值是/static,这意味着所有静态资源的URL都以/static开头。
+    // img_prefix: path.join(__dirname, "../app/public/img"),
+    dir: path.join(appInfo.baseDir, "static"), // 将其设置为新的 public 目录路径
     // 图片地址
-    img_prefix: path.join(__dirname, "../app/public/img"),
-    // img_prefix: "public/img",
     // dir: [path.join(__dirname, '../app/public'), path.join(__dirname, '../www')] // 多静态文件入口
+  };
+  config.ImgPath = {
+    img_prefix: "static/public/img",
+    file_prefix: "static/files",
   };
 
   // 日志配置 this.logger 访问到 Egg 内置的 logger 对象,  this.logger.debug('Debug message'); info, warn, error

@@ -71,4 +71,17 @@ module.exports = {
     }
     return str;
   },
+  /**
+   * 上传类型判断
+   * @param {*} type
+   * @returns
+   */
+  imgType(type) {
+    if (type.includes("image")) return "image";
+    if (type.endsWith(".csv")) return "csv";
+    if (type.endsWith(".xlsx")) return "xlsx";
+    if (type.endsWith(".json")) return "json";
+    if (type.endsWith(".txt")) return "txt";
+    return "other";
+  },
 };
