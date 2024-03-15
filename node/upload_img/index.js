@@ -38,9 +38,10 @@ const get_all = async () => {
       } else {
         big_bg = `https://game.gtimg.cn/images/yxzj/img201606/heroimg/50${i}/50${i}-smallskin-1.jpg`;
       }
+      console.log("--logs--路径--", i + is_error, big_bg);
       await get_img(big_bg, i + is_error);
     } catch (error) {
-      console.error("---logs--错误次数-", is_error);
+      console.log("---logs--错误次数-", is_error);
       if (is_error < 3) {
         is_error++;
         i = 1;
