@@ -82,6 +82,7 @@ module.exports = {
     if (type.endsWith(".xlsx")) return "xlsx";
     if (type.endsWith(".json")) return "json";
     if (type.endsWith(".txt")) return "txt";
+    if (type.includes("text")) return "text";
     return "other";
   },
 };
