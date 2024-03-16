@@ -20,14 +20,18 @@
 
 <script setup>
 import { ref, getCurrentInstance } from "vue";
-import { api_login } from "src/api"
-import md5 from "js-md5"
+import { api_login } from "src/api";
+import md5 from "js-md5";
+import { useRouter } from "vue-router";
+import { LocalStorage } from "quasar";
 
 const { ctx, proxy } = getCurrentInstance();  // 获取组件实例
 
 const login_form = ref({});
 
 const isPwd = ref(true);
+
+const Router = useRouter();
 
 /**
  * 登录
@@ -42,7 +46,12 @@ const chang_login = async () => {
   }
 
   const result = await api_login.user_login({ username, password: md5(password) })
-
+  const { code, message, data } = result;
+  if (code == 200) {
+    LocalStorage.set("userInfo", JSON.stringify(data));
+    Router.push({ name: "user" });
+    proxy.$showNotify({ message });
+  }
   console.log('---logs-result--', result);
 
   console.log("---logs--登录-", login_form.value);

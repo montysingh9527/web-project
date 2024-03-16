@@ -10,8 +10,8 @@ const routers = [
     name: "login",
     component: () => import("src/page/login/index.vue"),
     meta: {
-      title: "登录"
-    }
+      title: "登录",
+    },
   },
   {
     path: "/",
@@ -19,22 +19,28 @@ const routers = [
     component: () => import("src/layout/layout.vue"),
     children: [
       {
-        path: "/home",
+        path: "home",
         name: "home",
         component: () => import("src/page/home/index.vue"),
+        meta: {
+          title: "首页",
+        },
       },
       {
-        path: "/user",
+        path: "user",
         name: "user",
         component: () => import("src/page/user/index.vue"),
         meta: {
-          title: "用户管理"
-        }
+          title: "用户管理",
+        },
       },
       {
-        path: "/about",
+        path: "about",
         name: "about",
         component: () => import("src/page/about/index.vue"),
+        meta: {
+          title: "关于我们",
+        },
       },
     ],
   },

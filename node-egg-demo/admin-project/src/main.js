@@ -7,7 +7,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "src/router";
 
-import { Quasar, Notify, Dialog } from "quasar"; // 导入 Quasar
+import { Quasar, Notify, Dialog, LocalStorage, SessionStorage } from "quasar"; // 导入 Quasar
 import "quasar/dist/quasar.css"; // 导入 Quasar 样式
 // import '@quasar/extras/fontawesome-v6/fontawesome-v6.css'
 import "@quasar/extras/fontawesome-v5/fontawesome-v5.css";  // 导入字体图标
@@ -19,7 +19,7 @@ import { setupUtils }  from "src/boot/utils.js"
 const app = createApp(App);
 app.use(router);
 app.use(Quasar, {
-  plugins: [Notify, Dialog],
+  plugins: [Notify, Dialog, LocalStorage, SessionStorage],
   // iconSet: iconSet,
   // extras: [
   //   'material-icons',

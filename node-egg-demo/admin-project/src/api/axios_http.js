@@ -4,7 +4,7 @@
  * @FilePath: \web-project\node-egg-demo\admin-project\src\api\axios_http.js
  */
 import axios from "axios";
-import { Notify, useQuasar } from "quasar";
+import { Notify, useQuasar, LocalStorage } from "quasar";
 console.log("====import====", import.meta.env, "--BASE_URL--", BASE_URL);
 const http = axios.create({
   //   baseURL: import.meta.env.VITE_APP_PROXY_HOST,
@@ -27,9 +27,13 @@ http.interceptors.request.use(
         config.headers["Content-Type"] = "application/json; charset=utf-8";
         break;
     }
-    console.log("--发起请求之前的拦截器-logs---", config);
-    config.headers["token"] = "xxxx";
-
+    const userInfo = JSON.parse(LocalStorage.getItem("userInfo"));
+    // 获取用户token
+    if (userInfo) {
+      config.headers["Authorization"] = `Bearer ${userInfo.token}`;
+      config.headers["name"] = userInfo.username;
+    }
+    // console.log("--发起请求之前的拦截器-logs---", userInfo.token, config);
     return config;
   },
   (error) => Promise.reject(error)

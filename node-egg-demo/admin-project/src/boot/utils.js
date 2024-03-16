@@ -6,13 +6,13 @@ import { Notify, Dialog } from "quasar";
 
 /**
  * Notify消息提示
- * @param {msg} 消息
+ * @param {message} 消息
  * @param {position} 展示位置
  * @param {color}  negative红色  warning黄色  info  negative红色
  */
-const showNotify = ({ msg = "成功。", position = "top", color = "teal" }) => {
+const showNotify = ({ message = "成功。", position = "top", color = "teal" }) => {
   Notify.create({
-    message: msg,
+    message,
     position,
     color,
     timeout: 3000,
@@ -26,8 +26,8 @@ const showNotify = ({ msg = "成功。", position = "top", color = "teal" }) => 
  * @param {content} 内容
  * @returns
  */
-const showDialog = ({ title = "删除", msg = "确认删除吗 ?", content = "" }) => {
-  const innerMsg = `<div class="text-body2">${content}</div> <div class="text-red q-mt-md text-subtitle1">${msg}</div>`;
+const showDialog = ({ title = "删除", message = "确认删除吗 ?", content = "" }) => {
+  const innerMsg = `<div class="text-body2">${content}</div> <div class="text-red q-mt-md text-subtitle1">${message}</div>`;
   // 创建Dialog实例
   const initDialog = Dialog.create({
     title,

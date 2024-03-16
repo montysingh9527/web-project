@@ -21,8 +21,9 @@ module.exports = (appInfo) => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + "_1703658520164_5722";
 
-  // add your middleware config here
+  // 全局使用中间件 , 也可以在单个路由中使用 
   config.middleware = [
+    "jwtToken", // jwt校验
     "errorHandler", // 全局错误处理
   ];
 
@@ -98,8 +99,10 @@ module.exports = (appInfo) => {
   };
 
   config.jwt = {
-    secret: "egg-api-jwt",
+    secret: "egg-api-jwt-admin-v1",
     expiresIn: 60 * 60 * 24, // 1天过期
+    enable: true, // 开启
+    ignore: ["/admin/login", "/web/login"], // 不校验的请求
   };
 
   // cors跨域问题 #安全威胁csrf的防范
@@ -108,7 +111,7 @@ module.exports = (appInfo) => {
       enable: false,
       ignoreJSON: true,
     },
-    domainWhiteList: ["*"],
+    domainWhiteList: ["*"], // 允许访问接口的白名单  "http://127.0.0.1:8080"
   };
   config.cors = {
     origin: "*",

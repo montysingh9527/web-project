@@ -31,9 +31,9 @@ class LoginController extends Controller {
     };
     this.logger.warn("用户:", username, "token为:", token);
     if (data) {
-      ctx.api_success({ msg: "登录成功", data });
+      ctx.api_success({ msg: "登录成功。", data });
     } else {
-      ctx.api_error({ msg: "登录失败", data });
+      ctx.api_error({ msg: "登录失败 !", data });
     }
   }
 }

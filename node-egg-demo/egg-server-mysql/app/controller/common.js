@@ -17,13 +17,13 @@ class HomeController extends Controller {
     const { ctx } = this;
     const filesData = ctx.request.files;
     if (!filesData.length) {
-      return ctx.api_error({ msg: "上传错误, 请选择." });
+      return ctx.api_error({ msg: "上传错误, 请选择。" });
     }
     let data = {};
     for (let item of filesData) {
       data = await this.service.upload.uploadImg(item);
     }
-    ctx.api_success({ data, msg: "图片上传成功." });
+    ctx.api_success({ data, msg: "图片上传成功。" });
   }
 }
 
