@@ -180,6 +180,21 @@ module.exports = (appInfo) => {
     errorLogName: "common-error.log",
   };
 
+  // 修改定时任务目录
+  // config.schedule = {
+  //   directory: [
+  //     path.join(__dirname, '../app/otherSchedule'),
+  //   ],
+  // };
+
+  // 修改定时任务-日志目录
+  // config.customLogger = {
+  //   scheduleLogger: {
+  //     // consoleLevel: 'NONE',
+  //     // file: path.join(appInfo.root, 'logs', appInfo.name, 'egg-schedule.log'),
+  //   },
+  // };
+
   return {
     ...config,
   };
