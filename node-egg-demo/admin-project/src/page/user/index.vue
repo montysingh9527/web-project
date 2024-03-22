@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description: 用户管理
  * @Date: 2024-01-15 22:17:57
  * @FilePath: \web-project\node-egg-demo\admin-project\src\page\user\index.vue
 -->
@@ -7,14 +7,13 @@
   <div class="user-wrap">
     <q-card>
       <q-card-section>
-        <div>用户管理</div>
         <q-input @click="upload_img($event)" label="上传图片"></q-input>
         <q-input v-model="from.username" label="用户名" placeholder="请输入用户名..." outlined></q-input>
         <q-input v-model="from.password" class="q-mt-md" label="密码" placeholder="请输入密码..." outlined></q-input>
         <q-card-actions vertical align="right">
           <div>
-            <q-btn @click="chang_create" class="" label="创建用户" color="primary"></q-btn>
-            <q-btn @click="random_pwd" class="q-ml-md" label="随机密码" color="purple"></q-btn>
+            <q-btn @click="chang_create" class="" label="创建用户" color="primary" dense></q-btn>
+            <q-btn @click="random_pwd" class="q-ml-md" label="随机密码" color="purple" dense></q-btn>
           </div>
         </q-card-actions>
         <div class="">

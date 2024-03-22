@@ -5,12 +5,11 @@
 -->
 <template>
   <div class="app-container">
-    <Layout></Layout>
+    <router-view class="app-router-view" />
   </div>
 </template>
 
 <script setup>
-import Layout from "src/layout/layout.vue";
 </script>
 
 <style scoped lang="scss">

@@ -8,7 +8,7 @@
     <div class="login-card-box shadow-14">
       <div class="text-center text-h4">登录</div>
       <q-input v-model.trim="login_form.username" label="账号" class="q-my-md" outlined />
-      <q-input v-model.trim="login_form.password" label="密码" :type="isPwd ? 'password' : 'text'" outlined>
+      <q-input @keyup.enter="chang_login" v-model.trim="login_form.password" label="密码" :type="isPwd ? 'password' : 'text'" outlined>
         <template v-slot:append>
           <q-icon @click="isPwd = !isPwd" :name="isPwd ? 'visibility_off' : 'visibility'" class="cursor-pointer" />
         </template>
@@ -44,18 +44,15 @@ const chang_login = async () => {
     proxy.$showNotify({ msg: "账号密码不能为空。", color: "negative" })
     return;
   }
-
   const result = await api_login.user_login({ username, password: md5(password) })
   const { code, message, data } = result;
   if (code == 200) {
     LocalStorage.set("userInfo", JSON.stringify(data));
-    Router.push({ name: "user" });
+    Router.push({ name: "user_account" });
+    proxy.$showNotify({ message });
+  } else {
     proxy.$showNotify({ message });
   }
-  console.log('---logs-result--', result);
-
-  console.log("---logs--登录-", login_form.value);
-
 };
 </script>
 

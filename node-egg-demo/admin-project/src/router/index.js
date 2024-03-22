@@ -10,4 +10,11 @@ const router = createRouter({
   history: createWebHistory("#"),
   routes: routers,
 });
+
+router.beforeEach((to, from, next)=>{
+  // console.log('---logs--to-',to, from);
+  document.title = to.meta.title;
+  next();
+})
+
 export default router;
