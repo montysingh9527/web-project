@@ -23,7 +23,14 @@ class UserController extends Controller {
 
     const data = await ctx.sqlModel.User.findAndCountAll(query);
     if (data) {
-      ctx.api_success({ data: { list: data.rows, total: data.count, size: Number(size), page: Number(page) } });
+      ctx.api_success({
+        data: {
+          list: data.rows,
+          total: data.count,
+          size: Number(size),
+          page: Number(page),
+        },
+      });
     } else {
       ctx.api_error({ data });
     }
@@ -66,17 +73,16 @@ class UserController extends Controller {
     ctx.body = user;
   }
 
+  // 删除
   async delete() {
     const ctx = this.ctx;
-    const id = ctx.toInt(ctx.params.id);
+    const { id } = ctx.request.body;
     const user = await ctx.sqlModel.User.findByPk(id);
-    if (!user) {
-      ctx.status = 404;
-      return;
+    if (user) {
+      ctx.api_success({ msg: "删除用户成功。" });
+    } else {
+      ctx.api_error({ msg: "删除用户失败 !" });
     }
-
-    await user.destroy();
-    ctx.status = 200;
   }
 }
 

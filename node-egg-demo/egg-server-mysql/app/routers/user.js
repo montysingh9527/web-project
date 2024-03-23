@@ -13,9 +13,9 @@ module.exports = (app) => {
   // 查询
   router.get(adminPrefix + "/user/list", controller.user.findall);
   // 修改
-  router.get(adminPrefix + "/user/update", controller.user.update);
+  router.post(adminPrefix + "/user/update", controller.user.update);
   // 删除
-  router.get(adminPrefix + "/user/delete", controller.user.delete);
+  router.post(adminPrefix + "/user/delete", controller.user.delete);
 
   /** 一. 单路由插入jwt验证 */
   //   const jwt = app.middleware.jwt({ app });

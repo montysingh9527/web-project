@@ -17,13 +17,26 @@
           <!-- <q-btn round dense flat color="white" :icon="$q.fullscreen?.isActive ? 'fullscreen_exit' : 'fullscreen'"
             @click="$q.fullscreen?.toggle()" v-if="$q.screen.gt.sm">
           </q-btn> -->
-          <div>{{ timeWelcome() }}</div>
+          <div class="row no-wrap">
+            <div>{{ timeWelcome() }}。</div>
+            <div>{{ useUser.userInfo.username }}</div>
+            <q-avatar>
+              <img :src="user_logo" alt="">
+              <q-menu class="q-pa-xs">
+                <div class="q-gutter-xs" style="width: 90px;">
+                  <q-btn icon="person_pin" color="primary" label="查看" push size="sm" v-close-popup
+                    @click="showProfile" />
+                  <q-btn icon="logout" color="primary" label="退出" push size="sm" v-close-popup @click="logout" />
+                </div>
+              </q-menu>
+            </q-avatar>
+          </div>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
     <q-drawer v-model="leftDrawerOpen" class="bg-grey-3" :breakpoint="500" :width="200" elevated bordered show-if-above>
       <q-scroll-area class="fit">
-        <leftMenu></leftMenu>
+        <leftMenu :menu_data="menu_data" />
       </q-scroll-area>
     </q-drawer>
     <q-page-container class="page-container">
@@ -35,8 +48,21 @@
 <script setup>
 import leftMenu from "src/layout/left_menu.vue";
 import { timeWelcome } from "src/utils/welcome.js"
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { menu_data } from "src/layout/menu_config.js";
+import useUserInfo from "src/store/user.js"
+
+const useUser = useUserInfo();
+
 const leftDrawerOpen = ref(false)
+
+// 用户logo
+const user_logo = computed(() => BASE_URL + useUser?.userInfo.avatar)
+
+// 退出登录
+const logout = () => {
+
+}
 
 </script>
 

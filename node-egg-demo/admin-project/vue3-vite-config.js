@@ -9,8 +9,9 @@ import path from "path";
 import pkg from './package.json'
 const CWD = process.cwd()
 const __APP_INFO__ = {
-	pkg,
-	lastBuildTime: new Date().getTime()
+	// pkg,
+	lastBuildTime: new Date().getTime(),
+  buildTime: new Date().toLocaleString(),
 }
 console.log("--config--", path.resolve(__dirname, "./src"), "---", process.cwd());
 
@@ -27,7 +28,7 @@ export default defineConfig(({ mode, command }) => {
 		// 挂载到Window对象上
 		define: {
 			BASE_URL: JSON.stringify(devpro), // 设置请求url, 在.js中直接使用 BASE_URL
-			__APP_INFO__: JSON.stringify(__APP_INFO__)
+			APP_INFO: JSON.stringify(__APP_INFO__)
 		},
     plugins: [vue()],
     resolve: {

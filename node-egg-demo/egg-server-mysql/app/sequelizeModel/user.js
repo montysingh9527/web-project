@@ -42,7 +42,7 @@ module.exports = (app) => {
     avatar: {
       allowNull: true,
       type: STRING,
-      defaultValue: "../public/img/user.jpg",
+      defaultValue: "/public/image/user.png",
       comment: "头像",
     },
     email: {

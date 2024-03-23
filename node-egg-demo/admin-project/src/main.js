@@ -6,18 +6,24 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "src/router";
+import { createPinia } from "pinia";
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate"; // pinia持久化存储
 
 import { Quasar, Notify, Dialog, LocalStorage, SessionStorage } from "quasar"; // 导入 Quasar
 import "quasar/dist/quasar.css"; // 导入 Quasar 样式
 // import '@quasar/extras/fontawesome-v6/fontawesome-v6.css'
-import "@quasar/extras/fontawesome-v5/fontawesome-v5.css";  // 导入字体图标
-import "@quasar/extras/material-icons/material-icons.css";  // 导入字体图标
-// import "base_src/quasar/icon-set/fontawesome-v5.js"  
+import "@quasar/extras/fontawesome-v5/fontawesome-v5.css"; // 导入字体图标
+import "@quasar/extras/material-icons/material-icons.css"; // 导入字体图标
+// import "base_src/quasar/icon-set/fontawesome-v5.js"
 
-import { setupUtils }  from "src/boot/utils.js"
+import { setupUtils } from "src/boot/utils.js";
+// 实例化 pinia 容器
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
 
 const app = createApp(App);
 app.use(router);
+app.use(pinia);
 app.use(Quasar, {
   plugins: [Notify, Dialog, LocalStorage, SessionStorage],
   // iconSet: iconSet,
@@ -48,6 +54,6 @@ function setupPlugins() {
   // setupGlobalMethods(app);
 }
 
-setupPlugins()
+setupPlugins();
 
 app.mount("#vite-app");

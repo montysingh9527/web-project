@@ -10,15 +10,15 @@ export const menu_data = [
     icon: "inbox", // 图标 feedback help star send drafts outbox trash spam settings
     children: [
       {
-        title: "用户账号",
-        path: "user_account",
-        key: "user_account",
-        father_key: "user",
-      },
-      {
         title: "管理员账号",
         path: "admin_account",
         key: "admin_account",
+        father_key: "user",
+      },
+      {
+        title: "用户账号",
+        path: "user_account",
+        key: "user_account",
         father_key: "user",
       },
     ],

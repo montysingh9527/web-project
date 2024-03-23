@@ -37,10 +37,17 @@
 <script setup>
 import { useRoute, useRouter } from "vue-router"
 import { computed } from "vue"
-import { menu_data, opened_father_key } from "src/layout/menu_config.js";
+import { opened_father_key } from "src/layout/menu_config.js";
 
 const Router = useRoute();
 const Routers = useRouter();
+
+const props = defineProps({
+    menu_data: {
+        type: Array,
+        default: () => []
+    }
+})
 
 // 当前路由
 const route_name = computed(() => Router.name)
