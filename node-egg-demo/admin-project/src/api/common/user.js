@@ -11,7 +11,7 @@ export const create_user = (params) => {
 
 // 获取列表
 export const find_list = (params) => {
-  return axios.get("/user/list", { params: { ...params } });
+  return axios.get("/user/list", { params });
 };
 
 // 更新

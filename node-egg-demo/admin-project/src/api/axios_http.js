@@ -5,7 +5,11 @@
  */
 import axios from "axios";
 import { Notify, useQuasar, LocalStorage } from "quasar";
+import useUserInfo from "src/store/user.js";
+const useUser = useUserInfo();
+
 console.log("====import====", import.meta.env, "--BASE_URL--", BASE_URL);
+
 const http = axios.create({
   //   baseURL: import.meta.env.VITE_APP_PROXY_HOST,
   // baseURL: "http://192.168.3.14:10003/",
@@ -27,13 +31,12 @@ http.interceptors.request.use(
         config.headers["Content-Type"] = "application/json; charset=utf-8";
         break;
     }
-    const userInfo = JSON.parse(LocalStorage.getItem("userInfo"));
+    const userToken = useUser.userToken
     // 获取用户token
-    if (userInfo) {
-      config.headers["Authorization"] = `Bearer ${userInfo.token}`;
-      config.headers["name"] = userInfo.username;
+    if (userToken?.token) {
+      config.headers["Authorization"] = `Bearer ${userToken.token}`;
+      config.headers["name"] = userToken.username;
     }
-    // console.log("--发起请求之前的拦截器-logs---", userInfo.token, config);
     return config;
   },
   (error) => Promise.reject(error)

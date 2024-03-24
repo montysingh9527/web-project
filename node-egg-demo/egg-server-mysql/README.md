@@ -130,7 +130,7 @@ STRING: 字符串类型，用于存储文本数据。
 INTEGER: 整数类型。
 DATE: 日期类型。
 BOOLEAN: 布尔类型。
-ARRAY: 数组类型，用于存储数组。 DataTypes.ARRAY(DataTypes.STRING)
+ARRAY: 数组类型，用于存储数组。 type: DataTypes.ARRAY(DataTypes.STRING)
 ENUM: 枚举类型，用于定义可能的值集合。  DataTypes.ENUM('value1', 'value2', ...)
 
 UUID: UUID 类型。
@@ -163,4 +163,57 @@ references 和 referencesKey: 用于定义外键关系。 // references: { model
 onDelete 和 onUpdate: 在设置外键时，用于指定删除和更新关联行的动作。// onDelete: 'CASCADE', onUpdate: 'CASCADE'
 field: 指定字段在数据库中的实际名称，可以用于自定义字段名。  // field: 'custom_field_name'
 
+```
+
+###### 操作符
+```
+$and: {a: 5}           // AND (a = 5)
+$or: [{a: 5}, {a: 6}]  // (a = 5 OR a = 6)
+$gt: 6,                // > 6
+$gte: 6,               // >= 6
+$lt: 10,               // < 10
+$lte: 10,              // <= 10
+$ne: 20,               // != 20
+$eq: 3,                // = 3
+$not: true,            // IS NOT TRUE
+$between: [6, 10],     // 在 6 - 10 之间
+$notBetween: [11, 15], // 不再 11 - 15 之间
+$in: [1, 2],           // 在数组 [1, 2] 里面
+$notIn: [1, 2],        // 不在数组 [1, 2] 里面
+$like: '%hat',         // LIKE '%hat'
+$notLike: '%hat'       // NOT LIKE '%hat'
+$like: { $any: ['cat', 'hat']}
+
+
+Post.findAll({
+  where: {
+    authorId: {
+        $in: [3,4,5]
+    }
+  }
+});
+
+---- 900 < rank < 1000
+rank: {
+    $or: {
+      $lt: 1000,
+      $gt: 900
+    }
+}
+
+--------- $or
+{
+  $or: [
+    {
+      title: {
+        $like: 'Boat%'
+      }
+    },
+    {
+      description: {
+        $like: '%boat%'
+      }
+    }
+  ]
+}
 ```

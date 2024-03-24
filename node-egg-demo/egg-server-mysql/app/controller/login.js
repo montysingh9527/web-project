@@ -41,12 +41,11 @@ class LoginController extends Controller {
       // 生成token
       const token = await this.service.jwt.setToken(userToken);
       const data = {
-        token,
+        info: { token, username: user.username},
         user,
       };
       this.logger.warn("用户:", username, "token为:", token);
       if (data) {
-        console.log("--登录成功--", token, "----user---", user);
         ctx.api_success({ msg: "登录成功。", data });
       } else {
         ctx.api_error({ msg: "登录失败 !", data });

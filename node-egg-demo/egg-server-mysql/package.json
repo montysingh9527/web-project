@@ -8,7 +8,7 @@
   },
   "scripts": {
     "migrate": "npx sequelize db:migrate && echo \"初始化数据库迁移\"",
-    "generate": "npx sequelize migration:generate --name=create-users && echo \"创建表数据\"",
+    "generate": "npx sequelize migration:generate --name=create-admin && echo \"创建表数据\"",
     "start": "egg-scripts start --daemon --title=egg-server-egg-server && echo \"生产运行项目\"",
     "stop": "egg-scripts stop --title=egg-server-egg-server && echo \"停止项目\"",
     "dev": "egg-bin dev && echo \"dev启动项目\"",

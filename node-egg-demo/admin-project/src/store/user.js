@@ -5,28 +5,28 @@
  */
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { LocalStorage } from "quasar";
 export default defineStore(
   "user",
   () => {
-    const userInfo = ref(
-      JSON.parse(LocalStorage.getItem("userInfo"))?.user || null
-    );
-	const userToken = ref(null)
+    // 用户信息
+    const userInfo = ref(null);
+    // 用户token
+    const userToken = ref(null);
 
-	// 设置用户信息
+    // 设置用户信息
     const set_userInfo = (userData) => {
-		console.log('--设置用户信息-logs-userData--',userData);
       userInfo.value = userData.user;
-	  userToken.value = userData.token;
+      userToken.value = userData.info;
     };
 
-	// 删除用户信息
+    // 删除用户信息
     const del_userInfo = () => {
       userInfo.value = null;
+      userToken.value = null;
     };
     return {
       userInfo,
+      userToken,
       set_userInfo,
       del_userInfo,
     };

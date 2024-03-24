@@ -18,4 +18,6 @@ module.exports = (app) => {
   // require("./routers/roles")(app);
   // 用户
   require("./routers/user")(app);
+  // 后台admin管理员
+  require("./routers/admin")(app);
 };

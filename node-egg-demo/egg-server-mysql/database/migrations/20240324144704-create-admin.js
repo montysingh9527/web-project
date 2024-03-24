@@ -1,23 +1,18 @@
-/*
- * @Description: 用户
- * @Date: 2024-03-07 22:06:41
- * @FilePath: \web-project\node-egg-demo\egg-server-mysql\database\migrations\init-users.js
- */
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   // 创建表
   async up (queryInterface, Sequelize) {
-    console.log("--Sequelize-users-");
-    const { INTEGER, STRING, DATE, DataTypes } = Sequelize;
+    console.log("--Sequelize-admin-");
+    const { STRING, INTEGER, ARRAY, DATE, BOOLEAN, TEXT, DataTypes } = Sequelize;
     /**
      * Add altering commands here.
      *
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await queryInterface.createTable("users", {
+    await queryInterface.createTable("admin", {
       id: {
         type: INTEGER, // 类型
         allowNull: false, // 不允许为空 null
@@ -26,49 +21,41 @@ module.exports = {
         comment: "唯一值id", // 添加注释，描述字段的用途
       },
       username: {
-        type: STRING, // 字符串
         allowNull: false,
         unique: true,
+        type: STRING(20),
         comment: "用户名",
         validate: {
           len: [6, 30], // 验证器 字符串长度必须在 6 到 30 之间
         },
-      },
-      nickname: {
-        type: STRING,
-        defaultValue: null,
-        comment: "昵称",
-      },
-      avatar: {
-        allowNull: true,
-        type: STRING,
-        defaultValue: "/public/image/user.png",
-        comment: "头像",
-      },
-      sex: {
-        type: STRING,
-        defaultValue: "1",
-        comment: "性别（0代表女 1代表男）",
       },
       password: {
         allowNull: false,
         type: STRING,
         comment: "密码",
       },
+      isSuper: {
+        type: STRING,
+        defaultValue: "1",
+        comment: "超级管理员(1超级管理员 2普通会员)",
+      },
+      roleId: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        // defaultValue: [],
+        comment: "角色ID",
+      },
       email: {
-        allowNull: true,
         type: STRING,
         comment: "邮箱",
       },
+      avatar: {
+        type: STRING,
+        defaultValue: "/public/image/user.png",
+        comment: "头像",
+      },
       mobile: {
-        allowNull: true,
         type: STRING,
         comment: "手机号",
-      },
-      isDelete: {
-        type: STRING,
-        defaultValue: "0",
-        comment: "删除标志（0代表存在 1代表删除）",
       },
       status: {
         type: STRING,
@@ -80,24 +67,20 @@ module.exports = {
         comment: "备注",
       },
       createdAt: {
-        allowNull: true,
         type: DATE,
         comment: "创建时间",
         defaultValue: DataTypes.NOW,
       },
       createdBy: {
-        allowNull: true,
         type: STRING,
         comment: "创建者",
       },
       updatedAt: {
-        allowNull: true,
         type: DATE,
         comment: "更新时间",
         defaultValue: DataTypes.NOW,
       },
       updatedBy: {
-        allowNull: true,
         type: STRING,
         comment: "更新者",
       },
@@ -131,5 +114,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
+    await queryInterface.dropTable('admin');
   }
 };

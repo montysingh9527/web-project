@@ -23,7 +23,6 @@ import { ref, getCurrentInstance } from "vue";
 import { api_login } from "src/api";
 import md5 from "js-md5";
 import { useRouter } from "vue-router";
-// import { LocalStorage } from "quasar";
 import useUserInfo from "src/store/user.js"
 
 const { ctx, proxy } = getCurrentInstance();  // 获取组件实例
@@ -49,7 +48,6 @@ const chang_login = async () => {
   const result = await api_login.user_login({ username, password: md5(password) })
   const { code, message, data } = result;
   if (code == 200) {
-    // LocalStorage.set("userInfo", JSON.stringify(data));
     useUser.set_userInfo(data)
     Router.push({ name: "admin_account" });
     proxy.$showNotify({ message });

@@ -13,4 +13,7 @@ import * as api_login from "src/api/common/login.js";
 /** 用户 */
 import * as api_user from "src/api/common/user.js";
 
-export { api_login, api_user, api_upload };
+/** 管理员 */
+import * as api_admin from "src/api/common/admin.js";
+
+export { api_login, api_user, api_upload, api_admin };
