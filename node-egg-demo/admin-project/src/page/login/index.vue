@@ -5,6 +5,7 @@
 -->
 <template>
   <div class="login-card">
+    <div class="login-card-theme"><theme /></div>
     <div class="login-card-box shadow-14">
       <div class="text-center text-h4">登录</div>
       <q-input v-model.trim="login_form.username" label="账号" class="q-my-md" outlined />
@@ -24,6 +25,7 @@ import { api_login } from "src/api";
 import md5 from "js-md5";
 import { useRouter } from "vue-router";
 import useUserInfo from "src/store/user.js"
+import theme from "src/components/theme.vue";
 
 const { ctx, proxy } = getCurrentInstance();  // 获取组件实例
 
@@ -42,7 +44,7 @@ const chang_login = async () => {
   // const isdel = await proxy.$showDialog({})
   // console.log('---logs-isdel--',isdel);
   if (!username || !password) {
-    proxy.$showNotify({ msg: "账号密码不能为空。", color: "negative" })
+    proxy.$showNotify({ message: "账号或密码不能为空。", color: "negative" })
     return;
   }
   const result = await api_login.user_login({ username, password: md5(password) })
@@ -62,14 +64,20 @@ const chang_login = async () => {
   width: 100vw;
   height: 100vh;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(#ff8f8f, #eafe93);
+  background-image: var(--q-gb-bg-lg-34);
 
   &-box {
     width: 300px;
     padding: 30px;
     text-align: center;
+  }
+  &-theme {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 </style>
