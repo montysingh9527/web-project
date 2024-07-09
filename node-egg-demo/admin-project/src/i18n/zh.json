@@ -1,0 +1,8 @@
+{
+  "login": "登录",
+  "username": "账号",
+  "pwd": "密码",
+  "tips": {
+    "userempty": "账号或密码不能为空。"
+  }
+}

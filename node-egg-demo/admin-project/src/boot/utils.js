@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Date: 2024-02-27 23:49:20
+ * @FilePath: \web-project\node-egg-demo\admin-project\src\boot\utils.js
+ */
+import { i18n, i18n_t } from "src/i18n/index.js";
+
 /**
  * 常用全局方法
  */
@@ -61,4 +68,7 @@ const showDialog = ({ title = "删除", message = "确认删除吗 ?", content =
 export const setupUtils = (app) => {
   app.config.globalProperties.$showNotify = showNotify;
   app.config.globalProperties.$showDialog = showDialog;
+  app.config.globalProperties.$i18n = i18n;
+  app.config.globalProperties.$i18n_t = i18n_t;
+  window.$i18n_t = i18n_t;
 };

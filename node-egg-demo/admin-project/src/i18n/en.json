@@ -1,0 +1,8 @@
+{
+  "login": "Login",
+  "username": "UserName",
+  "pwd": "Password",
+  "tips": {
+    "userempty": "UserName Password cannot be Empty."
+  }
+}

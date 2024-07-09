@@ -5,7 +5,7 @@
 -->
 <template>
     <div class="theme-cont cursor-pointer">
-        <q-icon @click="change_theme" :name="is_day == 'day' ? 'light_mode' : 'nightlight'" size="lg" />
+        <q-icon @click="change_theme" :name="is_day == 'day' ? 'light_mode' : 'nightlight'" size="md" />
     </div>
 </template>
 

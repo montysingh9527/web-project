@@ -8,7 +8,7 @@ import App from "./App.vue";
 import router from "src/router";
 import { createPinia } from "pinia";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate"; // pinia持久化存储
-
+import { i18n } from "src/i18n/index.js";
 import { Quasar, Notify, Dialog, LocalStorage, SessionStorage } from "quasar"; // 导入 Quasar
 import "quasar/dist/quasar.css"; // 导入 Quasar 样式
 // import '@quasar/extras/fontawesome-v6/fontawesome-v6.css'
@@ -24,6 +24,7 @@ pinia.use(piniaPluginPersistedstate);
 const app = createApp(App);
 app.use(router);
 app.use(pinia);
+app.use(i18n);
 app.use(Quasar, {
   plugins: [Notify, Dialog, LocalStorage, SessionStorage],
   // iconSet: iconSet,
