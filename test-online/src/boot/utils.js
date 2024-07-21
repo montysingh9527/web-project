@@ -1,4 +1,35 @@
 /**
+ * 生成随机颜色
+ * @returns #74a169
+ */
+function randomColor() {
+  return "#" + Math.random().toString(16).substring(2, 8).padEnd(6, "0");
+}
+
+/**
+ * 生成随机长度字符串
+ * @param {*} len 10
+ * @returns 2h55qzlyko
+ */
+function randomString(len) {
+  return len <= 11
+    ? Math.random()
+        .toString(36)
+        .substring(2, 2 + len)
+        .padEnd(len, "0")
+    : randomString(11) + randomString(len - 11);
+}
+
+/**
+ * 数字金额格式化 ,
+ * @param {*} str formatNumber("1000000")
+ * @returns 1,000,000
+ */
+function formatNumber(str) {
+  return str.replace(/\B(?=(\d{3})+$)/g, ",");
+}
+
+/**
  * 判断是否是PC端
  * @returns {Boolean}
  */
