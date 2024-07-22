@@ -1,4 +1,18 @@
 /**
+ * 一秒钟内生成的数据, 时间段生成多少数据
+ */
+function random_date() {
+  const startTime = Date.now();
+  const duration = 1000; // 1秒
+  const array = [];
+  let idx = 0;
+  while (Date.now() - startTime < duration) {
+    array.push(idx++);
+  }
+  return array;
+}
+
+/**
  * 生成随机颜色
  * @returns #74a169
  */
@@ -472,6 +486,40 @@ export function subtraction(arg1, arg2) {
   //动态控制精度长度
   n = r1 >= r2 ? r1 : r2;
   return ((arg1 * m - arg2 * m) / m).toFixed(n);
+}
+
+/**
+ * 输出当前时间 带毫秒
+ * @returns 2024-07-22 15:30:45.123
+ */
+function get_isoString() {
+  const now = new Date();
+  const isoString = now.toISOString().replace("T", " ").slice(0, -1);
+  return isoString;
+}
+
+/**
+ * 时间格式化 输出当前时间
+ * @returns 2024-07-22 15:30:45.123
+ */
+function getCurrentTimeWithMilliseconds() {
+  const now = new Date();
+  // 年
+  const year = now.getFullYear();
+  // 月
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  // 天
+  const day = String(now.getDate()).padStart(2, "0");
+  // 小时
+  const hours = String(now.getHours()).padStart(2, "0");
+  // 分钟
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  // 秒
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+  // 毫秒
+  const milliseconds = String(now.getMilliseconds()).padStart(3, "0");
+
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}.${milliseconds}`;
 }
 
 /**
