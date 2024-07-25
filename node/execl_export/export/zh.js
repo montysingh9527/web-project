@@ -1,0 +1,13 @@
+module.exports = {
+  login: "登录",
+  register: "注册",
+  home: ["首页", "关于我们"],
+  user: {
+    username: "用户名",
+    password: "密码",
+    user_map: {
+      alipay: "支付宝",
+      wechat: "微信",
+    },
+  },
+};
