@@ -124,7 +124,7 @@ function merge_json_data(datas) {
   }
 }
 
-// 第一次处理  导入数据
+// 第一次处理  导入数据  第一个_前作为键值
 comput_json({ zh_file_data, en_file_data });
 // 第二次, 合并数据
 merge_json_data(comput_json_data);
