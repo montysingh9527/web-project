@@ -21,3 +21,11 @@ job：脚本
     test.js             // 无用文件（用于插入script脚本测试）
 
 ```
+
+
+##### scss生成css
+```
+npx sass --watch test.scss test.css
+test.scss 是要处理的scss
+test.css  是生成的css文件
+```
