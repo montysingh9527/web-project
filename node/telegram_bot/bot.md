@@ -7,8 +7,17 @@
 - 1.安装插件 `node-telegram-bot-api`
 - 2.插件使用
 ```
+const Agent = require('socks5-https-client/lib/Agent');  // 设置代理
 // 创建bot
-const bot = new TelegramBot(token, { polling: true });
+const bot = new TelegramBot(token, { 
+    polling: true,
+    // request: { // 设置代理
+    //    agentClass: Agent,
+    //    agentOptions: {
+    //        socksPassword: config.socksPassword
+    //    }
+    // }
+});
 // 监听消息
 bot.on("message", (msg) => {})
 // 删除消息   聊天室id,消息id

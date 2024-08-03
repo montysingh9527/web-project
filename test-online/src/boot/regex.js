@@ -11,6 +11,10 @@ const reg = /(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})/;
 const match = reg.exec('2021-02-23');
 
 
+// 判断是否是数字  isFinite("11")
+const is_number = /^\d+$/.test("11")
+
+
 /**
  * 匹配以 http 或 https 开头并以 .com 结尾的网址 
  */ 

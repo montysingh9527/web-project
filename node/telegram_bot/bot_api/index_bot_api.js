@@ -1,11 +1,20 @@
+/*
+ * @Description: telegram机器人
+ * @Date: 2024-07-19 22:34:54
+ * @FilePath: \web-project\node\telegram_bot\bot_api\index_bot_api.js
+ */
 // https://core.telegram.org/bots/features#botfather
+/**
+ * https://github.com/deepred5/yande-telegram-bot
+ * https://github.com/brickspert/blog/issues/65
+ */
 const TelegramBot = require("node-telegram-bot-api");
-
-// 从BotFather获取的API令牌
-const token = "900353384:AA26Km432M7-D20i4342VoFp4sMMokFT5339k";
+const { token } = require("./config.js");
 
 // 创建bot实例
-const bot = new TelegramBot(token, { polling: true });
+const bot = new TelegramBot(token, {
+  polling: true, // polling模式
+});
 
 // 定义匹配http或https链接的正则表达式
 const urlRegex = /https?:\/\/[^\s]+/;
@@ -47,6 +56,41 @@ bot.on("message", (msg) => {
     }
   }
 });
+
+/**
+ * 指令
+ */
+bot.onText(/\/add (.+)/, (msg, match) => {
+  const chatId = msg.chat.id;
+  const text = match[1];
+  console.log('---logs-msg, match--', msg, match);
+  bot.sendMessage(chatId, 'Added "' + text + '" to your to-do list.');
+});
+
+
+/**
+ * 指令处理
+ */
+bot.on("callback_query", function (data) {
+  const callbackData = JSON.parse(data.data);
+  if (callbackData.command === '/tag') {
+    const match = ['/tag', callbackData.data, 5];
+    const msg = {
+      chat: {
+        id: data.from.id
+      }
+    };
+    tagHandler(msg, match).then(() => {
+      bot.answerCallbackQuery(data.id, `搜索${callbackData.data}成功`);
+    }).catch((err) => {
+      bot.answerCallbackQuery(data.id, `搜索${callbackData.data}失败`);
+    });
+    return;
+  }
+  bot.answerCallbackQuery(data.id, '');
+});
+
+
 
 bot.on("polling_error", (error) => {
   console.log("---polling_error---", error.code); // => 'EFATAL'
