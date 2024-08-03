@@ -54,13 +54,10 @@ first_result.forEach(({ A, B, C }) => {
 });
 
 console.log("---logs---", result_data);
-
+// { '0': 'zh', '1': 'en' }
 const key_list = Object.entries(result_head)
   .slice(1)
-  .reduce((acc, [key, val], idx) => {
-    acc[idx] = val;
-    return acc;
-  }, {});
+  .reduce((acc, [key, val], idx) => ((acc[idx] = val), acc), {});
 
 // 保存路径
 const save_json_path = path.join(__dirname, "./import");

@@ -52,7 +52,7 @@ let json_data_result = [];
  */
 function comput_json(objs) {
   Object.entries(objs).map(([key, item]) => {
-    const title_name = key.split("_")[0];
+    const title_name = key;
     for (let zh_k in item) {
       // 对象数据处理
       if (
@@ -125,7 +125,7 @@ function merge_json_data(datas) {
 }
 
 // 第一次处理  导入数据  第一个_前作为键值
-comput_json({ zh_file_data, en_file_data });
+comput_json({ zh: zh_file_data, en: en_file_data });
 // 第二次, 合并数据
 merge_json_data(comput_json_data);
 
