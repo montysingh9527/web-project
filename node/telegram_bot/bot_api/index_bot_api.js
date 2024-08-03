@@ -9,7 +9,7 @@
  * https://github.com/brickspert/blog/issues/65
  */
 const TelegramBot = require("node-telegram-bot-api");
-const { token } = require("./config.js");
+const { token, keyboard_config } = require("./config.js");
 
 // 创建bot实例
 const bot = new TelegramBot(token, {
@@ -21,6 +21,13 @@ const urlRegex = /https?:\/\/[^\s]+/;
 
 // 删除消息聊天室id 及 消息id
 let chat_list = [];
+
+// 消息按钮
+const reply_markup_config = {
+  reply_markup: {
+    inline_keyboard: keyboard_config,
+  },
+};
 
 // 监听所有新的消息
 bot.on("message", (msg) => {
@@ -60,60 +67,69 @@ bot.on("message", (msg) => {
 /**
  * 指令
  */
-bot.onText(/\/add (.+)/, (msg, match) => {
+bot.onText(/\/menu/, (msg, match) => {
   const chatId = msg.chat.id;
   const text = match[1];
-  console.log('---logs-msg, match--', msg, match);
-  bot.sendMessage(chatId, 'Added "' + text + '" to your to-do list.');
+  bot.sendMessage(chatId, "菜单", {
+    ...reply_markup_config,
+  });
 });
 
+/**
+ * date指令
+ */
+bot.onText(/\/date/, (msg, match) => {
+  const chatId = msg.chat.id;
+  const text = match[1];
+  console.log("---logs-msg, match--", msg, match);
+  bot.sendMessage(chatId, `当前时间: ${new Date().toLocaleString()}`, {
+    ...reply_markup_config,
+  });
+});
 
 /**
- * 指令处理
+ * 按钮事件-指令处理
  */
 bot.on("callback_query", function (data) {
   const callbackData = JSON.parse(data.data);
-  if (callbackData.command === '/tag') {
-    const match = ['/tag', callbackData.data, 5];
-    const msg = {
-      chat: {
-        id: data.from.id
-      }
-    };
-    tagHandler(msg, match).then(() => {
-      bot.answerCallbackQuery(data.id, `搜索${callbackData.data}成功`);
-    }).catch((err) => {
-      bot.answerCallbackQuery(data.id, `搜索${callbackData.data}失败`);
+  const { chat, message_id } = data.message;
+  console.log("---logs-data--", data);
+  if (callbackData.command === "abouts") {
+    bot.answerCallbackQuery(
+      data.id,
+      `当前时间: ${new Date().toLocaleString()}`
+    );
+  } else if (callbackData.command == "welcome") {
+    bot.sendMessage(chat.id, `欢迎: ${chat.first_name} 进群.`, {
+      ...reply_markup_config,
     });
-    return;
+  } else {
+    bot.answerCallbackQuery(data.id, { text: "指令不存在,开发中..." });
   }
-  bot.answerCallbackQuery(data.id, '');
 });
-
-
 
 bot.on("polling_error", (error) => {
   console.log("---polling_error---", error.code); // => 'EFATAL'
 });
 
-setInterval(() => {
-  if (chat_list.length) {
-    chat_list.forEach((item) => {
-      bot
-        .deleteMessage(item.chatId, item.messageId)
-        .then(() => {
-          console.log(
-            `${new Date().toLocaleString()}-消息--${item.messageId} 已删除`
-          );
-        })
-        .catch((err) => {
-          console.error(
-            `${new Date().toLocaleString()}-删除消息--${
-              item.messageId
-            } 时出错:`,
-            err
-          );
-        });
-    });
-  }
-}, 2000 * 60);
+// setInterval(() => {
+//   if (chat_list.length) {
+//     chat_list.forEach((item) => {
+//       bot
+//         .deleteMessage(item.chatId, item.messageId)
+//         .then(() => {
+//           console.log(
+//             `${new Date().toLocaleString()}-消息--${item.messageId} 已删除`
+//           );
+//         })
+//         .catch((err) => {
+//           console.error(
+//             `${new Date().toLocaleString()}-删除消息--${
+//               item.messageId
+//             } 时出错:`,
+//             err
+//           );
+//         });
+//     });
+//   }
+// }, 2000 * 60);

@@ -24,6 +24,27 @@ bot.on("message", (msg) => {})
 bot.deleteMessage(chatId, messageId).then((res)=>{})
 ```
 
+#### 设置菜单
+- 1.在 `@BotFather` 中输入 `/setcommands` 
+
+#### 消息下方的按钮配置 reply_markup
+```
+bot.sendMessage(chatId, '消息msg', {
+    reply_markup: {
+        inline_keyboard: todoList.map((item, index) => [
+            {
+                text: `${index + 1}. ${item}`,
+                callback_data: JSON.stringify({ command: 'delete', index })
+            },
+        ]),
+    },
+});
+
+// 按钮事件处理
+bot.on("callback_query", function (data) {})
+```
+
+
 #### 问题
 - 1.如何删除一个时间段的消息?
 ```
@@ -32,3 +53,19 @@ bot.deleteMessage(chatId, messageId).then((res)=>{})
 2.将聊天室id和消息id存入, 使用定时任务删除聊天室时间段存入的消息
 
 ```
+
+### 需求功能
+- 1.进群验证
+- 2.进群欢迎
+- 3.定时广告
+- 4.自动回复
+- 5.自动禁言
+- 6.字数限制
+- 7.删除链接
+- 8.删除转发
+- 9.敏感词设置
+- 10.按钮设置
+- 11.添加VIP
+- 12.管理员命令
+- 13.共享群组
+- 14.小程序
