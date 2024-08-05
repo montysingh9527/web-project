@@ -41,6 +41,12 @@ let jsonData = [
   { key: "user.username", zh: "用户名", en: "UserName" },
 ];
 
+// 导入多语言数据
+const file_data_objs = { 
+  zh: zh_file_data,
+  en: en_file_data,
+}
+
 // 第一次合并数据
 let comput_json_data = [];
 // 最终数据
@@ -125,7 +131,7 @@ function merge_json_data(datas) {
 }
 
 // 第一次处理  导入数据  第一个_前作为键值
-comput_json({ zh: zh_file_data, en: en_file_data });
+comput_json(file_data_objs);
 // 第二次, 合并数据
 merge_json_data(comput_json_data);
 

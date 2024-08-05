@@ -1,0 +1,32 @@
+[
+    {
+        "key": "login"
+    },
+    {
+        "key": "register"
+    },
+    {
+        "key": "home.0"
+    },
+    {
+        "key": "home.1"
+    },
+    {
+        "key": "user.username"
+    },
+    {
+        "key": "user.password"
+    },
+    {
+        "key": "user.user_map.alipay",
+        "en": ""
+    },
+    {
+        "key": "user.user_map.wechat",
+        "zh": ""
+    },
+    {
+        "key": "menu",
+        "en": ""
+    }
+]

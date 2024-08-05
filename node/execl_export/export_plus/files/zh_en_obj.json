@@ -1,0 +1,47 @@
+{
+    "login": {
+        "key": "login",
+        "zh": "登录",
+        "en": "Login"
+    },
+    "register": {
+        "key": "register",
+        "zh": "注册",
+        "en": "Register"
+    },
+    "home.0": {
+        "key": "home.0",
+        "zh": "首页",
+        "en": "Home"
+    },
+    "home.1": {
+        "key": "home.1",
+        "zh": "关于我们",
+        "en": "Abouts"
+    },
+    "user.username": {
+        "key": "user.username",
+        "zh": "用户名",
+        "en": "UserName"
+    },
+    "user.password": {
+        "key": "user.password",
+        "zh": "密码",
+        "en": "PassWord"
+    },
+    "user.user_map.alipay": {
+        "key": "user.user_map.alipay",
+        "zh": "支付宝",
+        "en": ""
+    },
+    "user.user_map.wechat": {
+        "key": "user.user_map.wechat",
+        "zh": "",
+        "en": "Wechat Pay"
+    },
+    "menu": {
+        "key": "menu",
+        "zh": "菜单",
+        "en": ""
+    }
+}

@@ -10,4 +10,5 @@ module.exports = {
       wechat: "微信",
     },
   },
+  menu: "菜单",
 };

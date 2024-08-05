@@ -1,0 +1,47 @@
+[
+    {
+        "key": "login",
+        "zh": "登录",
+        "en": "Login"
+    },
+    {
+        "key": "register",
+        "zh": "注册",
+        "en": "Register"
+    },
+    {
+        "key": "home.0",
+        "zh": "首页",
+        "en": "Home"
+    },
+    {
+        "key": "home.1",
+        "zh": "关于我们",
+        "en": "Abouts"
+    },
+    {
+        "key": "user.username",
+        "zh": "用户名",
+        "en": "UserName"
+    },
+    {
+        "key": "user.password",
+        "zh": "密码",
+        "en": "PassWord"
+    },
+    {
+        "key": "user.user_map.alipay",
+        "zh": "支付宝",
+        "en": ""
+    },
+    {
+        "key": "user.user_map.wechat",
+        "zh": "",
+        "en": "Wechat Pay"
+    },
+    {
+        "key": "menu",
+        "zh": "菜单",
+        "en": ""
+    }
+]
