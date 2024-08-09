@@ -5,6 +5,7 @@
  */
 // https://core.telegram.org/bots/features#botfather
 /**
+ * https://ithelp.ithome.com.tw/articles/10277072
  * https://github.com/deepred5/yande-telegram-bot
  * https://github.com/brickspert/blog/issues/65
  */
@@ -102,10 +103,51 @@ bot.on("callback_query", function (data) {
   } else if (callbackData.command == "welcome") {
     bot.sendMessage(chat.id, `欢迎: ${chat.first_name} 进群.`, {
       ...reply_markup_config,
+      parse_mode: "MarkdownV2",
+    });
+  } else if (callbackData.command == "bill") {
+    bot.sendPhoto(chat.id, "/path/to/image.jpg", {
+      ...reply_markup_config,
+      caption: "通过URL发送的图片", // 为发送的图片添加的描述文字
     });
   } else {
     bot.answerCallbackQuery(data.id, { text: "指令不存在,开发中..." });
   }
+});
+
+/**
+ * img指令  发送多张图片
+ */
+bot.onText(/\/img/, (msg, match) => {
+  const chatId = msg.chat.id;
+  const text = match[1];
+  console.log("---logs-msg, match--", msg, match);
+  bot.sendMediaGroup(
+    chatId,
+    [
+      {
+        type: "photo",
+        media: "https://example.com/path/to/image1.jpg",
+        caption: "第一张图片",
+        reply_markup: {
+          inline_keyboard: keyboard_config,
+        },
+      },
+      {
+        type: "photo",
+        media: "/path/to/local/image3.jpg",
+        caption: "第三张图片",
+      },
+      {
+        type: "video",
+        media: "FILE_ID_FOR_IMAGE4", // 使用file_id发送已上传的图片
+        caption: "第四张图片",
+      },
+    ],
+    {
+      // ...reply_markup_config,
+    }
+  );
 });
 
 bot.on("polling_error", (error) => {
