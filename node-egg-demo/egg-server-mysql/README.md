@@ -101,6 +101,9 @@ module.exports = {
 module.exports = {
   //  up 方法中插入你想要的初始数据
   up: (queryInterface, Sequelize) => {
+    // 清空表  将删除 Users 表中的所有记录。第二个参数 null 表示不使用筛选条件，第三个参数 {} 是一个选项对象，通常不需要配置。
+    await queryInterface.bulkDelete('Users', null, {});
+    // 插入数据
     await queryInterface.bulkInsert('users', [
       {
         username: 'john_doe',
@@ -287,4 +290,45 @@ rank: {
     }
   ]
 }
+```
+
+
+#### MySql 增删改查
+- 增加（Create）
+> INSERT INTO users (username, email, created_at, updated_at)
+VALUES ('john_doe', 'john@example.com', NOW(), NOW());
+
+- 查询（Read）
+```
+查询所有: SELECT * FROM users;
+查询username, email: SELECT username, email FROM users;
+查询数据排序ORDER BY: SELECT * FROM users ORDER BY created_at DESC;
+
+// 查询 users 表中 username 为 'john_doe' 的记录
+SELECT * FROM users WHERE username = 'john_doe';
+
+// 查询 users 表中 created_at 在特定日期之后的记录
+SELECT * FROM users WHERE created_at > '2024-01-01';
+```
+- 修改（Update）
+```
+// 将 username 为 'john_doe' 的用户的电子邮件更新为 'john.doe@example.com'。
+UPDATE users 
+SET email = 'john.doe@example.com'
+WHERE username = 'john_doe';
+
+// 批量更新所有 created_at 在 2024-01-01 之前的记录的 status 为 'inactive'
+UPDATE users
+SET status = 'inactive'
+WHERE created_at < '2024-01-01';
+```
+- 删除（Delete）
+```
+// 删除 username 为 'john_doe' 的记录。
+DELETE FROM users
+WHERE username = 'john_doe';
+
+// 删除 created_at 在特定日期之前的所有记录
+DELETE FROM users
+WHERE created_at < '2024-01-01';
 ```
