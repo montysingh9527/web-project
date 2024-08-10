@@ -24,7 +24,7 @@ MySql数据库的ORM: egg-sequelize  https://github.com/eggjs/egg-sequelize?tab=
 管理数据结构的变更: sequelize-cli   https://www.eggjs.org/zh-CN/tutorials/sequelize#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C-migrations
 ```
 
-###### 数据迁移
+##### 数据迁移
 
 ```
 User.sync({alter: true}) // （慎用） 在程序运行时调用，把model跟数据表同步
@@ -47,14 +47,85 @@ npx sequelize db:migrate
 
 ```
 
-##### 数据库查询
+##### 生成 Sequelize配置 文件  
+> npx sequelize-cli init
+- config.json  配置文件
+- migrations  迁移文件,可以创建新表、添加或删除列、修改列的属性等
+- seeders  向数据库中插入初始数据或测试数据
+
+##### migrations 创建新表、添加或删除列、修改列 
+- 生成创建文件: 会在 SequelizeMeta 表中记录这个迁移文件的名称
+> npx sequelize-cli migration:generate --name demo-user
+- 执行迁移: 运行所有未执行的迁移
+> npx sequelize-cli db:migrate
+- 回滚迁移
+> 撤销最后一次迁移, 会执行 down 方法，撤销最后一个迁移文件中的更改: npx sequelize-cli db:migrate:undo
+> 撤销所有的迁移 : npx sequelize-cli db:migrate:undo:all
+
+```
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('Users', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      username: {
+        type: Sequelize.STRING
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+    });
+  },
+
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('Users');
+  }
+};
+```
+
+##### seeders 创建数据 表中插入一些数据 
+- 生成创建文件
+> 创建: npx sequelize-cli seed:generate --name demo-user
+- 执行创建
+> 执行Seeder所有创建脚本: npx sequelize-cli db:seed:all 
+> 执行Seeder单个创建脚本: npx sequelize-cli db:seed --seed demo-user.js
+- 撤销创建的数据
+> 撤销所有: npx sequelize-cli db:seed:undo:all
+> 撤销单个: npx sequelize-cli db:seed:undo --seed demo-user.js
+```
+module.exports = {
+  //  up 方法中插入你想要的初始数据
+  up: (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert('users', [
+      {
+        username: 'john_doe',
+        email: 'john@example.com',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
+    ], {});
+  },
+  // down 方法中，定义如何撤销这些数据（通常是删除这些数据）
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.bulkDelete('Users', null, {});
+  },
+};
+```
+
+
+#### 数据库查询
 
 ```
 数据迁移: https://www.cnblogs.com/xiebenyin-/p/15520978.html
 数据库查询: https://www.cnblogs.com/xiebenyin-/p/15490927.html
 ```
 
-##### 查询语句
+#### 查询语句
 
 ```
 ====== 新增数据
