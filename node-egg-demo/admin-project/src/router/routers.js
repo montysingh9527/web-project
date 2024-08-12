@@ -82,6 +82,13 @@ const routers = [
     ],
   },
   {
+    path: "/css",
+    component: () => import("src/page/css_test/index.vue"),
+    meta: {
+      title: "css测试",
+    },
+  },
+  {
     path: "/:catchAll(.*)*",
     component: () => import("src/page/Error404.vue"),
     meta: {

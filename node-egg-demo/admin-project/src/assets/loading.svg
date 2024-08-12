@@ -1,0 +1,306 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 100 100">
+  <!-- 灰色背景 -->
+  <rect width="100" height="100" fill="#d3d3d3" />
+
+  <!-- 旋转的橙色点圈 -->
+  <g transform="translate(50,50)">
+    <circle cx="0" cy="-30" r="5" fill="#FFA500">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="21.2" cy="-21.2" r="5" fill="#FFA500">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="30" cy="0" r="5" fill="#FFA500">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="21.2" cy="21.2" r="5" fill="#FFA500">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="0" cy="30" r="5" fill="#FFA500">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="-21.2" cy="21.2" r="5" fill="#FFA500">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="-30" cy="0" r="5" fill="#FFA500">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="-21.2" cy="-21.2" r="5" fill="#FFA500">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+  </g>
+</svg>
+
+
+
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 100 100">
+  灰色背景 
+  <rect width="100" height="100" fill="#d3d3d3" />
+
+  旋转的灰色点圈
+  <g transform="translate(50,50)">
+    <circle cx="0" cy="-30" r="5" fill="#808080">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="21.2" cy="-21.2" r="5" fill="#808080">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="30" cy="0" r="5" fill="#808080">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="21.2" cy="21.2" r="5" fill="#808080">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="0" cy="30" r="5" fill="#808080">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="-21.2" cy="21.2" r="5" fill="#808080">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="-30" cy="0" r="5" fill="#808080">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="-21.2" cy="-21.2" r="5" fill="#808080">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+  </g>
+</svg> -->
+
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50">
+  <circle cx="25" cy="25" r="20" fill="none" stroke-width="5" stroke="#3498db" stroke-linecap="round">
+    <animateTransform 
+      attributeName="transform" 
+      type="rotate" 
+      repeatCount="indefinite" 
+      dur="1s" 
+      values="0 25 25;360 25 25" 
+      keyTimes="0;1">
+    </animateTransform>
+  </circle>
+</svg> -->
+
+
+<!-- 
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 100 100">
+  灰色背景
+  <rect width="100" height="100" fill="#d3d3d3" />
+
+  "加载中" 文字
+  <text x="50%" y="50%" font-size="10" text-anchor="middle" fill="#000" dy=".3em">
+    加载中...
+  </text>
+
+  旋转圆圈
+  <circle cx="50" cy="50" r="35" fill="none" stroke="#3498db" stroke-width="4" stroke-linecap="round">
+    <animateTransform 
+      attributeName="transform" 
+      type="rotate" 
+      repeatCount="indefinite" 
+      dur="1s" 
+      values="0 50 50;360 50 50" 
+      keyTimes="0;1">
+    </animateTransform>
+  </circle>
+</svg> -->
+
+
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 100 100">
+  灰色背景 
+  <rect width="100" height="100" fill="#d3d3d3" />
+
+  旋转的点圈 
+  <g transform="translate(50,50)">
+    <circle cx="0" cy="-30" r="5" fill="#3498db">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="21.2" cy="-21.2" r="5" fill="#3498db">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="30" cy="0" r="5" fill="#3498db">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="21.2" cy="21.2" r="5" fill="#3498db">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="0" cy="30" r="5" fill="#3498db">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="-21.2" cy="21.2" r="5" fill="#3498db">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="-30" cy="0" r="5" fill="#3498db">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+    <circle cx="-21.2" cy="-21.2" r="5" fill="#3498db">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        repeatCount="indefinite" 
+        dur="1s" 
+        values="0 0 0;360 0 0" 
+        keyTimes="0;1">
+      </animateTransform>
+    </circle>
+  </g>
+</svg> -->

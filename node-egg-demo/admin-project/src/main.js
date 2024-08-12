@@ -15,8 +15,10 @@ import "quasar/dist/quasar.css"; // 导入 Quasar 样式
 import "@quasar/extras/fontawesome-v5/fontawesome-v5.css"; // 导入字体图标
 import "@quasar/extras/material-icons/material-icons.css"; // 导入字体图标
 // import "base_src/quasar/icon-set/fontawesome-v5.js"
+import "src/css/index.scss";  // 引入全局样式
 
 import { setupUtils } from "src/boot/utils.js";
+import { setupDirective }  from "src/boot/index.js";
 // 实例化 pinia 容器
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
@@ -47,6 +49,8 @@ app.use(Quasar, {
 function setupPlugins() {
   // 注册全局常用的utils插件
   setupUtils(app);
+  // 指令
+  setupDirective(app);
   // // 引入静态资源
   // setupAssets();
   // // 注册全局自定义组件,如：<svg-icon />
