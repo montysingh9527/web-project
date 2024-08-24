@@ -46,7 +46,6 @@ const imglazy = {
     el.imgObserver.observe(el);
   },
   unmounted(el, binding) {
-    console.log("---imgObserver---", el.imgObserver);
     if (el.imgObserver) {
       //   el.imgObserver.disconnect();
       el.imgObserver.unobserve(el);

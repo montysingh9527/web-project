@@ -18,9 +18,10 @@
 
 <script setup>
 import { ref } from "vue";
-import scssStar from "src/page/css_test/scss_star.vue";
+import scssStar from "src/page/css_test/scss_star.vue";  // 星空效果
 import imgLazy from "src/page/css_test/imglazy.vue"; // 图片懒加载
-import progress from "src/page/css_test/progress.vue";
+import progress from "src/page/css_test/progress.vue"; // 顶部进度条
+import lottery from "src/page/css_test/lottery/index.vue"; // 走势图
 const tab_list = [
     {
         title: "css测试",
@@ -35,8 +36,8 @@ const tab_list = [
         value: "scssStar",
     },
     {
-        title: "星空效果-3",
-        value: "scssStar-3",
+        title: "走势图",
+        value: "lottery",
     },
     {
         title: "星空效果-4",
@@ -80,6 +81,7 @@ const comp_map = {
     progress,
     scssStar,
     imgLazy,
+    lottery,
 }
 
 const is_comp = ref("progress")
