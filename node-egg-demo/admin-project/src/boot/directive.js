@@ -4,8 +4,7 @@
  * @FilePath: \web-project\node-egg-demo\admin-project\src\boot\directive.js
  */
 // 默认占位图
-import DEFAULT_IMG from "src/assets/loading.svg"
-
+import DEFAULT_IMG from "src/assets/loading.svg";
 
 /**
  * 图片懒加载指令
@@ -31,7 +30,8 @@ const imglazy = {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            loadImage();
+            // loadImage();
+            fetch_img(el, binding.value);
             el.imgObserver.unobserve(el);
           }
         });
@@ -46,13 +46,52 @@ const imglazy = {
     el.imgObserver.observe(el);
   },
   unmounted(el, binding) {
-    console.log('---imgObserver---', el.imgObserver);
+    console.log("---imgObserver---", el.imgObserver);
     if (el.imgObserver) {
       //   el.imgObserver.disconnect();
       el.imgObserver.unobserve(el);
     }
   },
 };
+
+// 图片错误次数
+let img_error = 0;
+/**
+ * 图片错误重试
+ * @param {*} el
+ */
+function fetch_img(el, imgUrl) {
+  if (!imgUrl) {
+    return;
+  }
+  el.src = imgUrl;
+  // el.onload = () => {
+  //   el.src = imgUrl;
+  //   el.classList.add("imglazy"); // 图片加载后添加样式类
+  //   console.log('---logs--el-',el);
+  // };
+  el.onerror = async () => {
+    if (img_error > 3) {
+      el.src = DEFAULT_IMG;
+      return;
+    }
+    try {
+      const res_img = await fetch(imgUrl);
+      if (res_img.ok) {
+        img_error++;
+        el.src = res_img.url;
+      } else {
+        if (img_error < 3) {
+          img_error++;
+          fetch_img(el, imgUrl);
+        }
+      }
+    } catch (error) {
+      el.src = DEFAULT_IMG;
+      console.log("---error--", error);
+    }
+  };
+}
 
 export const setupDirective = (app) => {
   app.directive("lazy", imglazy);

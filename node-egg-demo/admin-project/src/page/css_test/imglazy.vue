@@ -1,3 +1,8 @@
+<!--
+ * @Description: 图片懒加载
+ * @Date: 2024-08-13 00:34:39
+ * @FilePath: \web-project\node-egg-demo\admin-project\src\page\css_test\imglazy.vue
+-->
 <template>
     <div class="img-lazy-box">
         <div class="img-lazy-box-cont" v-for="(item, index) in img_list" :key="`lazy-${index}`">
