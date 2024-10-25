@@ -7,7 +7,15 @@
     "dialect": "mysql",
     "timezone": "+08:00 && echo \"东八区\"",
     "baseDir": "sequelizeModel && echo \"修改默认路径model`app/${baseDir}` as models, default to `model`\"",
-    "delegate": "sqlModel && echo \"修改默认model, ctx[delegate]`, default to `model`\""
+    "delegate": "sqlModel && echo \"修改默认model, ctx[delegate]`, default to `model`\"",
+    "define": {
+      "注释": "echo \"timestamps是否支持自动生产created_at，updated_at.,deleted_at,自动生成的时间为标准时间. underscored是否支持驼峰转为表的下划线\"",
+      "注释二": "echo \"freezeTableName不自动将表名转换为复数形式. paranoid删除是否自动插入时间\"",
+      "timestamps": false,
+      "underscored": true,
+      "freezeTableName": true,
+      "paranoid": false
+    }
   },
   "local": {
     "username": "root",

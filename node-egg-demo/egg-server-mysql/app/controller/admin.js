@@ -21,9 +21,11 @@ class AdminController extends Controller {
       },
     };
 
-    console.log('---logs--ctx.sqlModel-', ctx.sqlModel);
+    console.log('-11--logs--ctx.sqlModel-', ctx.sqlModel.model());
 
-    const data = await ctx.sqlModel.Admin.findAndCountAll(query);
+    // const data = await ctx.sqlModel.model.admin.findAndCountAll(query);
+    const data = await ctx.sqlModel.model.Admin.findAll();
+    console.log('---logs-data--',data);
     if (data) {
       ctx.api_success({
         data: {
