@@ -22,6 +22,8 @@ import scssStar from "src/page/css_test/scss_star.vue";  // 星空效果
 import imgLazy from "src/page/css_test/imglazy.vue"; // 图片懒加载
 import progress from "src/page/css_test/progress.vue"; // 顶部进度条
 import lottery from "src/page/css_test/lottery/index.vue"; // 走势图
+import virtualList from "src/page/css_test/virtual_list/index.vue"; // 虚拟列表
+
 const tab_list = [
     {
         title: "css测试",
@@ -40,8 +42,8 @@ const tab_list = [
         value: "lottery",
     },
     {
-        title: "星空效果-4",
-        value: "scssStar-4",
+        title: "虚拟列表",
+        value: "virtualList",
     },
     {
         title: "星空效果-5",
@@ -82,6 +84,7 @@ const comp_map = {
     scssStar,
     imgLazy,
     lottery,
+    virtualList,
 }
 
 const is_comp = ref("progress")
