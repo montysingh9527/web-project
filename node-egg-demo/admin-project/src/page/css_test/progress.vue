@@ -4,9 +4,8 @@
  * @FilePath: \web-project\node-egg-demo\admin-project\src\page\css_test\progress.vue
 -->
 <template>
-    <div ref="progressRef" class="progress-box">
-        <div>css测试</div>
-        <div id="progressBar"></div>
+    <div class="progress-box">
+        <div id="progressBar" :style="{ width: progressWidth + '%' }"></div>
     </div>
 </template>
 
@@ -14,34 +13,29 @@
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 
 
-const progressRef = ref(null);
-
+const progressWidth = ref(0);
 
 /**
  * 滚动顶部进度条
  */
 function handleScroll() {
-    console.log('---logs-xxx--',);
-    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-    var windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrollPercentage = (scrollPosition / windowHeight) * 100;
-    var progressBar = document.getElementById('progressBar');
-    progressBar.style.width = scrollPercentage + '%';
+    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    const windowHeight =
+        document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    progressWidth.value = (scrollPosition / windowHeight) * 100;
+    console.log('---logs-progressWidth--', progressWidth.value);
 };
 
 
 
 onMounted(() => {
-    console.log('---logs-xxc--', progressRef?.value);
-    progressRef?.value.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll)
 })
 
 
 // 清理事件监听器
 onUnmounted(() => {
-    if (progressRef.value) {
-        progressRef.value.removeEventListener('scroll', docScroll);
-    }
+    window.removeEventListener('scroll', handleScroll);
 });
 
 </script>

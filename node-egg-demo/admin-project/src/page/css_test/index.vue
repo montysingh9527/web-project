@@ -4,8 +4,8 @@
  * @FilePath: \web-project\node-egg-demo\admin-project\src\page\css_test\index.vue
 -->
 <template>
-    <div class="css-container">
-        <div class="text-h5 text-center">CSS测试页面</div>
+    <div class="css-container ma-10">
+        <div class="text-h5 text-center">CSS页面</div>
         <div class="css-tabs">
             <div @click="changeTab(tab)" :class="['css-tab', { 'tab-active': is_comp == tab.value }]"
                 v-for="(tab, index) in tab_list" :key="`tab-${index}`">
@@ -23,7 +23,7 @@ import imgLazy from "src/page/css_test/imglazy.vue"; // 图片懒加载
 import progress from "src/page/css_test/progress.vue"; // 顶部进度条
 import lottery from "src/page/css_test/lottery/index.vue"; // 走势图
 import virtualList from "src/page/css_test/virtual_list/index.vue"; // 虚拟列表
-
+import knob from "src/page/css_test/knob/index.vue";  // 进度条比例
 const tab_list = [
     {
         title: "css测试",
@@ -46,8 +46,8 @@ const tab_list = [
         value: "virtualList",
     },
     {
-        title: "星空效果-5",
-        value: "scssStar-5",
+        title: "进度条比例",
+        value: "knob",
     },
     {
         title: "星空效果-6",
@@ -85,6 +85,7 @@ const comp_map = {
     imgLazy,
     lottery,
     virtualList,
+    knob,
 }
 
 const is_comp = ref("progress")
@@ -104,7 +105,7 @@ const changeTab = (tab) => {
     display: flex;
     gap: 10px;
     border: 1px solid var(--q-gb-bg-c-5, #5a6074);
-    margin: 10px;
+    // margin: 10px;
     overflow: hidden;
     overflow-x: scroll;
 
