@@ -36,6 +36,7 @@ vue.js调试工具：  Vue.js devtools@6.1.4
 图片批量下载：    Fatkun
 正则提取：		XPath Helper
 格式化json数据： JSON-handle
+chatGpt工具: Monica
 
 ```
 
