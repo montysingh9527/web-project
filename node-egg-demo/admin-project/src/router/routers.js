@@ -83,6 +83,7 @@ const routers = [
   },
   {
     path: "/css",
+    name: "css",
     component: () => import("src/page/css_test/index.vue"),
     meta: {
       title: "css测试",
