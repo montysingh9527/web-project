@@ -7,7 +7,7 @@
     <div class="img-lazy-box">
         <div class="img-lazy-box-cont" v-for="(item, index) in img_list" :key="`lazy-${index}`">
             <div>{{ item.title }}</div>
-            <img v-lazy="item.value" :alt="item.title">
+            <img v-lazy="item.value" :alt="item.title"  loading="lazy">
         </div>
     </div>
 </template>

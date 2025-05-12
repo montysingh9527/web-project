@@ -5,7 +5,7 @@
 -->
 <template>
     <div class="css-container ma-10">
-        <div class="text-h5 text-center">CSS页面</div>
+        <div class="text-h5 text-center"></div>
         <div class="css-tabs">
             <div @click="changeTab(tab)" :class="['css-tab', { 'tab-active': is_comp == tab.value }]"
                 v-for="(tab, index) in tab_list" :key="`tab-${index}`">

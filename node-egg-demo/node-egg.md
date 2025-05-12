@@ -4,6 +4,7 @@
     1.2 可视化工具:  ([MongoDB Compass](https://www.mongodb.com/try/download/compass) / [NoSQLBooster](https://nosqlbooster.com/downloads?spm=a2c6h.12873639.article-detail.11.17cb125aIgDSvr))
     1.3 [mongoose分页插件](https://www.npmjs.com/package/mongoose-paginate-v2): mongoose-paginate
 2. MySQL数据库:
+    2.0 mysql安装教程：[mysql](https://www.runoob.com/mysql/mysql-install.html)
     2.1 mysql插件: [sequelize](https://github.com/demopark/sequelize-docs-Zh-CN)  
     2.2 mysql可视化工具: [dbeaver](https://dbeaver.io/download/) 
 

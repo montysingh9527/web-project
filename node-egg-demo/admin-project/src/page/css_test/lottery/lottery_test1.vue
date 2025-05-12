@@ -71,7 +71,7 @@ export default {
                     ctx.textAlign = "center";
                     ctx.textBaseline = "middle"; // 垂直居中
                     if (value) {
-                        const text = value === "long" ? "龙" : "虎";
+                        const text = value === "long" ? "黑" : "白";
                         ctx.fillText(text, x + this.cellWidth / 2, y + this.cellHeight / 2); // 在矩形中央显示文本
                     }
 

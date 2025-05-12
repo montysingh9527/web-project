@@ -19,7 +19,7 @@ module.exports = (app) => {
       username: {
         allowNull: false,
         unique: true,
-        type: STRING(20),
+        type: STRING(30),
         comment: "用户名",
         validate: {
           len: [6, 30], // 验证器 字符串长度必须在 6 到 30 之间
@@ -36,7 +36,7 @@ module.exports = (app) => {
         comment: "超级管理员(1超级管理员 2普通会员)",
       },
       roleId: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
+        type: STRING,
         // defaultValue: [],
         comment: "角色ID",
       },
@@ -80,7 +80,7 @@ module.exports = (app) => {
         type: STRING,
         comment: "更新者",
       },
-    },
+    }
     // {
     //   tableName: "Admins", // 指定表名
     // }

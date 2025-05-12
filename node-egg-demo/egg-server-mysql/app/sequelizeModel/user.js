@@ -18,7 +18,7 @@ module.exports = (app) => {
     username: {
       allowNull: false,
       unique: true,
-      type: STRING(20),
+      type: STRING(30),
       comment: "用户名",
       validate: {
         len: [6, 30], // 验证器 字符串长度必须在 6 到 30 之间

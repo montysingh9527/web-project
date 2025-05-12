@@ -26,7 +26,7 @@ module.exports = {
         comment: "唯一值id", // 添加注释，描述字段的用途
       },
       username: {
-        type: STRING, // 字符串
+        type: STRING(30), // 字符串
         allowNull: false,
         unique: true,
         comment: "用户名",

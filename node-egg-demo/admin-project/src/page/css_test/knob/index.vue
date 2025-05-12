@@ -7,7 +7,7 @@
     <div class="knob">
         <div class="text-center text-h5">进度比例</div>
         <div class="mt-20">
-            <knob-test-noe />
+            <knob-test-noe :home="30" :away="50" />
         </div>
     </div>
 </template>
