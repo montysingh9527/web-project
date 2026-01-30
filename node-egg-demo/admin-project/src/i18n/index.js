@@ -26,7 +26,8 @@ const loadLanguageAsync = async (lang) => {
     lang = LocalStorage.getItem("lang") ?? "zh";
     // 动态加载对应的语言包
     const lang_obj = await import(`./${lang}.json`);
-    i18n.global.setLocaleMessage(lang, lang_obj);
+    // i18n.global.setLocaleMessage(lang, lang_obj);
+    i18n.global.setLocaleMessage(lang, lang_obj.default);
     i18n.global.locale = lang;
     i18n.locale = lang;
     return lang;
